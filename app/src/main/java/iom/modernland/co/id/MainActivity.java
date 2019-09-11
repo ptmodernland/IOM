@@ -1,0 +1,59 @@
+package iom.modernland.co.id;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    ImageView bgapp, clover;
+    TextView txtFlashUser;
+    LinearLayout textsplash, texthome, menus, menuiom;
+    Animation frombottom;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        frombottom = AnimationUtils.loadAnimation(this, R.anim.frombottom);
+
+        bgapp = (ImageView) findViewById(R.id.bgapp);
+        clover = (ImageView) findViewById(R.id.clover);
+        textsplash = (LinearLayout) findViewById(R.id.textsplash);
+        texthome = (LinearLayout) findViewById(R.id.texthome);
+        menus = (LinearLayout) findViewById(R.id.menus);
+        menuiom = (LinearLayout) findViewById(R.id.menuIom);
+        txtFlashUser = (TextView) findViewById(R.id.txtFlashUser);
+
+        SharedPreferences sp = getApplicationContext()
+                .getSharedPreferences("DATALOGIN", 0);
+
+        String username      = sp.getString("nama", "");
+
+        txtFlashUser.setText(username);
+
+        bgapp.animate().translationY(-900).setDuration(3000).setStartDelay(1000);
+        clover.animate().alpha(0).setDuration(3000).setStartDelay(1000);
+        textsplash.animate().translationY(140).alpha(0).setDuration(3000).setStartDelay(1000);
+
+        texthome.startAnimation(frombottom);
+        menus.startAnimation(frombottom);
+
+        menuiom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(MainActivity.this, HomeUserActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+}

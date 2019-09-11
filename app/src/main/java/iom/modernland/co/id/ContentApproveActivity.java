@@ -1,0 +1,17 @@
+package iom.modernland.co.id;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class ContentApproveActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_content_approve);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameApprove, new ApproveMemoFragment())
+                .addToBackStack(null)
+                .commit();
+    }
+}
