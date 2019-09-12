@@ -18,13 +18,13 @@
 
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="nomor">Nomor : </string>
-    <string name="kepada">Kepada Yth : </string>
-    <string name="cc">Cc : </string>
-    <string name="dari">Dari : </string>
-    <string name="tanggal">Tanggal : </string>
-    <string name="jenis">Jenis : </string>
-    <string name="perihal">Perihal : </string>
+    <string name="nomor">Nomor </string>
+    <string name="kepada">Kepada Yth </string>
+    <string name="cc">Cc </string>
+    <string name="dari">Dari </string>
+    <string name="tanggal">Tanggal </string>
+    <string name="jenis">Jenis </string>
+    <string name="perihal">Perihal </string>
 
     <string name="welcome">Welcome</string>
 

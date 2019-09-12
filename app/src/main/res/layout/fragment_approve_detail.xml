@@ -12,131 +12,127 @@
         android:layout_height="wrap_content"
         android:hint="@string/back"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:stretchColumns="3">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/nomor"/>
+        <TableRow>
 
-        <TextView
-            android:id="@+id/txtNomord"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:text="@string/nomor"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/txtNomord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/kepada"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtKepada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/cc"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtCc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/dari"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
 
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtDari"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/kepada"/>
+        </TableRow>
 
-        <TextView
-            android:id="@+id/txtKepada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <TableRow>
 
-    </LinearLayout>
+            <TextView
+                android:text="@string/tanggal"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtTanggal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/cc"/>
+        </TableRow>
 
-        <TextView
-            android:id="@+id/txtCc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <TableRow>
 
-    </LinearLayout>
+            <TextView
+                android:text="@string/perihal"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtPerihal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/dari"/>
+        </TableRow>
 
-        <TextView
-            android:id="@+id/txtDari"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        <TableRow>
 
-    </LinearLayout>
+            <TextView
+                android:text="@string/jenis"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/txtJenis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/tanggal"/>
+        </TableRow>
 
-        <TextView
-            android:id="@+id/txtTanggal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+    </TableLayout>
 
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/perihal"/>
-
-        <TextView
-            android:id="@+id/txtPerihal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/jenis"/>
-
-        <TextView
-            android:id="@+id/txtJenis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/lnWV"
