@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/txtDashboard"
-                android:text="Dashboard"
+                android:text="@string/dashboard"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
@@ -88,7 +88,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Approve"
+                        android:text="@string/approve"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -123,7 +123,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="List Memo"
+                        android:text="@string/list_memo"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -156,7 +156,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Logout"
+                        android:text="@string/logout"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -189,7 +189,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Exit"
+                        android:text="@string/exit"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 

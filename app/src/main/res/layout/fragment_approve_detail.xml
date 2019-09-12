@@ -10,7 +10,7 @@
         android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Back"/>
+        android:hint="@string/back"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -20,14 +20,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Nomor  : "/>
+            android:hint="@string/nomor"/>
 
         <TextView
             android:id="@+id/txtNomord"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -40,14 +38,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Kepada Yth : "/>
+            android:hint="@string/kepada"/>
 
         <TextView
             android:id="@+id/txtKepada"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -59,14 +55,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Cc : "/>
+            android:hint="@string/cc"/>
 
         <TextView
             android:id="@+id/txtCc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -78,14 +72,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Dari : "/>
+            android:hint="@string/dari"/>
 
         <TextView
             android:id="@+id/txtDari"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            />
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
@@ -97,7 +89,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Tanggal : "/>
+            android:hint="@string/tanggal"/>
 
         <TextView
             android:id="@+id/txtTanggal"
@@ -116,7 +108,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Perihal  : "/>
+            android:hint="@string/perihal"/>
 
         <TextView
             android:id="@+id/txtPerihal"
@@ -135,7 +127,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Jenis : "/>
+            android:hint="@string/jenis"/>
 
         <TextView
             android:id="@+id/txtJenis"
@@ -155,7 +147,7 @@
         <Button
             android:id="@+id/btnWV"
             android:drawableLeft="@drawable/ic_search_black_24dp"
-            android:text="Lihat Memo"
+            android:text="@string/view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -177,7 +169,7 @@
             android:id="@+id/btnApprove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Approve"/>
+            android:text="@string/approve"/>
 
     </LinearLayout>
 

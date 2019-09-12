@@ -32,7 +32,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
-                android:text="Login"
+                android:text="@string/login"
                 android:textColor="#2a5298"
                 android:textSize="24sp" />
 
@@ -44,7 +44,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginRight="12dp"
-                android:hint="Username"
+                android:hint="@string/username"
                 android:textColorHint="#1e3c73">
 
                 <android.support.design.widget.TextInputEditText
@@ -63,7 +63,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginRight="12dp"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:textColorHint="#1e3c73">
 
                 <android.support.design.widget.TextInputEditText
@@ -83,7 +83,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/button_gradient"
-                android:text="Login"
+                android:text="@string/login"
                 android:textColor="#fff"/>
 
 
@@ -103,11 +103,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
-            android:text="Modernland Apps"
+            android:text="@string/modernland_apps"
             android:textColor="#fff"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
+
 </android.support.constraint.ConstraintLayout>

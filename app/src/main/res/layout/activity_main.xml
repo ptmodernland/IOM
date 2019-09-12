@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome"
+            android:text="@string/welcome"
             android:textColor="#FFF"
             android:textSize="24sp" />
 
@@ -61,14 +61,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modernland Realty"
+            android:text="@string/modernland"
             android:textColor="#FFF"
             android:textSize="24sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mobile Apps"
+            android:text="@string/mobile_apps"
             android:textColor="#FFF"
             android:textSize="16sp" />
 
@@ -114,7 +114,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="IOM"
+                    android:text="@string/iom"
                     android:textColor="#0E1843"
                     android:textSize="22sp" />
 
@@ -138,12 +138,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NPV"
+                    android:text="@string/npv"
                     android:textColor="#0E1843"
                     android:textSize="22sp" />
 
             </LinearLayout>
-
 
         </LinearLayout>
 
