@@ -135,24 +135,51 @@
 
 
     <LinearLayout
-        android:id="@+id/lnWV"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnWV"
-            android:drawableLeft="@drawable/ic_search_black_24dp"
-            android:text="@string/view"
+        <LinearLayout
+            android:id="@+id/lnWV"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:visibility="gone"
-            android:id="@+id/txtWV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnWV"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:text="@string/view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtWV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnAF"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnAF"
+                android:drawableLeft="@drawable/ic_file_download_black_24dp"
+                android:text="@string/file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtAF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -163,7 +190,7 @@
 
         <Button
             android:id="@+id/btnApprove"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/approve"/>
 

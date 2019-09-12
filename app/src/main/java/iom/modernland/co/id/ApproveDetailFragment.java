@@ -1,9 +1,14 @@
 package iom.modernland.co.id;
 
 
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -34,6 +39,8 @@ import okhttp3.Response;
  */
 public class ApproveDetailFragment extends Fragment {
 
+    long queueid;
+    DownloadManager dm ;
 
     public ApproveDetailFragment() {
         // Required empty public constructor
@@ -58,6 +65,7 @@ public class ApproveDetailFragment extends Fragment {
         final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenis);
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihal);
         final TextView txtWV = (TextView) x.findViewById(R.id.txtWV);
+        final TextView txtAF = (TextView) x.findViewById(R.id.txtAF);
 
         OkHttpClient postman = new OkHttpClient();
 
@@ -101,6 +109,7 @@ public class ApproveDetailFragment extends Fragment {
                     final String tanggal = jo.getString("tanggal");
                     final String jenis = jo.getString("jenis");
                     final String perihal = jo.getString("perihal");
+                    final String lampiran = jo.getString("attch_lampiran");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -114,6 +123,7 @@ public class ApproveDetailFragment extends Fragment {
                             txtJenis.setText(jenis);
                             txtPerihal.setText(perihal);
                             txtWV.setText(id);
+                            txtAF.setText(lampiran);
 
                             pd.dismiss();
                         }
@@ -283,6 +293,44 @@ public class ApproveDetailFragment extends Fragment {
                         .replace(R.id.frameApprove, wv)
                         .addToBackStack(null)
                         .commit();
+            }
+        });
+
+        LinearLayout lnAF = (LinearLayout) x.findViewById(R.id.lnAF);
+        lnAF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String attch_lampiran = txtAF.getText().toString();
+
+                dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
+
+                Uri uri = Uri.parse("https://reminder.modernland.co.id/iom/assets/file/"
+                        + attch_lampiran);
+
+                DownloadManager.Request request = new DownloadManager.Request(uri);
+
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+
+                Long reference = dm.enqueue(request);
+            }
+        });
+
+        Button btnAF = (Button) x.findViewById(R.id.btnAF);
+        btnAF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String attch_lampiran = txtAF.getText().toString();
+
+                dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
+
+                Uri uri = Uri.parse("https://reminder.modernland.co.id/iom/assets/file/"
+                        + attch_lampiran);
+
+                DownloadManager.Request request = new DownloadManager.Request(uri);
+
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+
+                Long reference = dm.enqueue(request);
             }
         });
 

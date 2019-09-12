@@ -12,6 +12,8 @@
     <string name="npv">NPV</string>
     <string name="login">Login</string>
     <string name="view">View</string>
+    <string name="file">File</string>
+    <string name="download">Download</string>
     <string name="back">Back</string>
     <string name="logout">Logout</string>
     <string name="exit">Exit</string>
