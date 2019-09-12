@@ -130,7 +130,9 @@ public class HomeUserActivity extends AppCompatActivity {
                                 .edit().clear().commit();
 
                         Intent i = new Intent(HomeUserActivity.this, LoginActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
+                        finish();
                     }
                 });
                 ab.setNegativeButton("No", new DialogInterface.OnClickListener() {
