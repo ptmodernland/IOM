@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#fff"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_margin="4dp"
-        android:padding="2dp"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:stretchColumns="2">
 
         <TextView
             android:layout_width="wrap_content"
@@ -15,51 +20,36 @@
             android:id="@+id/txtIDap"
             android:visibility="gone"/>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TableRow>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:text="@string/nomor"
+                android:textColor="#000"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nomor  : "/>
+                android:layout_column="0"/>
 
             <TextView
                 android:id="@+id/txtNomorap"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
 
-                />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TableRow>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:text="@string/perihal"
+                android:textColor="#000"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Perihal  : "/>
+                android:layout_column="0"/>
 
             <TextView
                 android:id="@+id/txtPerihalap"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
 
-                />
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="____________________________________________________"/>
-
-    </LinearLayout>
-
+    </TableLayout>
 
 </android.support.v7.widget.CardView>
