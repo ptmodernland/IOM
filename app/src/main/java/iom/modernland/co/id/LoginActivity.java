@@ -54,9 +54,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(buttonView.isChecked()){
-                    Toast.makeText(LoginActivity.this,"Checked", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Data Login Saved", Toast.LENGTH_SHORT).show();
                 }else if(!buttonView.isChecked()){
-                    Toast.makeText(LoginActivity.this,"Unchecked", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Unsave Data Login", Toast.LENGTH_SHORT).show();
                 }
             }
         });
