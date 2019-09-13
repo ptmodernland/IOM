@@ -20,6 +20,7 @@
 
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="remember">Remember Me</string>
     <string name="nomor">Nomor </string>
     <string name="kepada">Kepada Yth </string>
     <string name="cc">Cc </string>

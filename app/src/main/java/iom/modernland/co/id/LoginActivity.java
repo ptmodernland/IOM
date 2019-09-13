@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -30,6 +32,34 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        SharedPreferences sp = getSharedPreferences("DATALOGIN",MODE_PRIVATE);
+
+        if(sp.contains("username")){
+            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+
+            i.putExtra("x",
+                    sp.getString("email",""));
+
+            startActivity(i);
+            finish();
+        }else{
+
+            Toast.makeText(this, "Please Login", Toast.LENGTH_LONG).show();
+
+        }
+
+        CheckBox Remember = (CheckBox) findViewById(R.id.ckRemember);
+        Remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(buttonView.isChecked()){
+                    Toast.makeText(LoginActivity.this,"Checked", Toast.LENGTH_SHORT).show();
+                }else if(!buttonView.isChecked()){
+                    Toast.makeText(LoginActivity.this,"Unchecked", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 

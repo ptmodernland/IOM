@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/login"
                 android:textColor="#2a5298"
                 android:textSize="24sp" />
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtLogin"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="12dp"
                 android:hint="@string/username"
                 android:textColorHint="#1e3c73">
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/username"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="12dp"
                 android:hint="@string/password"
                 android:textColorHint="#1e3c73">
@@ -74,13 +74,24 @@
                     android:layout_alignStart="@+id/password" />
             </android.support.design.widget.TextInputLayout>
 
+            <CheckBox
+                android:id="@+id/ckRemember"
+                android:layout_below="@id/password"
+                android:layout_marginLeft="12dp"
+                android:hint="@string/remember"
+                android:textColorHint="#1e3c73"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+            </CheckBox>
+
             <Button
                 android:id="@+id/btnLogin"
                 android:onClick="prosesLogin"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/password"
-                android:layout_marginTop="10dp"
+                android:layout_below="@id/ckRemember"
+                android:layout_marginTop="15dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/button_gradient"
                 android:text="@string/login"
