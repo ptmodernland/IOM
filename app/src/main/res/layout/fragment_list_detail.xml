@@ -135,24 +135,51 @@
     </TableLayout>
 
     <LinearLayout
-        android:id="@+id/lnWVM"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnMVM"
-            android:drawableLeft="@drawable/ic_search_black_24dp"
-            android:text="@string/view"
+        <LinearLayout
+            android:id="@+id/lnWVM"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:visibility="gone"
-            android:id="@+id/txtWVM"
+            <Button
+                android:id="@+id/btnMVM"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:text="@string/view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtWVM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnAFM"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
+            <Button
+                android:id="@+id/btnAFM"
+                android:drawableLeft="@drawable/ic_file_download_black_24dp"
+                android:text="@string/file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtAFM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

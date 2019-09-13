@@ -1,8 +1,11 @@
 package iom.modernland.co.id;
 
 
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -31,6 +34,7 @@ import okhttp3.Response;
  */
 public class ListDetailFragment extends Fragment {
 
+    DownloadManager dm ;
 
     public ListDetailFragment() {
         // Required empty public constructor
@@ -54,6 +58,7 @@ public class ListDetailFragment extends Fragment {
         final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenis);
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihal);
         final TextView txtWVM = (TextView) x.findViewById(R.id.txtWVM);
+        final TextView txtAFM = (TextView) x.findViewById(R.id.txtAFM);
 
         OkHttpClient postman = new OkHttpClient();
 
@@ -97,6 +102,7 @@ public class ListDetailFragment extends Fragment {
                     final String tanggal = jo.getString("tanggal");
                     final String jenis = jo.getString("jenis");
                     final String perihal = jo.getString("perihal");
+                    final String lampiran = jo.getString("attch_lampiran");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -110,6 +116,7 @@ public class ListDetailFragment extends Fragment {
                             txtJenis.setText(jenis);
                             txtPerihal.setText(perihal);
                             txtWVM.setText(id);
+                            txtAFM.setText(lampiran);
 
                             pd.dismiss();
                         }
@@ -169,6 +176,25 @@ public class ListDetailFragment extends Fragment {
                         .replace(R.id.frameMemo, wv)
                         .addToBackStack(null)
                         .commit();
+            }
+        });
+
+        Button btnAFM = (Button) x.findViewById(R.id.btnAFM);
+        btnAFM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String attch_lampiran = txtAFM.getText().toString();
+
+                dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
+
+                Uri uri = Uri.parse("https://reminder.modernland.co.id/iom/assets/file/"
+                        + attch_lampiran);
+
+                DownloadManager.Request request = new DownloadManager.Request(uri);
+
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+
+                Long reference = dm.enqueue(request);
             }
         });
 
