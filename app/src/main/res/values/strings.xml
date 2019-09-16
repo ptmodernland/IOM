@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">ModernlandIom</string>
 
+    <string name="default_notification_channel_id">Notification</string>
+    <string name="fcm_message">Notification</string>
+
     <string name="modernland">Modernland Realty Tbk </string>
     <string name="modernland_apps">Modernland Apps </string>
     <string name="mobile_apps">Mobile Apps </string>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "21653421615",
+    "firebase_url": "https://modernlandiom.firebaseio.com",
+    "project_id": "modernlandiom",
+    "storage_bucket": "modernlandiom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21653421615:android:4bd4db420bcb5ad63ed0da",
+        "android_client_info": {
+          "package_name": "iom.modernland.co.id"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21653421615-u0outr5ctgvbb1cg2umq162aj0jft126.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "iom.modernland.co.id",
+            "certificate_hash": "6bc394334f6be2eaa669f64fcf88175cab3eaa62"
+          }
+        },
+        {
+          "client_id": "21653421615-ufuvjh2tcnpmtnkl2sosm5s3pjb81tru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcGxtiDd-iI92ZNAlAjYAXNkHBBkK0HTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21653421615-ufuvjh2tcnpmtnkl2sosm5s3pjb81tru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

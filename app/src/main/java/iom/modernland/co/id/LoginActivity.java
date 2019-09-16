@@ -13,6 +13,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -70,7 +72,19 @@ public class LoginActivity extends AppCompatActivity {
 
         final String isiuser = etUsername.getText().toString();
         final String isipass = etPassword.getText().toString();
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        String token = refreshedToken.toString();
 
+        if (token.length() == 0) {
+            Toast.makeText(getApplicationContext(),
+                    "Token Ga Dapat",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //Toast.makeText(getApplicationContext(),
+        //        "Token " + token,
+        //        Toast.LENGTH_SHORT).show();
 
         //Intent i = new Intent(getApplicationContext(),
         //        HomeUserActivity.class);
@@ -83,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("username", isiuser)
                 .addFormDataPart("password", isipass)
+                .addFormDataPart("token", token)
                 .build();
 
         Request request = new Request.Builder()
