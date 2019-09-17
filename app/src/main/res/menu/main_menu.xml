@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bNewThread"
+        android:icon="@drawable/ic_add_black_48dp_00"
+        android:title="@string/back" />
+
+    <item android:title="Logout"
+        android:id="@+id/menuLogout"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"/>
+
+    <item android:title="Exit"
+        android:id="@+id/menuExit"
+        android:icon="@drawable/ic_close_black_24dp"/>
+
+</menu>

@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -118,7 +119,20 @@ public class ListMemoFragment extends Fragment {
             }
         });
 
+        /*
         Button btnKembali = (Button) x.findViewById(R.id.btnKembali);
+        btnKembali.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(),
+                        HomeUserActivity.class);
+
+                startActivity(i);
+            }
+        });
+        */
+
+        FloatingActionButton btnKembali = (FloatingActionButton) x.findViewById(R.id.btnKembali);
         btnKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
