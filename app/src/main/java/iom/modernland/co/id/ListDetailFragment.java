@@ -128,6 +128,7 @@ public class ListDetailFragment extends Fragment {
             }
         });
 
+        /*
         Button btnBack = (Button) x.findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +137,7 @@ public class ListDetailFragment extends Fragment {
                         .popBackStackImmediate();
             }
         });
+        */
 
         Button btnWvM = (Button) x.findViewById(R.id.btnMVM);
         btnWvM.setOnClickListener(new View.OnClickListener() {

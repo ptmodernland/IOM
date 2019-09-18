@@ -34,18 +34,19 @@ public class WebViewFragment extends Fragment {
         String id_iom = getArguments().getString("idiomnya");
 
         WebView webviewku = (WebView) x.findViewById(R.id.WebView1);
+
         webviewku.getSettings().setLoadsImagesAutomatically(true);
         webviewku.getSettings().setJavaScriptEnabled(true);
         webviewku.getSettings().setDomStorageEnabled(true);
 
-        webviewku.getSettings().setSupportZoom(false);
+        webviewku.getSettings().setSupportZoom(true);
         webviewku.getSettings().setBuiltInZoomControls(true);
         webviewku.getSettings().setDisplayZoomControls(false);
 
         webviewku.getSettings().setJavaScriptEnabled(true);
         webviewku.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
-        webviewku.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webviewku.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
 
         webviewku.setWebViewClient(new WebViewClient());
         webviewku.loadUrl("https://reminder.modernland.co.id/iom/memo/view_mobile/" + id_iom);

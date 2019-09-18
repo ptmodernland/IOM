@@ -1,12 +1,15 @@
 package iom.modernland.co.id;
 
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,13 +33,14 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ListMemoFragment extends Fragment {
 
-
     public ListMemoFragment() {
+
         // Required empty public constructor
     }
 
@@ -130,7 +134,7 @@ public class ListMemoFragment extends Fragment {
                 startActivity(i);
             }
         });
-        */
+
 
         FloatingActionButton btnKembali = (FloatingActionButton) x.findViewById(R.id.btnKembali);
         btnKembali.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +146,77 @@ public class ListMemoFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        fabBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager()
+                        .popBackStackImmediate();
+            }
+        });
+
+        fabLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder ab = new AlertDialog.Builder(getActivity());
+
+                ab.create();
+                ab.setTitle("Confirmation");
+                ab.setIcon(R.drawable.ic_check_black_24dp);
+                ab.setMessage("Are you sure to logout?");
+                ab.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        getActivity().getSharedPreferences("DATALOGIN", MODE_PRIVATE)
+                                .edit().clear().commit();
+
+                        Intent i = new Intent(getActivity(), LoginActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i);
+                    }
+                });
+                ab.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                ab.show();
+            }
+        });
+
+        fabExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder ab = new AlertDialog.Builder(getActivity());
+
+                ab.create();
+                ab.setTitle("Confirmation");
+                ab.setIcon(R.drawable.ic_check_black_24dp);
+                ab.setMessage("Are you sure to exit?");
+                ab.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                    }
+                });
+                ab.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                ab.show();
+
+            }
+        });
+
+        */
 
         return x;
     }

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/bNewThread"
-        android:icon="@drawable/ic_add_black_48dp_00"
+        android:icon="@drawable/ic_close_black_24dp"
         android:title="@string/back" />
 
     <item android:title="Logout"
