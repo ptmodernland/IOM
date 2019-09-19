@@ -41,7 +41,7 @@ public class WebViewFragment extends Fragment {
 
         webviewku.getSettings().setSupportZoom(true);
         webviewku.getSettings().setBuiltInZoomControls(true);
-        webviewku.getSettings().setDisplayZoomControls(false);
+        webviewku.getSettings().setDisplayZoomControls(true);
 
         webviewku.getSettings().setJavaScriptEnabled(true);
         webviewku.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
