@@ -133,12 +133,12 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/transfer" />
+                    android:src="@drawable/credit_payment" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/npv"
+                    android:text="@string/permohonan"
                     android:textColor="#0E1843"
                     android:textSize="22sp" />
 
