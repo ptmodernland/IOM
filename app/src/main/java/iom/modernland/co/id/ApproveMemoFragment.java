@@ -118,17 +118,6 @@ public class ApproveMemoFragment extends Fragment {
             }
         });
 
-        Button btnKembali = (Button) x.findViewById(R.id.btnKembali);
-        btnKembali.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(),
-                        HomeUserActivity.class);
-
-                startActivity(i);
-            }
-        });
-
         return x;
     }
 

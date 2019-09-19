@@ -135,15 +135,6 @@ public class ApproveDetailFragment extends Fragment {
             }
         });
 
-        Button btnCancel = (Button) x.findViewById(R.id.btnCancel);
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager()
-                        .popBackStackImmediate();
-            }
-        });
-
         Button btnApprove = (Button) x.findViewById(R.id.btnApprove);
         btnApprove.setOnClickListener(new View.OnClickListener() {
             @Override
