@@ -116,12 +116,12 @@
                     android:layout_height="wrap_content"
                     android:text="@string/iom"
                     android:textColor="#0E1843"
-                    android:textSize="22sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/menuNpv"
+                android:id="@+id/menuPbj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/permohonan"
                     android:textColor="#0E1843"
-                    android:textSize="22sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 

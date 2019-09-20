@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView bgapp, clover;
     TextView txtFlashUser;
-    LinearLayout textsplash, texthome, menus, menuiom;
+    LinearLayout textsplash, texthome, menus, menuiom, menupbj;
     Animation frombottom;
 
     @Override
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         texthome = (LinearLayout) findViewById(R.id.texthome);
         menus = (LinearLayout) findViewById(R.id.menus);
         menuiom = (LinearLayout) findViewById(R.id.menuIom);
+        menupbj = (LinearLayout) findViewById(R.id.menuPbj);
+
         txtFlashUser = (TextView) findViewById(R.id.txtFlashUser);
 
         SharedPreferences sp = getApplicationContext()
@@ -55,5 +57,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        menupbj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, HomePermohonanActivity.class);
+                startActivity(i);
+            }
+        });
+
+
     }
 }

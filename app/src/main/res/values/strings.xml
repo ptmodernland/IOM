@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ModernlandIom</string>
+    <string name="app_name">Modernland IOM</string>
 
     <string name="default_notification_channel_id">Notification</string>
     <string name="fcm_message">Notification</string>
@@ -7,13 +7,22 @@
     <string name="modernland">Modernland Realty Tbk </string>
     <string name="modernland_apps">Modernland Apps </string>
     <string name="mobile_apps">Mobile Apps </string>
-    <string name="dashboard">Dashboard </string>
 
-    <string name="approve">Approve</string>
-    <string name="list_memo">List Memo</string>
+    <string name="dashboard">Dashboard </string>
+    <string name="dashboard_iom">Internal Office Memo</string>
+    <string name="dashboard_pbj">Permohonan Barang Jasa</string>
+
     <string name="iom">IOM</string>
     <string name="npv">NPV</string>
-    <string name="permohonan">Barang Jasa</string>
+    <string name="permohonan">PBJ</string>
+
+    <string name="approve_memo">Approve Memo</string>
+    <string name="list_memo">List Memo</string>
+    <string name="approve">Approve </string>
+    <string name="list">List </string>
+    <string name="memo">Memo </string>
+    <string name="permo">Permohonan </string>
+
     <string name="login">Login</string>
     <string name="view">View</string>
     <string name="file">File</string>
