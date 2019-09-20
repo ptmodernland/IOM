@@ -59,6 +59,7 @@ public class ListDetailFragment extends Fragment {
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihal);
         final TextView txtWVM = (TextView) x.findViewById(R.id.txtWVM);
         final TextView txtAFM = (TextView) x.findViewById(R.id.txtAFM);
+        final LinearLayout lnAFM = (LinearLayout) x.findViewById(R.id.lnAFM);
 
         OkHttpClient postman = new OkHttpClient();
 
@@ -108,15 +109,32 @@ public class ListDetailFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            txtNomor.setText(nomor);
-                            txtKepada.setText(kepada);
-                            txtCc.setText(cc);
-                            txtDari.setText(dari);
-                            txtTanggal.setText(tanggal);
-                            txtJenis.setText(jenis);
-                            txtPerihal.setText(perihal);
-                            txtWVM.setText(id);
-                            txtAFM.setText(lampiran);
+                            if (!lampiran.isEmpty()){
+
+                                txtNomor.setText(nomor);
+                                txtKepada.setText(kepada);
+                                txtCc.setText(cc);
+                                txtDari.setText(dari);
+                                txtTanggal.setText(tanggal);
+                                txtJenis.setText(jenis);
+                                txtPerihal.setText(perihal);
+                                txtWVM.setText(id);
+                                txtAFM.setText(lampiran);
+
+                            } else {
+
+                                txtNomor.setText(nomor);
+                                txtKepada.setText(kepada);
+                                txtCc.setText(cc);
+                                txtDari.setText(dari);
+                                txtTanggal.setText(tanggal);
+                                txtJenis.setText(jenis);
+                                txtPerihal.setText(perihal);
+                                txtWVM.setText(id);
+
+                                lnAFM.setVisibility(View.INVISIBLE);
+
+                            }
 
                             pd.dismiss();
                         }
