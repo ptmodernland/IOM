@@ -66,6 +66,8 @@ public class ApproveDetailFragment extends Fragment {
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihal);
         final TextView txtWV = (TextView) x.findViewById(R.id.txtWV);
         final TextView txtAF = (TextView) x.findViewById(R.id.txtAF);
+        final LinearLayout lnAF = (LinearLayout) x.findViewById(R.id.lnAF);
+        final Button btnAF = (Button) x.findViewById(R.id.btnAF);
 
         OkHttpClient postman = new OkHttpClient();
 
@@ -115,15 +117,32 @@ public class ApproveDetailFragment extends Fragment {
                         @Override
                         public void run() {
 
-                            txtNomor.setText(nomor);
-                            txtKepada.setText(kepada);
-                            txtCc.setText(cc);
-                            txtDari.setText(dari);
-                            txtTanggal.setText(tanggal);
-                            txtJenis.setText(jenis);
-                            txtPerihal.setText(perihal);
-                            txtWV.setText(id);
-                            txtAF.setText(lampiran);
+                            if (!lampiran.isEmpty()){
+
+                                txtNomor.setText(nomor);
+                                txtKepada.setText(kepada);
+                                txtCc.setText(cc);
+                                txtDari.setText(dari);
+                                txtTanggal.setText(tanggal);
+                                txtJenis.setText(jenis);
+                                txtPerihal.setText(perihal);
+                                txtWV.setText(id);
+                                txtAF.setText(lampiran);
+
+                            } else {
+
+                                txtNomor.setText(nomor);
+                                txtKepada.setText(kepada);
+                                txtCc.setText(cc);
+                                txtDari.setText(dari);
+                                txtTanggal.setText(tanggal);
+                                txtJenis.setText(jenis);
+                                txtPerihal.setText(perihal);
+                                txtWV.setText(id);
+
+                                lnAF.setVisibility(View.INVISIBLE);
+
+                            }
 
                             pd.dismiss();
                         }
@@ -287,7 +306,7 @@ public class ApproveDetailFragment extends Fragment {
             }
         });
 
-        LinearLayout lnAF = (LinearLayout) x.findViewById(R.id.lnAF);
+
         lnAF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -306,7 +325,6 @@ public class ApproveDetailFragment extends Fragment {
             }
         });
 
-        Button btnAF = (Button) x.findViewById(R.id.btnAF);
         btnAF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
