@@ -186,6 +186,9 @@ public class HomePermohonanActivity extends AppCompatActivity {
     }
 
     public void listPermohonan(View view) {
+
+        Intent i = new Intent(HomePermohonanActivity.this, ContentListPBJActivity.class);
+        startActivity(i);
     }
 
     private void initIconWithBadges(int total) {

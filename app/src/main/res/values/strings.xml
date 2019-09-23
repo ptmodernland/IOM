@@ -20,6 +20,7 @@
 
     <string name="approve_memo">Approve Memo</string>
     <string name="list_memo">List Memo</string>
+    <string name="list_permohonan">List Permohonan</string>
     <string name="approve">Approve </string>
     <string name="list">List </string>
     <string name="memo">Memo </string>

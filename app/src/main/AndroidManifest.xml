@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ContentApprovePBJActivity"></activity>
+        <activity android:name=".ContentListPBJActivity"></activity>
+        <activity android:name=".ContentApprovePBJActivity" />
         <activity android:name=".HomePermohonanActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".ContentApproveActivity" />
