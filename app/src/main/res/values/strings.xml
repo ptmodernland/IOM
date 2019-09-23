@@ -43,6 +43,8 @@
     <string name="tanggal">Tanggal </string>
     <string name="jenis">Jenis </string>
     <string name="perihal">Perihal </string>
+    <string name="karyawan">Karyawan </string>
+    <string name="departemen">Departemen </string>
 
     <string name="welcome">Welcome</string>
 

@@ -16,7 +16,6 @@ public class ApprovePBJViewHolder extends RecyclerView.ViewHolder {
         txtNoPermo = (TextView) itemView.findViewById(R.id.txtNoPermoA);
         txtJenisPermo = (TextView) itemView.findViewById(R.id.txtJenisPermoA);
 
-        /*
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,11 +24,11 @@ public class ApprovePBJViewHolder extends RecyclerView.ViewHolder {
                 String nomor = txtNoPermo.getText().toString();
                 String jenis = txtJenisPermo.getText().toString();
 
-                ApproveDetailFragment ad = new ApproveDetailFragment();
+                ApproveDetailPBJFragment ad = new ApproveDetailPBJFragment();
 
                 Bundle b = new Bundle();
                 b.putString("jenisnya",jenis);
-                b.putString("nomornya",nomor);
+                b.putString("no_permintaan",nomor);
 
                 ad.setArguments(b);
 
@@ -40,7 +39,6 @@ public class ApprovePBJViewHolder extends RecyclerView.ViewHolder {
                         .commit();
             }
         });
-        */
 
     }
 }

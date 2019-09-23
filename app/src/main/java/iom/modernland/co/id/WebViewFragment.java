@@ -69,7 +69,4 @@ public class WebViewFragment extends Fragment {
             return true;
         }
     }
-
-
-
 }

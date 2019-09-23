@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".ApproveDetailFragment">
+    tools:context=".ApproveDetailPBJFragment">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -23,64 +23,13 @@
                 android:layout_column="0"/>
 
             <TextView
-                android:id="@+id/txtNomord"
+                android:id="@+id/txtNoPermoAd"
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
         </TableRow>
 
-        <TableRow>
-
-            <TextView
-                android:text="@string/kepada"
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"/>
-
-            <TextView
-                android:id="@+id/txtKepada"
-                android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:text="@string/cc"
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"/>
-
-            <TextView
-                android:id="@+id/txtCc"
-                android:layout_marginLeft="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:text="@string/dari"
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"/>
-
-
-            <TextView
-                android:id="@+id/txtDari"
-                android:layout_marginLeft="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </TableRow>
 
         <TableRow>
 
@@ -92,8 +41,9 @@
                 android:layout_column="0"/>
 
             <TextView
-                android:id="@+id/txtTanggal"
+                android:id="@+id/txtTanggalAd"
                 android:layout_marginLeft="5dp"
+                android:inputType="date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -102,16 +52,48 @@
         <TableRow>
 
             <TextView
-                android:text="@string/perihal"
+                android:text="@string/karyawan"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
 
             <TextView
-                android:id="@+id/txtPerihal"
+                android:id="@+id/txtKaryawanAd"
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/departemen"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtJabatanAd"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtDepartemenAd"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
         </TableRow>
@@ -126,7 +108,7 @@
                 android:layout_column="0"/>
 
             <TextView
-                android:id="@+id/txtJenis"
+                android:id="@+id/txtJenisPermoAd"
                 android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -141,13 +123,13 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/lnWV"
+            android:id="@+id/lnWVP"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btnWV"
+                android:id="@+id/btnWVP"
                 android:drawableLeft="@drawable/ic_search_black_24dp"
                 android:text="@string/view"
                 android:layout_width="wrap_content"
@@ -155,27 +137,27 @@
 
             <TextView
                 android:visibility="gone"
-                android:id="@+id/txtWV"
+                android:id="@+id/txtWVP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lnAF"
+            android:id="@+id/lnAFP"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btnAF"
+                android:id="@+id/btnAFP"
                 android:drawableLeft="@drawable/ic_file_download_black_24dp"
                 android:text="@string/file"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/txtAF"
+                android:id="@+id/txtAFP"
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -190,7 +172,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/btnApprove"
+            android:id="@+id/btnApproveP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/approve"/>
