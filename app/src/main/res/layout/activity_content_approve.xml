@@ -120,6 +120,7 @@
                     fab:fab_label="Menu Utama"
                     fab:fab_size="mini" />
 
+                <!--
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/menuFabBackA"
                     android:layout_width="wrap_content"
@@ -127,6 +128,7 @@
                     android:src="@drawable/ic_chevron_left_black_24dp"
                     fab:fab_label="Back"
                     fab:fab_size="mini" />
+                -->
             </com.github.clans.fab.FloatingActionMenu>
 
 

@@ -25,11 +25,12 @@ public class ContentApproveActivity extends AppCompatActivity {
                 .commit();
 
         materialDesignFAmA = (FloatingActionMenu) findViewById(R.id.menuFAMA);
-        fabBackA = (FloatingActionButton) findViewById(R.id.menuFabBackA);
+        //fabBackA = (FloatingActionButton) findViewById(R.id.menuFabBackA);
         fabLogoutA = (FloatingActionButton) findViewById(R.id.menuFabLogoutA);
         fabMainA = (FloatingActionButton) findViewById(R.id.menuFabMainA);
         fabExitA = (FloatingActionButton) findViewById(R.id.menuFabExitA);
 
+        /*
         fabBackA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,6 +38,7 @@ public class ContentApproveActivity extends AppCompatActivity {
                         .popBackStackImmediate();
             }
         });
+        */
 
         fabMainA.setOnClickListener(new View.OnClickListener() {
             @Override
