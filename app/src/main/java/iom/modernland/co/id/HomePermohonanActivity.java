@@ -1,22 +1,116 @@
 package iom.modernland.co.id;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import ru.nikartm.support.BadgePosition;
+import ru.nikartm.support.ImageBadgeView;
 
 public class HomePermohonanActivity extends AppCompatActivity {
+
+    private ImageBadgeView imageBadgeView;
+
+    private int value = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_permohonan);
 
-        LinearLayout menuUserLogout = (LinearLayout) findViewById(R.id.menuUserLogout);
-        LinearLayout menuUserExit = (LinearLayout) findViewById(R.id.menuUserExit);
+        imageBadgeView = findViewById(R.id.ibv_icon5);
+
+
+        SharedPreferences sp = getSharedPreferences("DATALOGIN", 0);
+
+        String username      = sp.getString("username", "");
+
+        OkHttpClient postman = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .get()
+                .url(Setting.IP + "counter_permohonan.php?username=" + username)
+                .build();
+
+        final ProgressDialog pd = new ProgressDialog(HomePermohonanActivity.this);
+        pd.setMessage("Please wait");
+        pd.setTitle("Loading ...");
+        pd.setIcon(R.drawable.ic_check_black_24dp);
+        pd.setCancelable(false);
+        pd.show();
+
+        postman.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Please Try Again",
+                                Toast.LENGTH_SHORT).show();
+                        pd.dismiss();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String hasil = response.body().string();
+                try {
+                    JSONObject j = new JSONObject(hasil);
+                    boolean st = j.getBoolean("status");
+                    final int total = j.getInt("total");
+
+                    if(st == false)
+                    {
+                        final String p = j.getString("pesan");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(),
+                                        p, Toast.LENGTH_LONG).show();
+                                pd.dismiss();
+                            }
+                        });
+                    }
+                    else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                pd.dismiss();
+
+                                initIconWithBadges(total);
+
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+        LinearLayout menuUserLogout = (LinearLayout) findViewById(R.id.menuUserLogoutPBJ);
+        LinearLayout menuUserExit = (LinearLayout) findViewById(R.id.menuUserExitPBJ);
 
         menuUserLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,8 +179,27 @@ public class HomePermohonanActivity extends AppCompatActivity {
     }
 
     public void ApprovePermohonan(View view) {
+
+        Intent i = new Intent(HomePermohonanActivity.this, ContentApprovePBJActivity.class);
+        startActivity(i);
+
     }
 
     public void listPermohonan(View view) {
+    }
+
+    private void initIconWithBadges(int total) {
+        value = total;
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
+        imageBadgeView.setBadgeValue(value)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.BOTTOM_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
     }
 }

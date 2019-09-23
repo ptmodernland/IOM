@@ -73,7 +73,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/LnApprove"
+                    android:id="@+id/LnApprovePBJ"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -82,7 +82,7 @@
                     android:padding="16dp">
 
                     <ru.nikartm.support.ImageBadgeView
-                        android:id="@+id/ibv_icon4"
+                        android:id="@+id/ibv_icon5"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginTop="30dp"
@@ -123,7 +123,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/LnItem"
+                    android:id="@+id/LnItemPBJ"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -164,7 +164,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/menuUserLogout"
+                    android:id="@+id/menuUserLogoutPBJ"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -197,7 +197,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/menuUserExit"
+                    android:id="@+id/menuUserExitPBJ"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

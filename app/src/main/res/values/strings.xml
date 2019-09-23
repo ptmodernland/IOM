@@ -9,8 +9,10 @@
     <string name="mobile_apps">Mobile Apps </string>
 
     <string name="dashboard">Dashboard </string>
-    <string name="dashboard_iom">Internal Office Memo</string>
+    <string name="dashboard_iom">Inter Office Memo</string>
     <string name="dashboard_pbj">Permohonan Barang Jasa</string>
+
+    <string name="menu">Menu </string>
 
     <string name="iom">IOM</string>
     <string name="npv">NPV</string>
