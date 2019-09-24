@@ -32,7 +32,7 @@
 
             <ImageView
                 android:layout_alignParentRight="true"
-                android:src="@drawable/modernland"
+                android:src="@drawable/mdln1min"
                 android:layout_width="62dp"
                 android:layout_height="62dp" />
 

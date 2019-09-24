@@ -109,7 +109,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/person_file" />
+                    android:src="@drawable/monitor_confirm" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
                 android:id="@+id/menuPbj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
+                android:layout_marginRight="30dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -133,7 +133,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="4dp"
-                    android:src="@drawable/credit_payment" />
+                    android:src="@drawable/monitor_percentage" />
 
                 <TextView
                     android:layout_width="wrap_content"
