@@ -25,7 +25,6 @@ public class ContentListPBJActivity extends AppCompatActivity {
                 .commit();
 
         materialDesignFamL = (FloatingActionMenu) findViewById(R.id.menuFamLP);
-        //fabBackA = (FloatingActionButton) findViewById(R.id.menuFabBackAP);
         fabLogoutL = (FloatingActionButton) findViewById(R.id.menuFabLogoutLP);
         fabMainL = (FloatingActionButton) findViewById(R.id.menuFabMainLP);
         fabExitL = (FloatingActionButton) findViewById(R.id.menuFabExitLP);
