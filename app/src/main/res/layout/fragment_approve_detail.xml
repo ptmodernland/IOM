@@ -42,6 +42,7 @@
             <TextView
                 android:id="@+id/txtKepada"
                 android:layout_marginLeft="5dp"
+                android:paddingRight="100dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
