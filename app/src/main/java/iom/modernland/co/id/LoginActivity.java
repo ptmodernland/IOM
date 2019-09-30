@@ -1,12 +1,23 @@
 package iom.modernland.co.id;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Handler;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
+import android.text.format.Formatter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,6 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.UUID;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -29,9 +41,12 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity {
+    TelephonyManager telephonyManager;
+    static final int PERMISSION_READ_STATE = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -66,6 +81,36 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void prosesLogin(View view) {
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+
+        if (permissionCheck == PackageManager.PERMISSION_GRANTED){
+            MyTelephoneManager();
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[] {Manifest.permission.READ_PHONE_STATE},
+                    PERMISSION_READ_STATE);
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case PERMISSION_READ_STATE:
+            {
+                if(grantResults.length >= 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    MyTelephoneManager();
+                }else {
+                    Toast.makeText(this,
+                            "You don't have required permission to make the action",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+    }
+
+    private void MyTelephoneManager(){
 
         TextInputEditText etUsername = (TextInputEditText) findViewById(R.id.etUsername);
         TextInputEditText etPassword = (TextInputEditText) findViewById(R.id.etPassword);
@@ -75,6 +120,17 @@ public class LoginActivity extends AppCompatActivity {
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         String token = refreshedToken.toString();
 
+        telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        String imeiNumber = telephonyManager.getImei();
+
+        WifiManager wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+
+        WifiInfo info = wifiManager.getConnectionInfo();
+        String address = info.getMacAddress();
+        String IP = Formatter.formatIpAddress(info.getIpAddress());
+        String Imei = UUID.randomUUID().toString();
+
+
         if (token.length() == 0) {
             Toast.makeText(getApplicationContext(),
                     "Token Ga Dapat",
@@ -82,9 +138,12 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        //Toast.makeText(getApplicationContext(),
-        //        "Token " + token,
-        //        Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),
+                "Nomor Imei " + imeiNumber + "\n"
+                        + address + "\n"
+                        + IP
+                        + Build.BRAND,
+                Toast.LENGTH_LONG).show();
 
         //Intent i = new Intent(getApplicationContext(),
         //        HomeUserActivity.class);
@@ -98,6 +157,10 @@ public class LoginActivity extends AppCompatActivity {
                 .addFormDataPart("username", isiuser)
                 .addFormDataPart("password", isipass)
                 .addFormDataPart("token", token)
+                .addFormDataPart("imei",imeiNumber)
+                .addFormDataPart("address", address)
+                .addFormDataPart("ip", IP)
+                .addFormDataPart("brand", Build.BRAND)
                 .build();
 
         Request request = new Request.Builder()
@@ -200,5 +263,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 }
