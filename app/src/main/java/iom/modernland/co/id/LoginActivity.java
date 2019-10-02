@@ -41,6 +41,9 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity {
+
+    String strPhoneType = "";
+    int PHONE_type;
     TelephonyManager telephonyManager;
     static final int PERMISSION_READ_STATE = 123;
 
@@ -122,6 +125,25 @@ public class LoginActivity extends AppCompatActivity {
 
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         String imeiNumber = telephonyManager.getImei();
+        String softwareVersion = telephonyManager.getDeviceSoftwareVersion();
+        String simSerial = telephonyManager.getSimSerialNumber();
+        String subscribeId = telephonyManager.getSubscriberId();
+
+        PHONE_type = telephonyManager.getPhoneType();
+
+        switch (PHONE_type){
+            case (TelephonyManager.PHONE_TYPE_CDMA) :
+                strPhoneType = "CDMA";
+                break;
+
+            case (TelephonyManager.PHONE_TYPE_GSM) :
+                strPhoneType = "GSM";
+                break;
+
+            case (TelephonyManager.PHONE_TYPE_NONE) :
+                strPhoneType = "NONE";
+                break;
+        }
 
         WifiManager wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
@@ -138,17 +160,25 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
+
         Toast.makeText(getApplicationContext(),
                 "Nomor Imei " + imeiNumber + "\n"
-                        + address + "\n"
-                        + IP
+                        + strPhoneType + "\n"
+                        + softwareVersion + "\n"
+                        + simSerial + "\n"
+                        + subscribeId + "\n"
+                        + Build.MANUFACTURER + "\n"
+                        + Build.MODEL + "\n"
+                        + Build.SERIAL + "\n"
                         + Build.BRAND,
                 Toast.LENGTH_LONG).show();
+
 
         //Intent i = new Intent(getApplicationContext(),
         //        HomeUserActivity.class);
         //startActivity(i);
         //finish();
+
 
         OkHttpClient postman = new OkHttpClient();
 
@@ -157,10 +187,13 @@ public class LoginActivity extends AppCompatActivity {
                 .addFormDataPart("username", isiuser)
                 .addFormDataPart("password", isipass)
                 .addFormDataPart("token", token)
+                .addFormDataPart("simserial",simSerial)
                 .addFormDataPart("imei",imeiNumber)
                 .addFormDataPart("address", address)
                 .addFormDataPart("ip", IP)
                 .addFormDataPart("brand", Build.BRAND)
+                .addFormDataPart("model", Build.MODEL)
+                .addFormDataPart("phonetype", strPhoneType)
                 .build();
 
         Request request = new Request.Builder()
