@@ -30,7 +30,6 @@
 
         </TableRow>
 
-
         <TableRow>
 
             <TextView
@@ -44,6 +43,25 @@
                 android:id="@+id/txtTanggalAd"
                 android:layout_marginLeft="5dp"
                 android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/lama"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtLamaPengaju"
+                android:layout_marginLeft="5dp"
+                android:inputType="date"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

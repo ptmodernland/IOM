@@ -84,12 +84,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void prosesLogin(View view) {
-        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
+        int permissionCheck = ContextCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_PHONE_STATE);
 
         if (permissionCheck == PackageManager.PERMISSION_GRANTED){
             MyTelephoneManager();
         } else {
-            ActivityCompat.requestPermissions(this,
+            ActivityCompat.requestPermissions(LoginActivity.this,
                     new String[] {Manifest.permission.READ_PHONE_STATE},
                     PERMISSION_READ_STATE);
         }
@@ -161,17 +161,17 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        Toast.makeText(getApplicationContext(),
-                "Nomor Imei " + imeiNumber + "\n"
-                        + strPhoneType + "\n"
-                        + softwareVersion + "\n"
-                        + simSerial + "\n"
-                        + subscribeId + "\n"
-                        + Build.MANUFACTURER + "\n"
-                        + Build.MODEL + "\n"
-                        + Build.SERIAL + "\n"
-                        + Build.BRAND,
-                Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),
+        //        "Nomor Imei " + imeiNumber + "\n"
+        //                + strPhoneType + "\n"
+        //                + softwareVersion + "\n"
+        //                + simSerial + "\n"
+        //                + subscribeId + "\n"
+        //                + Build.MANUFACTURER + "\n"
+        //                + Build.MODEL + "\n"
+        //                + Build.SERIAL + "\n"
+        //                 + Build.BRAND,
+        //        Toast.LENGTH_LONG).show();
 
 
         //Intent i = new Intent(getApplicationContext(),

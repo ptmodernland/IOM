@@ -54,6 +54,7 @@ public class ApproveDetailPBJFragment extends Fragment {
 
         final TextView txtNoPermintaan = (TextView) x.findViewById(R.id.txtNoPermoAd);
         final TextView txtTanggal = (TextView) x.findViewById(R.id.txtTanggalAd);
+        final TextView txtLama = (TextView) x.findViewById(R.id.txtLamaPengaju);
         final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenisPermoAd);
         final TextView txtKaryawan = (TextView) x.findViewById(R.id.txtKaryawanAd);
         final TextView txtJabatan = (TextView) x.findViewById(R.id.txtJabatanAd);
@@ -105,6 +106,7 @@ public class ApproveDetailPBJFragment extends Fragment {
                     final String nama_user = go.getString("namaUser");
                     final String jabatan = go.getString("jabatan");
                     final String departemen = go.getString("departemen");
+                    final String lama = go.getString("lama");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -120,6 +122,7 @@ public class ApproveDetailPBJFragment extends Fragment {
                                 txtDepartemen.setText(departemen);
                                 txtAFP.setText(lampiran);
                                 txtWVP.setText(no_permintaan);
+                                txtLama.setText(lama + " hari");
 
                             } else {
 
@@ -131,6 +134,7 @@ public class ApproveDetailPBJFragment extends Fragment {
                                 txtDepartemen.setText(departemen);
                                 txtAFP.setText(lampiran);
                                 txtWVP.setText(no_permintaan);
+                                txtLama.setText(lama + " hari");
 
                                 lnAFP.setVisibility(View.INVISIBLE);
 
