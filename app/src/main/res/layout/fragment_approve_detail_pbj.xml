@@ -51,19 +51,9 @@
         <TableRow>
 
             <TextView
-                android:text="@string/lama"
-                android:textColor="#000"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_column="0"/>
-
-            <TextView
-                android:id="@+id/txtLamaPengaju"
-                android:layout_marginLeft="5dp"
-                android:inputType="date"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
 
         </TableRow>
 
@@ -128,6 +118,54 @@
             <TextView
                 android:id="@+id/txtJenisPermoAd"
                 android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/lama"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtLamaPengaju"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:inputType="date"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/pending"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtLamaPeding"
+                android:layout_marginLeft="10dp"
+                android:inputType="date"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
