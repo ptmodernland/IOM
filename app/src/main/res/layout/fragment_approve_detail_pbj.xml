@@ -163,7 +163,7 @@
 
             <TextView
                 android:id="@+id/txtLamaPeding"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="5dp"
                 android:inputType="date"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
