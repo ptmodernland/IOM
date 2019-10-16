@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="102dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         app:cardCornerRadius="16dp"
@@ -25,22 +25,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/txtLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/imgLogin"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:src="@drawable/mdln1min"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:text="@string/login"
-                android:textColor="#2a5298"
-                android:textSize="24sp" />
+                android:layout_marginTop="30dp"/>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtLogin"
+                android:layout_below="@id/imgLogin"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="12dp"
@@ -114,7 +112,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="47dp"
             android:text="@string/modernland_apps"
             android:textColor="#fff"
             android:textSize="24sp"

@@ -74,17 +74,10 @@ public class MainActivity extends AppCompatActivity {
         menunpv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(MainActivity.this, "Under Construction", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(MainActivity.this, HomeNPVActivity.class);
+                startActivity(i);
 
-                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-                alert.setMessage("Sorry.. This Content Under Construction");
-                alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
 
-                    }
-                });
-                alert.create().show();
             }
         });
 

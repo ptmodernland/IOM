@@ -8,9 +8,12 @@
     <string name="modernland_apps">Modernland Apps </string>
     <string name="mobile_apps">Mobile Apps </string>
 
-    <string name="dashboard">Dashboard </string>
+    <string name="dashboardpermo">Dashboard </string>
+    <string name="dashboardmemo">Dashboard </string>
+    <string name="dashboardnpv">Dashboard </string>
     <string name="dashboard_iom">Inter Office Memo</string>
     <string name="dashboard_pbj">Permohonan Barang Jasa</string>
+    <string name="dashboard_npv">Net Present Value</string>
 
     <string name="menu">Menu </string>
 
@@ -25,6 +28,8 @@
     <string name="list">List </string>
     <string name="memo">Memo </string>
     <string name="permo">Permohonan </string>
+    <string name="pemberit">Pemberitahuan </string>
+    <string name="pembel">Pembelian </string>
 
     <string name="login">Login</string>
     <string name="view">View</string>
