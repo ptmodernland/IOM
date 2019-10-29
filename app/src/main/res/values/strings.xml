@@ -23,6 +23,8 @@
 
     <string name="approve_memo">Approve Memo</string>
     <string name="list_memo">List Memo</string>
+    <string name="list_npv">List Net Present Value</string>
+    <string name="list_pembelian">List Pembelian</string>
     <string name="list_permohonan">List Permohonan</string>
     <string name="approve">Approve </string>
     <string name="list">List </string>
@@ -43,6 +45,9 @@
     <string name="password">Password</string>
     <string name="remember">Remember Me</string>
     <string name="nomor">Nomor </string>
+    <string name="kode_unit">Kode Unit </string>
+    <string name="nama">Nama </string>
+    <string name="cluster">Cluster </string>
     <string name="kepada">Kepada Yth </string>
     <string name="cc">Cc </string>
     <string name="dari">Dari </string>

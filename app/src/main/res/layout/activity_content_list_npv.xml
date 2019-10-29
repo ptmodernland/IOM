@@ -6,13 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgapps"
-    tools:context=".ContentListActivity">
+    tools:context=".ContentListNpvActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <RelativeLayout
             android:layout_marginTop="32dp"
@@ -22,7 +21,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/txtDashboard"
+                android:id="@+id/txtMenuLP"
                 android:text="@string/menu"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
@@ -30,8 +29,8 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_below="@id/txtDashboard"
-                android:text="@string/list_memo"
+                android:layout_below="@id/txtMenuLP"
+                android:text="@string/list_npv"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
@@ -52,12 +51,12 @@
             android:layout_marginTop="100dp">
 
             <FrameLayout
-                android:id="@+id/frameMemo"
+                android:id="@+id/frameNPV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <com.github.clans.fab.FloatingActionMenu
-                android:id="@+id/menuFAM"
+                android:id="@+id/menuFamNV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -97,7 +96,7 @@
                 fab:menu_showShadow="true">
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabExit"
+                    android:id="@+id/menuFabExitNV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_exit_to_app_black_24dp"
@@ -105,7 +104,7 @@
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabLogout"
+                    android:id="@+id/menuFabLogoutNV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_repeat_black_24dp"
@@ -113,7 +112,7 @@
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabMain"
+                    android:id="@+id/menuFabMainNV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_home_black_24dp"

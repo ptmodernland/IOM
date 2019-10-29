@@ -105,18 +105,18 @@ public class HomeNPVActivity extends AppCompatActivity {
 
     public void listPembelian(View view) {
 
-        //Intent i = new Intent(HomeNPVActivity.this, ContentListPBJActivity.class);
-        //startActivity(i);
+        Intent i = new Intent(HomeNPVActivity.this, ContentListNpvActivity.class);
+        startActivity(i);
 
-        AlertDialog.Builder alert = new AlertDialog.Builder(HomeNPVActivity.this);
-        alert.setMessage("Sorry.. This Content Under Construction");
-        alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        // AlertDialog.Builder alert = new AlertDialog.Builder(HomeNPVActivity.this);
+        // alert.setMessage("Sorry.. This Content Under Construction");
+        // alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+        //    @Override
+        //    public void onClick(DialogInterface dialog, int which) {
 
-            }
-        });
-        alert.create().show();
+        //    }
+        // });
+        // alert.create().show();
 
     }
 }

@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeNPVActivity"></activity>
+        <activity android:name=".ContentListNpvActivity"></activity>
+        <activity android:name=".HomeNPVActivity" />
         <activity android:name=".ContentListPBJActivity" />
         <activity android:name=".ContentApprovePBJActivity" />
         <activity android:name=".HomePermohonanActivity" />
