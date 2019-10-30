@@ -88,18 +88,8 @@ public class HomeNPVActivity extends AppCompatActivity {
 
     public void ApprovePembelian(View view) {
 
-        //Intent i = new Intent(HomeNPVActivity.this, ContentApprovePBJActivity.class);
-        //startActivity(i);
-
-        AlertDialog.Builder alert = new AlertDialog.Builder(HomeNPVActivity.this);
-        alert.setMessage("Sorry.. This Content Under Construction");
-        alert.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        alert.create().show();
+        Intent i = new Intent(HomeNPVActivity.this, ContentApproveNPVActivity.class);
+        startActivity(i);
 
     }
 
