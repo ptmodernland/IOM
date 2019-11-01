@@ -48,6 +48,12 @@
     <string name="kode_unit">Kode Unit </string>
     <string name="nama">Nama </string>
     <string name="cluster">Cluster </string>
+    <string name="build_sz">Build Size </string>
+    <string name="land_sz">Land Size </string>
+    <string name="price">Price </string>
+    <string name="rate">Interest Rate </string>
+    <string name="source">Source </string>
+    <string name="tgl_buat">Tanggal Buat </string>
     <string name="kepada">Kepada Yth </string>
     <string name="cc">Cc </string>
     <string name="dari">Dari </string>

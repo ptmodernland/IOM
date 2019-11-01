@@ -29,6 +29,7 @@ public class ApproveNPVAdapter extends RecyclerView.Adapter<ApproveNPVViewHolder
 
         ListNPV lnv = data.get(i);
         approveNPVViewHolder.txtKodeUnit.setText(lnv.Lot_no);
+        approveNPVViewHolder.txtNoNpv.setText(lnv.Npv_no);
         approveNPVViewHolder.txtCluster.setText(lnv.Cluster);
         approveNPVViewHolder.txtNama.setText(lnv.Nama + "");
 

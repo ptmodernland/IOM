@@ -28,6 +28,18 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/txtNoNpvA"
+                android:visibility="gone"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </TableRow>
 
         <TableRow>

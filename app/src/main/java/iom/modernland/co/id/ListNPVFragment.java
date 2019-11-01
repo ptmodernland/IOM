@@ -97,6 +97,7 @@ public class ListNPVFragment extends Fragment {
                         ListNPV lnp = new ListNPV();
 
                         lnp.Lot_no = jon.getString("Lot_no");
+                        lnp.Npv_no = jon.getString("Npv_no");
                         lnp.Cluster = jon.getString("Cluster");
                         lnp.Nama = jon.getString("Nama");
 

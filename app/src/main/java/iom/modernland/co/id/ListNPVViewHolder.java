@@ -8,34 +8,37 @@ import android.widget.TextView;
 
 public class ListNPVViewHolder extends RecyclerView.ViewHolder {
 
-    TextView txtKodeUnit, txtCluster, txtNama;
+    TextView txtKodeUnit, txtNoNpv, txtCluster, txtNama;
 
     public ListNPVViewHolder(@NonNull final View itemView) {
         super(itemView);
 
         txtKodeUnit = (TextView) itemView.findViewById(R.id.txtKdUnitNpv);
+        txtNoNpv = (TextView) itemView.findViewById(R.id.txtNoNpv);
         txtCluster = (TextView) itemView.findViewById(R.id.txtClusterNpv);
         txtNama = (TextView) itemView.findViewById(R.id.txtNamaNpv);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ContentListPBJActivity c = (ContentListPBJActivity) itemView.getContext();
+                ContentListNpvActivity cln = (ContentListNpvActivity) itemView.getContext();
 
                 String kode_unit = txtKodeUnit.getText().toString();
+                String npv_no = txtNoNpv.getText().toString();
                 String cluster = txtCluster.getText().toString();
                 String nama = txtNama.getText().toString();
 
                 ListDetailNPVFragment lnp = new ListDetailNPVFragment();
 
                 Bundle b = new Bundle();
-                b.putString("kode_unitnya",kode_unit);
-                b.putString("cluster",cluster);
-                b.putString("nama",nama);
+                b.putString("kode_unit_list",kode_unit);
+                b.putString("npv_no_list",npv_no);
+                b.putString("cluster_list",cluster);
+                b.putString("nama_list",nama);
 
                 lnp.setArguments(b);
 
-                c.getSupportFragmentManager()
+                cln.getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frameNPV, lnp)
                         .addToBackStack(null)

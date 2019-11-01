@@ -33,6 +33,17 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/txtNoNpv"
+                android:visibility="gone"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
                 android:text="@string/cluster"
                 android:textColor="#000"
                 android:layout_width="match_parent"

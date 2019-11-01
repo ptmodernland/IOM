@@ -1,14 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".ApproveDetailNPVFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="#fff"
+        android:stretchColumns="2">
 
-</FrameLayout>
+        <TableRow>
+
+            <TextView
+                android:text="@string/kode_unit"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtKdUnitANV"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtNoANV"
+                android:visibility="gone"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/nama"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtNamaANV"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/cluster"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtClusterANV"
+                android:layout_marginLeft="5dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/build_sz"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtBuildANV"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/land_sz"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtLandANV"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/price"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtPriceANV"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/rate"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtRateANV"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/tgl_buat"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtTglBuatANV"
+                android:layout_marginLeft="5dp"
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lnWVANV"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnWVANV"
+                android:drawableLeft="@drawable/ic_search_black_24dp"
+                android:text="@string/view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtWVANV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnApproveNV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/approve"/>
+
+    </LinearLayout>
+
+</LinearLayout>
