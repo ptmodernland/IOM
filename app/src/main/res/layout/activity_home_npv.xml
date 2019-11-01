@@ -82,7 +82,7 @@
                     android:padding="16dp">
 
                     <ru.nikartm.support.ImageBadgeView
-                        android:id="@+id/ibv_icon5"
+                        android:id="@+id/ibv_icon6"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginTop="30dp"
