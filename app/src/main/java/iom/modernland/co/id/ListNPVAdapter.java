@@ -29,6 +29,7 @@ public class ListNPVAdapter extends RecyclerView.Adapter<ListNPVViewHolder> {
 
         ListNPV lnv = data.get(i);
         listNPVViewHolder.txtKodeUnit.setText(lnv.Lot_no);
+        listNPVViewHolder.txtNoNpv.setText(lnv.Npv_no);
         listNPVViewHolder.txtCluster.setText(lnv.Cluster);
         listNPVViewHolder.txtNama.setText(lnv.Nama + "");
 

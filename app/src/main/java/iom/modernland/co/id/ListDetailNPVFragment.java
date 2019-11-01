@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,7 +67,7 @@ public class ListDetailNPVFragment extends Fragment {
 
         final ProgressDialog pd = new ProgressDialog(getActivity());
         pd.setMessage("Please wait ...");
-        pd.setTitle("Loading ...");
+        pd.setTitle("Loading ..." + npv_no);
         pd.setIcon(R.drawable.ic_check_black_24dp);
         pd.setCancelable(true);
         pd.show();
@@ -119,6 +120,27 @@ public class ListDetailNPVFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        Button btnWVLNV = (Button) x.findViewById(R.id.btnWVLNV);
+        btnWVLNV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String npv_no = txtNo.getText().toString();
+
+                WebViewNPVFragment wvnv = new WebViewNPVFragment();
+
+                Bundle b = new Bundle();
+                b.putString("npv_no",npv_no);
+
+                wvnv.setArguments(b);
+
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameNPV, wvnv)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
