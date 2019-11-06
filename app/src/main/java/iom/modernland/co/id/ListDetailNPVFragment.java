@@ -53,6 +53,8 @@ public class ListDetailNPVFragment extends Fragment {
         final TextView txtBuild = (TextView) x.findViewById(R.id.txtBuildLNV);
         final TextView txtLand = (TextView) x.findViewById(R.id.txtLandLNV);
         final TextView txtPrice = (TextView) x.findViewById(R.id.txtPriceLNV);
+        final TextView txtDiskon = (TextView) x.findViewById(R.id.txtDiskonLNV);
+        final TextView txtUpHarga = (TextView) x.findViewById(R.id.txtUpHargaLNV);
         final TextView txtRate = (TextView) x.findViewById(R.id.txtRateLNV);
         final TextView txtTglBuat = (TextView) x.findViewById(R.id.txtTglBuatLNV);
 
@@ -96,6 +98,8 @@ public class ListDetailNPVFragment extends Fragment {
                     final String build_size = jolv.getString("Build_size");
                     final String land_size = jolv.getString("Land_size");
                     final String interest_rate = jolv.getString("Interest_rate");
+                    final Integer diskon = jolv.getInt("Diskon");
+                    final Integer upharga = jolv.getInt("Up_harga");
                     final Integer price = jolv.getInt("Price");
                     final String tgl_buat = jolv.getString("Tgl_buat");
 
@@ -110,7 +114,9 @@ public class ListDetailNPVFragment extends Fragment {
                             txtBuild.setText(build_size + " m2");
                             txtLand.setText(land_size + " m2");
                             txtRate.setText(interest_rate + " %");
+                            txtDiskon.setText(diskon + " %");
                             txtPrice.setText("Rp " + decim.format(price));
+                            txtUpHarga.setText("Rp " + decim.format(upharga));
                             txtTglBuat.setText(tgl_buat);
 
                             pd.dismiss();

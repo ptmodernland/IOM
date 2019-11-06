@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Modernland IOM</string>
+    <string name="app_name">Modernland Approval</string>
 
     <string name="default_notification_channel_id">Notification</string>
     <string name="fcm_message">Notification</string>
@@ -51,6 +51,8 @@
     <string name="build_sz">Build Size </string>
     <string name="land_sz">Land Size </string>
     <string name="price">Price </string>
+    <string name="diskon">Diskon </string>
+    <string name="upharga">Up Harga </string>
     <string name="rate">Interest Rate </string>
     <string name="source">Source </string>
     <string name="tgl_buat">Tanggal Buat </string>

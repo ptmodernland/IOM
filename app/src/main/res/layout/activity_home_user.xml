@@ -90,7 +90,7 @@
                         tools:ibv_badgeValue="0"
                         tools:ibv_badgeTextSize="16dp"
                         tools:ibv_badgePadding="5dp"
-                        tools:ibv_badgePosition="bottom_right"
+                        tools:ibv_badgePosition="top_right"
                         tools:ibv_badgeBackground="@drawable/rectangle_rounded"
                         android:src="@drawable/smartphone" />
 

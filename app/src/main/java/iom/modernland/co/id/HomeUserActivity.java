@@ -201,7 +201,7 @@ public class HomeUserActivity extends AppCompatActivity {
                 .setMaxBadgeValue(999)
                 .setBadgeTextFont(typeface)
                 .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
-                .setBadgePosition(BadgePosition.BOTTOM_RIGHT)
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
                 .setBadgeTextStyle(Typeface.NORMAL)
                 .setShowCounter(true)
                 .setBadgePadding(4);

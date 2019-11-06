@@ -60,6 +60,8 @@ public class ApproveDetailNPVFragment extends Fragment {
         final TextView txtLand = (TextView) x.findViewById(R.id.txtLandANV);
         final TextView txtPrice = (TextView) x.findViewById(R.id.txtPriceANV);
         final TextView txtRate = (TextView) x.findViewById(R.id.txtRateANV);
+        final TextView txtDiskon = (TextView) x.findViewById(R.id.txtDiskonANV);
+        final TextView txtUpHarga = (TextView) x.findViewById(R.id.txtUpHargaANV);
         final TextView txtTglBuat = (TextView) x.findViewById(R.id.txtTglBuatANV);
 
         final DecimalFormat decim = new DecimalFormat("#,###.##");
@@ -102,6 +104,8 @@ public class ApproveDetailNPVFragment extends Fragment {
                     final String build_size = joav.getString("Build_size");
                     final String land_size = joav.getString("Land_size");
                     final String interest_rate = joav.getString("Interest_rate");
+                    final Integer diskon = joav.getInt("Diskon");
+                    final Integer upharga = joav.getInt("Up_harga");
                     final Integer price = joav.getInt("Price");
                     final String tgl_buat = joav.getString("Tgl_buat");
 
@@ -116,7 +120,9 @@ public class ApproveDetailNPVFragment extends Fragment {
                                 txtBuild.setText(build_size + " m2");
                                 txtLand.setText(land_size + " m2");
                                 txtRate.setText(interest_rate + " %");
+                                txtDiskon.setText(diskon + " %");
                                 txtPrice.setText("Rp " + decim.format(price));
+                                txtUpHarga.setText("Rp " + decim.format(upharga));
                                 txtTglBuat.setText(tgl_buat);
 
                             pd.dismiss();
