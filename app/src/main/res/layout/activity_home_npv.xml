@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgapps"
+    android:background="@drawable/bgappsgrey"
     tools:context=".HomeNPVActivity">
 
     <LinearLayout
@@ -42,7 +42,7 @@
                 android:layout_below="@id/txtDashboardNPV"
                 android:text="4 items"
                 android:textSize="14sp"
-                android:textColor="#5284FF"
+                android:textColor="#020F13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

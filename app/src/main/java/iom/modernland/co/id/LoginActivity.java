@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("DATALOGIN",MODE_PRIVATE);
 
         if(sp.contains("username")){
-            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+            Intent i = new Intent(getApplicationContext(),MainRedActivity.class);
 
             i.putExtra("x",
                     sp.getString("email",""));
@@ -262,7 +262,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (lvl.equals("head")){
 
                             Intent i = new Intent(getApplicationContext(),
-                                    MainActivity.class);
+                                    MainRedActivity.class);
 
                             i.putExtra("id_user", iduser);
                             i.putExtra("user", isiuser);
