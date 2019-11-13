@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -168,6 +169,10 @@ public class ApproveDetailFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+                        EditText tCatatan = (EditText) x.findViewById(R.id.tCatatan);
+
+                        final String isiKomen = tCatatan.getText().toString();
+
                         OkHttpClient postman = new OkHttpClient();
 
                         SharedPreferences sp = getActivity()
@@ -177,6 +182,7 @@ public class ApproveDetailFragment extends Fragment {
 
                         RequestBody body = new MultipartBody.Builder()
                                 .setType(MultipartBody.FORM)
+                                .addFormDataPart("komen", isiKomen)
                                 .addFormDataPart("nomor", nomormemo)
                                 .addFormDataPart("id_user", id_user)
                                 .build();

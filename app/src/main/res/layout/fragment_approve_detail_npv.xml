@@ -192,6 +192,29 @@
 
         </TableRow>
 
+        <TableRow>
+
+            <TextView
+                android:text="@string/catatan"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <EditText
+                android:id="@+id/tCatatanNPV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="100dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="top|left"
+                android:hint="@string/komen"
+                android:lines="10"
+                android:maxLines="15"
+                android:minLines="5" />
+
+        </TableRow>
+
     </TableLayout>
 
     <LinearLayout

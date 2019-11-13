@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,7 +46,7 @@ public class ApproveDetailNPVFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View x = inflater.inflate(R.layout.fragment_approve_detail_npv, container, false);
+        final View x = inflater.inflate(R.layout.fragment_approve_detail_npv, container, false);
 
         final String npv_no = getArguments().getString("npv_no");
         final String kd_unit = getArguments().getString("kode_unitnya");
@@ -139,6 +140,11 @@ public class ApproveDetailNPVFragment extends Fragment {
         btnApprove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                EditText tCatatanNV = (EditText) x.findViewById(R.id.tCatatanNPV);
+
+                final String isiKomenNV = tCatatanNV.getText().toString();
+
                 AlertDialog.Builder abp = new AlertDialog.Builder(getActivity());
 
                 abp.create();
@@ -158,6 +164,7 @@ public class ApproveDetailNPVFragment extends Fragment {
 
                         RequestBody body = new MultipartBody.Builder()
                                 .setType(MultipartBody.FORM)
+                                .addFormDataPart("komennv", isiKomenNV)
                                 .addFormDataPart("npv_no", npv_no)
                                 .addFormDataPart("id_user", id_user)
                                 .build();

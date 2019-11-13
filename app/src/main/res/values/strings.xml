@@ -65,6 +65,8 @@
     <string name="pengajuan">- Pengajuan </string>
     <string name="pending">- Pending </string>
     <string name="jenis">Jenis </string>
+    <string name="catatan">Catatan </string>
+    <string name="komen">Input Comment </string>
     <string name="perihal">Perihal </string>
     <string name="karyawan">Karyawan </string>
     <string name="departemen">Departemen </string>
