@@ -209,13 +209,31 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:orientation="horizontal"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/btnApprove"
-            android:layout_width="match_parent"
+            android:id="@+id/btnCancelM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reject"/>
+
+        <Button
+            android:id="@+id/btnApproveM"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/approve"/>
 

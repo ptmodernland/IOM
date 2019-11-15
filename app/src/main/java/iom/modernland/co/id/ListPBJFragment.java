@@ -98,6 +98,7 @@ public class ListPBJFragment extends Fragment {
 
                         lp.nomor = ko.getString("no_permintaan");
                         lp.jenis = ko.getString("jenis");
+                        lp.status = ko.getString("status");
 
                         adapter.data.add(lp);
                     }

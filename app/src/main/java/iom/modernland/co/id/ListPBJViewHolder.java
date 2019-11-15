@@ -8,12 +8,13 @@ import android.widget.TextView;
 
 public class ListPBJViewHolder extends RecyclerView.ViewHolder {
 
-    TextView txtNoPermo, txtJenisPermo;
+    TextView txtNoPermo, txtJenisPermo, txtStatusPermo;
 
     public ListPBJViewHolder(@NonNull final View itemView) {
         super(itemView);
 
         txtNoPermo = (TextView) itemView.findViewById(R.id.txtNoPermoL);
+        txtStatusPermo = (TextView) itemView.findViewById(R.id.txtStatusPermoL);
         txtJenisPermo = (TextView) itemView.findViewById(R.id.txtJenisPermoL);
 
         itemView.setOnClickListener(new View.OnClickListener() {

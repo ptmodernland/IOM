@@ -27,7 +27,8 @@
     <string name="list_npv">List Net Present Value</string>
     <string name="list_pembelian">List Pembelian</string>
     <string name="list_permohonan">List Permohonan</string>
-    <string name="approve">Approve </string>
+    <string name="approve">Approved </string>
+    <string name="reject">Rejected </string>
     <string name="list">List </string>
     <string name="memo">Memo </string>
     <string name="permo">Permohonan </string>
@@ -64,6 +65,7 @@
     <string name="lama">Lama "\n"- Pengajuan </string>
     <string name="pengajuan">- Pengajuan </string>
     <string name="pending">- Pending </string>
+    <string name="status">Status </string>
     <string name="jenis">Jenis </string>
     <string name="catatan">Catatan </string>
     <string name="komen">Input Comment </string>

@@ -28,6 +28,19 @@ public class ListNPVAdapter extends RecyclerView.Adapter<ListNPVViewHolder> {
     public void onBindViewHolder(@NonNull ListNPVViewHolder listNPVViewHolder, int i) {
 
         ListNPV lnv = data.get(i);
+
+        if (lnv.Status.equals("T")){
+
+            listNPVViewHolder.txtStatus.setText("Approved");
+
+        }
+
+        else if (lnv.Status.equals("C")){
+
+            listNPVViewHolder.txtStatus.setText("Rejected");
+
+        }
+
         listNPVViewHolder.txtKodeUnit.setText(lnv.Lot_no);
         listNPVViewHolder.txtNoNpv.setText(lnv.Npv_no);
         listNPVViewHolder.txtCluster.setText(lnv.Cluster);

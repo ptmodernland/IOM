@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class MemoViewHolder extends RecyclerView.ViewHolder {
 
-    TextView txtNomor, txtPerihal, txtID;
+    TextView txtNomor, txtPerihal, txtStatus, txtID;
 
     public MemoViewHolder(@NonNull final View itemView) {
         super(itemView);
@@ -16,6 +16,7 @@ public class MemoViewHolder extends RecyclerView.ViewHolder {
         txtID = (TextView) itemView.findViewById(R.id.txtID);
         txtNomor = (TextView) itemView.findViewById(R.id.txtNomor);
         txtPerihal = (TextView) itemView.findViewById(R.id.txtPerihal);
+        txtStatus = (TextView) itemView.findViewById(R.id.txtStatus);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

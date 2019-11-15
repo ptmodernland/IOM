@@ -28,6 +28,19 @@ public class ListAdapter extends RecyclerView.Adapter<MemoViewHolder> {
     public void onBindViewHolder(@NonNull MemoViewHolder memoViewHolder, int i) {
 
         ListMemo m = data.get(i);
+
+        if (m.status.equals("T")){
+
+            memoViewHolder.txtStatus.setText("Approved");
+
+        }
+
+        else if (m.status.equals("C")){
+
+            memoViewHolder.txtStatus.setText("Rejected");
+
+        }
+
         memoViewHolder.txtNomor.setText(m.nomor);
         memoViewHolder.txtID.setText(m.id_iom);
         memoViewHolder.txtPerihal.setText(m.perihal + "");

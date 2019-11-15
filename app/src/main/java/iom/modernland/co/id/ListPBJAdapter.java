@@ -28,7 +28,21 @@ public class ListPBJAdapter extends RecyclerView.Adapter<ListPBJViewHolder> {
     public void onBindViewHolder(@NonNull ListPBJViewHolder listPBJViewHolder, int i) {
 
         ListPermohonan lv = data.get(i);
+
+        if (lv.status.equals("T")){
+
+            listPBJViewHolder.txtStatusPermo.setText("Approved");
+
+        }
+
+        else if (lv.status.equals("C")){
+
+            listPBJViewHolder.txtStatusPermo.setText("Rejected");
+
+        }
+
         listPBJViewHolder.txtNoPermo.setText(lv.nomor);
+
         listPBJViewHolder.txtJenisPermo.setText(lv.jenis + "");
     }
 

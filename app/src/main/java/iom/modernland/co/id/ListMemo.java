@@ -5,5 +5,6 @@ public class ListMemo {
     public String id_iom;
     public String nomor;
     public String perihal;
+    public String status;
 
 }

@@ -6,4 +6,5 @@ public class ListNPV {
     public String Npv_no;
     public String Nama;
     public String Cluster;
+    public String Status;
 }

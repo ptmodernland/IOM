@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class ListNPVViewHolder extends RecyclerView.ViewHolder {
 
-    TextView txtKodeUnit, txtNoNpv, txtCluster, txtNama;
+    TextView txtKodeUnit, txtNoNpv, txtStatus, txtCluster, txtNama;
 
     public ListNPVViewHolder(@NonNull final View itemView) {
         super(itemView);
@@ -17,6 +17,7 @@ public class ListNPVViewHolder extends RecyclerView.ViewHolder {
         txtNoNpv = (TextView) itemView.findViewById(R.id.txtNoNpv);
         txtCluster = (TextView) itemView.findViewById(R.id.txtClusterNpv);
         txtNama = (TextView) itemView.findViewById(R.id.txtNamaNpv);
+        txtStatus = (TextView) itemView.findViewById(R.id.txtStatusNpv);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

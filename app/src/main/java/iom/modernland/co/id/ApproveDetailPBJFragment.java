@@ -271,6 +271,121 @@ public class ApproveDetailPBJFragment extends Fragment {
             }
         });
 
+        Button btnCancel = (Button) x.findViewById(R.id.btnCancelP);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                EditText tCatatanCAd = (EditText) x.findViewById(R.id.tCatatanPBJ);
+
+                final String isiKomenCAd = tCatatanCAd.getText().toString();
+
+                AlertDialog.Builder abpc = new AlertDialog.Builder(getActivity());
+
+                abpc.create();
+                abpc.setTitle("Confirmation");
+                abpc.setIcon(R.drawable.ic_check_black_24dp);
+                abpc.setMessage("Apakah Anda Yakin Tidak Menyetujui Pengajuan Ini?");
+                abpc.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        OkHttpClient postman = new OkHttpClient();
+
+                        SharedPreferences sp = getActivity()
+                                .getSharedPreferences("DATALOGIN", 0);
+
+                        String id_user      = sp.getString("id_user", "");
+
+                        RequestBody body = new MultipartBody.Builder()
+                                .setType(MultipartBody.FORM)
+                                .addFormDataPart("komenad", isiKomenCAd)
+                                .addFormDataPart("no_permintaan", nopermintaan)
+                                .addFormDataPart("id_user", id_user)
+                                .build();
+
+                        Request request = new Request.Builder()
+                                .post(body)
+                                .url(Setting.IP + "proses_cancel_pbj.php")
+                                .build();
+
+                        final ProgressDialog pd = new ProgressDialog(
+                                getActivity()
+                        );
+                        pd.setMessage("Please Wait");
+                        pd.setTitle("Loading Rejected...");
+                        pd.setIcon(R.drawable.ic_check_black_24dp);
+                        pd.show();
+
+                        postman.newCall(request).enqueue(new Callback() {
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getActivity(),
+                                                "Please Try Again",
+                                                Toast.LENGTH_LONG).show();
+                                        pd.dismiss();
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+                                String hasil = response.body().string();
+                                try {
+                                    JSONObject j = new JSONObject(hasil);
+                                    boolean st = j.getBoolean("status");
+
+                                    if(st == false)
+                                    {
+                                        final String p = j.getString("pesan");
+                                        getActivity().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getActivity(),
+                                                        p, Toast.LENGTH_LONG).show();
+                                                pd.dismiss();
+                                            }
+                                        });
+                                    }
+                                    else {
+
+                                        getActivity().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getActivity().getApplicationContext(),
+                                                        "Terima Kasih!",
+                                                        Toast.LENGTH_LONG).show();
+
+                                                getActivity().getSupportFragmentManager()
+                                                        .popBackStackImmediate();
+
+                                                pd.dismiss();
+                                            }
+                                        });
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                    }
+                });
+
+                abpc.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+                abpc.show();
+            }
+        });
+
         Button btnWvP = (Button) x.findViewById(R.id.btnWVP);
         btnWvP.setOnClickListener(new View.OnClickListener() {
             @Override
