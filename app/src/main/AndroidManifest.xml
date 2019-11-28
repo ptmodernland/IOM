@@ -22,20 +22,35 @@
         <activity android:name=".MainRedActivity"></activity>
         <activity
             android:name=".ContentApproveNPVActivity"
-            android:configChanges="orientation|screenSize" />
-        <activity
-            android:name=".ContentListNpvActivity"
-            android:configChanges="orientation|screenSize" />
-        <activity android:name=".HomeNPVActivity" />
-        <activity android:name=".ContentListPBJActivity" />
-        <activity android:name=".ContentApprovePBJActivity" />
-        <activity android:name=".HomePermohonanActivity" />
-        <activity android:name=".WebViewActivity" />
-        <activity android:name=".ContentApproveActivity" />
-        <activity android:name=".ContentListActivity" />
+            android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="iom.modernland.co.id_TARGET_NPV" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ContentApprovePBJActivity">
+            <intent-filter>
+                <action android:name="iom.modernland.co.id_TARGET_PBJ" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ContentApproveActivity">
+            <intent-filter>
+                <action android:name="iom.modernland.co.id_TARGET_IOM" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".HomeTestDetailActivity" />
         <activity android:name=".HomeTestActivity" />
         <activity android:name=".HomeUserActivity" />
+        <activity android:name=".HomePermohonanActivity" />
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".HomeNPVActivity" />
+        <activity
+            android:name=".ContentListNpvActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".ContentListPBJActivity" />
+        <activity android:name=".ContentListActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +59,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

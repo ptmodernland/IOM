@@ -239,11 +239,6 @@ public class LoginActivity extends AppCompatActivity {
                                         p, Toast.LENGTH_LONG).show();
                                 pd.dismiss();
 
-                                Intent i = new Intent(getApplicationContext(),
-                                        MainRedActivity.class);
-
-                                startActivity(i);
-                                finish();
                             }
                         });
                     }

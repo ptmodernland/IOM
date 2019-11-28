@@ -8,17 +8,29 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.util.Map;
+
+import static android.content.ContentValues.TAG;
+
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        sendNotification(remoteMessage.getNotification().getBody());
+
+
+        Map<String, String> data = remoteMessage.getData();
+        String idnya = data.get("idnya");
+        String nomornya = data.get("nomornya");
+
+        String click_action = remoteMessage.getNotification().getClickAction();
+        sendNotification(remoteMessage.getNotification().getBody(),click_action,idnya,nomornya);
 
         // TODO(developer): Handle FCM messages here.
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
@@ -26,7 +38,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
 
-            sendNotification(remoteMessage.getNotification().getBody());
+            sendNotification(remoteMessage.getNotification().getBody(),click_action,idnya,nomornya);
 
             if (/* Check if data needs to be processed by long running job */ true) {
                 // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
@@ -47,8 +59,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // message, here is where that should be initiated. See sendNotification method below.
     }
 
-    private void sendNotification(String messageBody) {
-        Intent intent = new Intent(this, ContentApproveActivity.class);
+    private void sendNotification(String messageBody,String click_action,String idnya,String nomornya) {
+        Intent intent = new Intent(click_action);
+
+        Bundle notifSaya = new Bundle();
+        notifSaya.putString("idnya", idnya);
+        notifSaya.putString("nomornya", nomornya);
+
+        intent.putExtras(notifSaya);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);
