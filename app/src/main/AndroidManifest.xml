@@ -18,11 +18,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ChangePAsswordActivity"></activity>
         <activity android:name=".MainRedActivity"></activity>
-        <activity android:name=".ContentApproveNPVActivity"
-                  android:configChanges="orientation|screenSize"/>
-        <activity android:name=".ContentListNpvActivity"
-                  android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name=".ContentApproveNPVActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ContentListNpvActivity"
+            android:configChanges="orientation|screenSize" />
         <activity android:name=".HomeNPVActivity" />
         <activity android:name=".ContentListPBJActivity" />
         <activity android:name=".ContentApprovePBJActivity" />
