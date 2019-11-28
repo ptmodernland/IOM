@@ -19,8 +19,10 @@ import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import ru.nikartm.support.BadgePosition;
 import ru.nikartm.support.ImageBadgeView;
@@ -126,13 +128,98 @@ public class HomePermohonanActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        getSharedPreferences("DATALOGIN", MODE_PRIVATE)
-                                .edit().clear().commit();
+                        // buka postman
+                        OkHttpClient postman = new OkHttpClient();
 
-                        Intent i = new Intent(HomePermohonanActivity.this, LoginActivity.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(i);
-                        finish();
+                        // body
+                        SharedPreferences spl = (HomePermohonanActivity.this)
+                                .getSharedPreferences("DATALOGIN", 0);
+
+                        String username      = spl.getString("username", "");
+
+                        RequestBody body = new MultipartBody.Builder()
+                                .setType(MultipartBody.FORM)
+                                .addFormDataPart("username", username)
+                                .build();
+
+                        // request (POST + tujuan)
+                        Request request = new Request.Builder()
+                                .post(body)
+                                .url(Setting.IP + "proses_logout.php")
+                                .build();
+
+                        // progress dialog
+                        final ProgressDialog pdl = new ProgressDialog(
+                                HomePermohonanActivity.this
+                        );
+                        pdl.setMessage("Please Wait");
+                        pdl.setTitle("Loading ...");
+                        pdl.setIcon(R.drawable.ic_check_black_24dp);
+                        pdl.show();
+
+                        // send
+                        postman.newCall(request).enqueue(new Callback() {
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getApplicationContext(),
+                                                "Please try again",
+                                                Toast.LENGTH_LONG).show();
+                                        pdl.dismiss();
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+
+                                String hasil = response.body().string();
+                                try {
+                                    JSONObject j = new JSONObject(hasil);
+                                    boolean st = j.getBoolean("status");
+
+                                    if(st == false)
+                                    {
+                                        final String p = j.getString("pesan");
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getApplicationContext(),
+                                                        p, Toast.LENGTH_LONG).show();
+                                                pdl.dismiss();
+                                            }
+                                        });
+                                    }
+                                    else {
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getApplicationContext(),
+                                                        "Berhasil Logout",
+                                                        Toast.LENGTH_LONG).show();
+                                                pdl.dismiss();
+
+                                                getSharedPreferences("DATALOGIN", MODE_PRIVATE)
+                                                        .edit().clear().commit();
+
+                                                Intent i = new Intent(HomePermohonanActivity.this, LoginActivity.class);
+                                                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(i);
+                                                finish();
+                                            }
+                                        });
+
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        });
+
                     }
                 });
                 ab.setNegativeButton("No", new DialogInterface.OnClickListener() {

@@ -284,7 +284,7 @@ public class MainRedActivity extends AppCompatActivity {
                                                 @Override
                                                 public void run() {
                                                     Toast.makeText(getApplicationContext(),
-                                                            "Sukses",
+                                                            "Berhasil Logout",
                                                             Toast.LENGTH_LONG).show();
                                                     pdl.dismiss();
 
