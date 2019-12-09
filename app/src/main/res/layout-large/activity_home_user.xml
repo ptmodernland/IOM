@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgappsgrey"
-    tools:context=".HomePermohonanActivity">
+    tools:context=".HomeUserActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -22,17 +22,17 @@
 
             <TextView
                 android:id="@+id/txtDashboard"
-                android:text="@string/dashboardpermo"
-                android:textSize="22sp"
+                android:text="@string/dashboardmemo"
+                android:textSize="32sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/txtDashboardPBJ"
-                android:text="@string/dashboard_pbj"
+                android:text="@string/dashboard_iom"
                 android:layout_below="@id/txtDashboard"
-                android:textSize="22sp"
+                android:textSize="32sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -41,7 +41,7 @@
                 android:layout_marginTop="6dp"
                 android:layout_below="@id/txtDashboardPBJ"
                 android:text="4 items"
-                android:textSize="14sp"
+                android:textSize="24sp"
                 android:textColor="#020F13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -49,8 +49,8 @@
             <ImageView
                 android:layout_alignParentRight="true"
                 android:src="@drawable/mdln1min"
-                android:layout_width="62dp"
-                android:layout_height="62dp" />
+                android:layout_width="100dp"
+                android:layout_height="90dp" />
 
         </RelativeLayout>
 
@@ -73,24 +73,24 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/LnApprovePBJ"
+                    android:id="@+id/LnApprove"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:onClick="ApprovePermohonan"
+                    android:onClick="ApproveMemo"
                     android:orientation="vertical"
                     android:padding="16dp">
 
                     <ru.nikartm.support.ImageBadgeView
-                        android:id="@+id/ibv_icon5"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="20dp"
+                        android:id="@+id/ibv_icon4"
+                        android:layout_width="100dp"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="10dp"
                         android:layout_gravity="center"
                         tools:ibv_badgeValue="0"
                         tools:ibv_badgeTextSize="16dp"
                         tools:ibv_badgePadding="5dp"
-                        tools:ibv_badgePosition="bottom_right"
+                        tools:ibv_badgePosition="top_right"
                         tools:ibv_badgeBackground="@drawable/rectangle_rounded"
                         android:src="@drawable/smartphone" />
 
@@ -99,14 +99,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/approve"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/permo"
+                        android:text="@string/pemberit"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="28sp" />
 
 
                 </LinearLayout>
@@ -123,18 +123,17 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/LnItemPBJ"
+                    android:id="@+id/LnItem"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:onClick="listPermohonan"
+                    android:onClick="listMemo"
                     android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_width="100dp"
+                        android:layout_height="90dp"
                         android:src="@drawable/person_file" />
 
                     <TextView
@@ -142,14 +141,14 @@
                         android:layout_height="wrap_content"
                         android:text="@string/list"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/permo"
+                        android:text="@string/pemberit"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="28sp" />
 
                 </LinearLayout>
 
@@ -165,7 +164,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/menuUserLogoutPBJ"
+                    android:id="@+id/menuUserLogout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -173,9 +172,9 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_width="100dp"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="10dp"
                         android:src="@drawable/arrow_forward" />
 
                     <TextView
@@ -183,8 +182,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/logout"
                         android:textColor="#6f6f6f"
-                        android:layout_marginBottom="10dp"
-                        android:textSize="18sp" />
+                        android:layout_marginBottom="30dp"
+                        android:textSize="28sp" />
 
                 </LinearLayout>
 
@@ -200,7 +199,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/menuUserExitPBJ"
+                    android:id="@+id/menuUserExit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -208,8 +207,9 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="100dp"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="10dp"
                         android:src="@drawable/arrow_right" />
 
                     <TextView
@@ -217,7 +217,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/exit"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:layout_marginBottom="30dp"
+                        android:textSize="28sp" />
 
                 </LinearLayout>
 
