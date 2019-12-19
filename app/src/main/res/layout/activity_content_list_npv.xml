@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/txtMenuLP"
-                android:text="@string/menu"
+                android:text="@string/menu_list"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
 
             <TextView
                 android:layout_below="@id/txtMenuLP"
-                android:text="@string/list_npv"
+                android:text="@string/dashboard_npv"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"

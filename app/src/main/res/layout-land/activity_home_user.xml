@@ -14,9 +14,9 @@
 
 
         <RelativeLayout
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="22dp"
             android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -48,37 +48,35 @@
             <ImageView
                 android:layout_alignParentRight="true"
                 android:src="@drawable/mdln1min"
-                android:layout_width="62dp"
-                android:layout_height="62dp" />
+                android:layout_width="75dp"
+                android:layout_height="75dp" />
 
         </RelativeLayout>
 
         <GridLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
             android:alignmentMode="alignMargins"
-            android:columnCount="2"
             android:columnOrderPreserved="false"
             android:rowCount="3">
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
+                android:layout_width="150dp"
+                android:layout_height="175dp"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
                     android:id="@+id/LnApprove"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:onClick="ApproveMemo"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="10dp">
 
                     <ru.nikartm.support.ImageBadgeView
                         android:id="@+id/ibv_icon4"
@@ -113,22 +111,20 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
+                android:layout_width="150dp"
+                android:layout_height="175dp"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
                     android:id="@+id/LnItem"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:onClick="listMemo"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="10dp">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -155,21 +151,19 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
+                android:layout_width="145dp"
+                android:layout_height="175dp"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
                     android:id="@+id/menuUserLogout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="135dp"
+                    android:layout_height="170dp"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="10dp">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -190,21 +184,19 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
+                android:layout_width="145dp"
+                android:layout_height="175dp"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
                     android:id="@+id/menuUserExit"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="135dp"
+                    android:layout_height="170dp"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="10dp">
 
                     <ImageView
                         android:layout_width="80dp"

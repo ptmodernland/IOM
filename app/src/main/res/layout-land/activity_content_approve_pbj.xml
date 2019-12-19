@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgappsgrey"
-    tools:context=".ContentApproveNPVActivity">
+    tools:context=".ContentApprovePBJActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -15,14 +15,14 @@
 
 
         <RelativeLayout
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="22dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/txtMenuANV"
+                android:id="@+id/txtMenuAP"
                 android:text="@string/menu_approv"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
@@ -30,8 +30,8 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_below="@id/txtMenuANV"
-                android:text="@string/dashboard_npv"
+                android:layout_below="@id/txtMenuAP"
+                android:text="@string/dashboard_pbj"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
@@ -49,30 +49,31 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp">
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp">
 
             <FrameLayout
-                android:id="@+id/frameApproveNPV"
+                android:id="@+id/frameApprovePBJ"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></FrameLayout>
 
             <com.github.clans.fab.FloatingActionMenu
-                android:id="@+id/menuFamANV"
+                android:id="@+id/menuFamAP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="11dp"
                 android:layout_marginRight="11dp"
-                android:layout_marginBottom="200dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="150dp"
                 fab:menu_animationDelayPerItem="55"
                 fab:menu_backgroundColor="@android:color/transparent"
                 fab:menu_buttonSpacing="0dp"
                 fab:menu_colorNormal="#da3c2f"
                 fab:menu_colorPressed="#dc4b3f"
                 fab:menu_colorRipple="#99d4d4d4"
-                fab:menu_fab_label=""
-                fab:menu_fab_size="normal"
+                fab:menu_fab_size="mini"
                 fab:menu_icon="@drawable/fab_add"
                 fab:menu_labels_colorNormal="#333"
                 fab:menu_labels_colorPressed="#444"
@@ -97,7 +98,7 @@
                 fab:menu_showShadow="true">
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabExitANV"
+                    android:id="@+id/menuFabExitAP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_exit_to_app_black_24dp"
@@ -105,7 +106,7 @@
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabLogoutANV"
+                    android:id="@+id/menuFabLogoutAP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_repeat_black_24dp"
@@ -113,7 +114,7 @@
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabMainANV"
+                    android:id="@+id/menuFabMainAP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_home_black_24dp"
@@ -136,5 +137,6 @@
         </RelativeLayout>
 
     </LinearLayout>
+
 
 </RelativeLayout>

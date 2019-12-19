@@ -23,7 +23,7 @@
 
             <TextView
                 android:id="@+id/txtMenuAP"
-                android:text="@string/menu"
+                android:text="@string/menu_approv"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"

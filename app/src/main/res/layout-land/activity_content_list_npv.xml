@@ -6,31 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgappsgrey"
-    tools:context=".ContentApproveNPVActivity">
+    tools:context=".ContentListNpvActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <RelativeLayout
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="22dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/txtMenuANV"
-                android:text="@string/menu_approv"
+                android:id="@+id/txtMenuLP"
+                android:text="@string/menu_list"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_below="@id/txtMenuANV"
+                android:layout_below="@id/txtMenuLP"
                 android:text="@string/dashboard_npv"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
@@ -49,30 +48,31 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp">
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp">
 
             <FrameLayout
-                android:id="@+id/frameApproveNPV"
+                android:id="@+id/frameNPV"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></FrameLayout>
+                android:layout_height="wrap_content" />
 
             <com.github.clans.fab.FloatingActionMenu
-                android:id="@+id/menuFamANV"
+                android:id="@+id/menuFamNV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="11dp"
                 android:layout_marginRight="11dp"
-                android:layout_marginBottom="200dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="150dp"
                 fab:menu_animationDelayPerItem="55"
                 fab:menu_backgroundColor="@android:color/transparent"
                 fab:menu_buttonSpacing="0dp"
                 fab:menu_colorNormal="#da3c2f"
                 fab:menu_colorPressed="#dc4b3f"
                 fab:menu_colorRipple="#99d4d4d4"
-                fab:menu_fab_label=""
-                fab:menu_fab_size="normal"
+                fab:menu_fab_size="mini"
                 fab:menu_icon="@drawable/fab_add"
                 fab:menu_labels_colorNormal="#333"
                 fab:menu_labels_colorPressed="#444"
@@ -97,15 +97,15 @@
                 fab:menu_showShadow="true">
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabExitANV"
+                    android:id="@+id/menuFabExitNV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_exit_to_app_black_24dp"
-                    fab:fab_label="Close Aplication"
+                    fab:fab_label="Close App"
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabLogoutANV"
+                    android:id="@+id/menuFabLogoutNV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_repeat_black_24dp"
@@ -113,7 +113,7 @@
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabMainANV"
+                    android:id="@+id/menuFabMainNV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_home_black_24dp"
@@ -122,14 +122,13 @@
 
                 <!--
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabBackAP"
+                    android:id="@+id/menuFabBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_chevron_left_black_24dp"
                     fab:fab_label="Back"
                     fab:fab_size="mini" />
                 -->
-
             </com.github.clans.fab.FloatingActionMenu>
 
 
