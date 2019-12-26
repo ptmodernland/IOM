@@ -15,16 +15,21 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -69,12 +74,18 @@ public class ApproveDetailFragment extends Fragment {
         final TextView txtAF = (TextView) x.findViewById(R.id.txtAF);
         final LinearLayout lnAF = (LinearLayout) x.findViewById(R.id.lnAF);
         final Button btnAF = (Button) x.findViewById(R.id.btnAF);
+        final Button btnKordinasi = (Button) x.findViewById(R.id.btnKordinasiM);
 
         OkHttpClient postman = new OkHttpClient();
 
+        SharedPreferences sp = getActivity()
+                .getSharedPreferences("DATALOGIN", 0);
+
+        String username      = sp.getString("username", "");
+
         Request r = new Request.Builder()
                 .get()
-                .url(Setting.IP + "get_memo.php?idiom=" + id)
+                .url(Setting.IP + "get_memo.php?idiom=" + id +"&user=" + username)
                 .build();
 
         final ProgressDialog pd = new ProgressDialog(getActivity());
@@ -113,6 +124,7 @@ public class ApproveDetailFragment extends Fragment {
                     final String jenis = jo.getString("jenis");
                     final String perihal = jo.getString("perihal");
                     final String lampiran = jo.getString("attch_lampiran");
+                    final Boolean kordinasi = jo.getBoolean("kordinasi");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -142,6 +154,15 @@ public class ApproveDetailFragment extends Fragment {
                                 txtWV.setText(id);
 
                                 lnAF.setVisibility(View.INVISIBLE);
+
+                            }
+
+                            if (kordinasi == false){
+
+
+                            } else {
+
+                                btnKordinasi.setVisibility(View.INVISIBLE);
 
                             }
 
@@ -268,6 +289,86 @@ public class ApproveDetailFragment extends Fragment {
                 ab.show();
             }
         });
+
+        btnKordinasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+                View mView = getLayoutInflater().inflate(R.layout.dialog_pilih_head, null);
+
+                final Spinner spnPilihHead = (Spinner) x.findViewById(R.id.spnHead);
+
+                /*
+                OkHttpClient postman = new OkHttpClient();
+
+                Request request = new Request.Builder()
+                        .get()
+                        .url(Setting.IP + "get_head.php")
+                        .build();
+
+                final ProgressDialog pd = new ProgressDialog(getActivity());
+                pd.setMessage("Please wait");
+                pd.setTitle("Loading ...");
+                pd.setIcon(R.drawable.ic_check_black_24dp);
+                pd.setCancelable(false);
+                pd.show();
+
+                postman.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getActivity(),
+                                        "Please Try Again",
+                                        Toast.LENGTH_SHORT).show();
+                                pd.dismiss();
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String hasil = response.body().string();
+                        try {
+                            JSONArray j = new JSONArray(hasil);
+
+                            final ArrayAdapter<String> adapter = new ArrayAdapter<String>();
+                            final ArrayList<ListHead> data = new ArrayList<>();
+
+                            for (int i = 0;i < j.length();i++)
+                            {
+                                JSONObject jo = j.getJSONObject(i);
+                                ListHead l = new ListHead();
+
+                                l.namaUser = jo.getString("namaUser");
+
+                                data.add(l);
+                            }
+
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    pd.dismiss();
+
+                                    spnPilihHead.setAdapter(adapter);
+                                }
+                            });
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+                */
+
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+            }
+        });
+
 
         Button btnCancel = (Button) x.findViewById(R.id.btnCancelM);
         btnCancel.setOnClickListener(new View.OnClickListener() {

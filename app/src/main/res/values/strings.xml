@@ -31,6 +31,7 @@
     <string name="list_permohonan">List Permohonan</string>
     <string name="approve">Approved </string>
     <string name="reject">Rejected </string>
+    <string name="kordinasi">Kordinasi </string>
     <string name="list">List </string>
     <string name="memo">Memo </string>
     <string name="permo">Permohonan </string>
@@ -76,6 +77,17 @@
     <string name="perihal">Perihal </string>
     <string name="karyawan">Karyawan </string>
     <string name="departemen">Departemen </string>
+
+
+    <string-array name="head">
+        <item>--Pilih Head--</item>
+        <item>LH. Freddy Chan</item>
+        <item>Herman Go</item>
+        <item>Tamara</item>
+        <item>Dharma Mitra</item>
+        <item>Jamal</item>
+        <item>Rifky Andryan</item>
+    </string-array>
 
 
     <string name="welcome">Welcome</string>

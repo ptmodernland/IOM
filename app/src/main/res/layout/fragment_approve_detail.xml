@@ -237,6 +237,12 @@
             android:layout_height="wrap_content"
             android:text="@string/approve"/>
 
+        <Button
+            android:id="@+id/btnKordinasiM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kordinasi"/>
+
     </LinearLayout>
 
 </LinearLayout>
