@@ -1,6 +1,7 @@
 package iom.modernland.co.id;
 
 
+import android.app.Dialog;
 import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -75,6 +76,7 @@ public class ApproveDetailFragment extends Fragment {
         final LinearLayout lnAF = (LinearLayout) x.findViewById(R.id.lnAF);
         final Button btnAF = (Button) x.findViewById(R.id.btnAF);
         final Button btnKordinasi = (Button) x.findViewById(R.id.btnKordinasiM);
+        final Button btnApprove = (Button) x.findViewById(R.id.btnApproveM);
 
         OkHttpClient postman = new OkHttpClient();
 
@@ -124,6 +126,7 @@ public class ApproveDetailFragment extends Fragment {
                     final String jenis = jo.getString("jenis");
                     final String perihal = jo.getString("perihal");
                     final String lampiran = jo.getString("attch_lampiran");
+                    final String status = jo.getString("status");
                     final Boolean kordinasi = jo.getBoolean("kordinasi");
 
                     getActivity().runOnUiThread(new Runnable() {
@@ -142,6 +145,7 @@ public class ApproveDetailFragment extends Fragment {
                                 txtWV.setText(id);
                                 txtAF.setText(lampiran);
 
+
                             } else {
 
                                 txtNomor.setText(nomor);
@@ -157,12 +161,14 @@ public class ApproveDetailFragment extends Fragment {
 
                             }
 
-                            if (kordinasi == false){
+                            if ("K".equals(status)){
 
-
-                            } else {
-
+                                btnApprove.setVisibility(View.INVISIBLE);
                                 btnKordinasi.setVisibility(View.INVISIBLE);
+
+                            }
+                            else if ("T".equals(status)){
+
 
                             }
 
@@ -176,7 +182,6 @@ public class ApproveDetailFragment extends Fragment {
             }
         });
 
-        Button btnApprove = (Button) x.findViewById(R.id.btnApproveM);
         btnApprove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -294,9 +299,7 @@ public class ApproveDetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
-                View mView = getLayoutInflater().inflate(R.layout.dialog_pilih_head, null);
-
-                final Spinner spnPilihHead = (Spinner) x.findViewById(R.id.spnHead);
+                final View mView = getLayoutInflater().inflate(R.layout.dialog_pilih_head, null);
 
                 /*
                 OkHttpClient postman = new OkHttpClient();
@@ -364,7 +367,95 @@ public class ApproveDetailFragment extends Fragment {
                 */
 
                 mBuilder.setView(mView);
+
                 AlertDialog dialog = mBuilder.create();
+                dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        final Spinner spnPilihHead = (Spinner) mView.findViewById(R.id.spnHead);
+                        final String headPilihan = spnPilihHead.getSelectedItem().toString();
+
+                        OkHttpClient postman = new OkHttpClient();
+
+                        RequestBody body = new MultipartBody.Builder()
+                                .setType(MultipartBody.FORM)
+                                .addFormDataPart("nomor", nomormemo)
+                                .addFormDataPart("head", headPilihan)
+                                .build();
+
+                        Request request = new Request.Builder()
+                                .post(body)
+                                .url(Setting.IP + "proses_kordinasi.php")
+                                .build();
+
+                        final ProgressDialog pd = new ProgressDialog(
+                                getActivity()
+                        );
+                        pd.setMessage("Please Wait");
+                        pd.setTitle("Loading Approve...");
+                        pd.setIcon(R.drawable.ic_check_black_24dp);
+                        pd.show();
+
+                        postman.newCall(request).enqueue(new Callback() {
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getActivity(),
+                                                "Please Try Again",
+                                                Toast.LENGTH_LONG).show();
+                                        pd.dismiss();
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+                                String hasil = response.body().string();
+                                try {
+                                    JSONObject j = new JSONObject(hasil);
+                                    boolean st = j.getBoolean("status");
+
+                                    if(st == false)
+                                    {
+                                        final String p = j.getString("pesan");
+                                        getActivity().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getActivity(),
+                                                        p, Toast.LENGTH_LONG).show();
+                                                pd.dismiss();
+                                            }
+                                        });
+                                    }
+                                    else {
+
+                                        getActivity().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getActivity().getApplicationContext(),
+                                                        "Kordinasi ke Bagian terkait sudah dikirimkan!",
+                                                        Toast.LENGTH_LONG).show();
+
+                                                pd.dismiss();
+                                            }
+                                        });
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        });
+
+                        //Toast.makeText(getActivity(),
+                        //        "Head yang dipilih: " + headPilihan,
+                        //        Toast.LENGTH_LONG).show();
+                    }
+                });
                 dialog.show();
             }
         });
