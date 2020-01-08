@@ -45,7 +45,7 @@ public class WebViewPBJFragment extends Fragment {
         webviewpbj.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
 
         webviewpbj.setWebViewClient(new WebViewClient());
-        webviewpbj.loadUrl("https://reminder.modernland.co.id/iom/permohonan_barang_jasa/views_permohonan/" + no_permintaan);
+        webviewpbj.loadUrl("https://approval.modernland.co.id/permohonan_barang_jasa/views_permohonan/" + no_permintaan);
 
         return x;
     }

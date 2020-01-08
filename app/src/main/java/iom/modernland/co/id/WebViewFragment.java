@@ -49,16 +49,7 @@ public class WebViewFragment extends Fragment {
         webviewku.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
 
         webviewku.setWebViewClient(new WebViewClient());
-        webviewku.loadUrl("https://reminder.modernland.co.id/iom/memo/view_mobile/" + id_iom);
-
-        //FloatingActionButton btnBackAp = (FloatingActionButton) x.findViewById(R.id.btnBackApp);
-        //btnBackAp.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-        //        getActivity().getSupportFragmentManager()
-        //                .popBackStackImmediate();
-        //    }
-        //});
+        webviewku.loadUrl("https://approval.modernland.co.id/memo/view_mobile/" + id_iom);
 
         return x;
     }

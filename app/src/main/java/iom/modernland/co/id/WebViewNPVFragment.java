@@ -45,7 +45,7 @@ public class WebViewNPVFragment extends Fragment {
         webviewnpv.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
 
         webviewnpv.setWebViewClient(new WebViewClient());
-        webviewnpv.loadUrl("https://reminder.modernland.co.id/iom/npv/view_mobile/" + npv_no);
+        webviewnpv.loadUrl("https://approval.modernland.co.id/npv/view_mobile/" + npv_no);
 
         return x;
     }
