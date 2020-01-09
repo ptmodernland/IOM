@@ -30,7 +30,7 @@ import ru.nikartm.support.ImageBadgeView;
 public class HomeUserActivity extends AppCompatActivity {
 
     private ImageBadgeView imageBadgeView;
-
+    private ImageBadgeView imageBadgeViewKordM;
     private int value = 0;
 
     @Override
@@ -39,6 +39,7 @@ public class HomeUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_user);
 
         imageBadgeView = findViewById(R.id.ibv_icon4);
+        imageBadgeViewKordM = findViewById(R.id.ibv_iconKordM);
 
 
         SharedPreferences sp = getSharedPreferences("DATALOGIN", 0);
@@ -80,6 +81,7 @@ public class HomeUserActivity extends AppCompatActivity {
                     JSONObject j = new JSONObject(hasil);
                     boolean st = j.getBoolean("status");
                     final int total = j.getInt("total");
+                    final int totalKordinasi = j.getInt("total_kordinasi");
 
                     if(st == false)
                     {
@@ -100,6 +102,7 @@ public class HomeUserActivity extends AppCompatActivity {
                                 pd.dismiss();
 
                                 initIconWithBadges(total);
+                                initIconWithBadgesKordM(totalKordinasi);
 
                             }
                         });
@@ -291,6 +294,21 @@ public class HomeUserActivity extends AppCompatActivity {
         value = total;
         Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
         imageBadgeView.setBadgeValue(value)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+    }
+
+    private void initIconWithBadgesKordM(int totalKordinasi) {
+        value = totalKordinasi;
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
+        imageBadgeViewKordM.setBadgeValue(value)
                 .setBadgeOvalAfterFirst(true)
                 .setBadgeTextSize(16)
                 .setMaxBadgeValue(999)

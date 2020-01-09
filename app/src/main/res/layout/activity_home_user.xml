@@ -172,10 +172,17 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <ImageView
+                    <ru.nikartm.support.ImageBadgeView
+                        android:id="@+id/ibv_iconKordM"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginTop="20dp"
+                        android:layout_gravity="center"
+                        tools:ibv_badgeValue="0"
+                        tools:ibv_badgeTextSize="16dp"
+                        tools:ibv_badgePadding="5dp"
+                        tools:ibv_badgePosition="top_right"
+                        tools:ibv_badgeBackground="@drawable/rectangle_rounded"
                         android:src="@drawable/teamwork" />
 
                     <TextView
