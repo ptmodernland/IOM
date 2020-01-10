@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ApproveDetailFragment">
+    android:orientation="vertical"
+    tools:context=".KordinasiDetailFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,28 +12,28 @@
         android:orientation="vertical">
 
         <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="72dp"
-        android:padding="5dp"
-        android:background="#fff"
-        android:stretchColumns="2">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="72dp"
+            android:padding="5dp"
+            android:background="#fff"
+            android:stretchColumns="2">
 
             <TableRow>
 
                 <TextView
-                android:text="@string/nomor"
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"/>
+                    android:text="@string/nomor"
+                    android:textColor="#000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"/>
 
                 <TextView
-                android:id="@+id/txtNomord"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp" />
+                    android:id="@+id/txtNomorKD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp" />
 
             </TableRow>
 
@@ -46,7 +47,7 @@
                     android:layout_column="0"/>
 
                 <TextView
-                    android:id="@+id/txtKepada"
+                    android:id="@+id/txtKepadaKD"
                     android:layout_marginLeft="5dp"
                     android:paddingRight="100dp"
                     android:layout_width="wrap_content"
@@ -64,7 +65,7 @@
                     android:layout_column="0"/>
 
                 <TextView
-                    android:id="@+id/txtCc"
+                    android:id="@+id/txtCcKD"
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -82,7 +83,7 @@
 
 
                 <TextView
-                    android:id="@+id/txtDari"
+                    android:id="@+id/txtDariKD"
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -99,7 +100,7 @@
                     android:layout_column="0"/>
 
                 <TextView
-                    android:id="@+id/txtTanggal"
+                    android:id="@+id/txtTanggalKD"
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -116,7 +117,7 @@
                     android:layout_column="0"/>
 
                 <TextView
-                    android:id="@+id/txtPerihal"
+                    android:id="@+id/txtPerihalKD"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -133,7 +134,7 @@
                     android:layout_column="0"/>
 
                 <TextView
-                    android:id="@+id/txtJenis"
+                    android:id="@+id/txtJenisKD"
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -150,68 +151,68 @@
                     android:layout_column="0"/>
 
                 <EditText
-                    android:id="@+id/tCatatan"
+                    android:id="@+id/tCatatanKD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="200dp"
                     android:layout_marginLeft="5dp"
                     android:gravity="top|left"
                     android:hint="@string/komen"
                     android:lines="10"
                     android:maxLines="15"
-                    android:minLines="3" />
+                    android:minLines="3"
+                    android:paddingRight="200dp" />
 
             </TableRow>
 
         </TableLayout>
 
         <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginStart="22dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-            <LinearLayout
-            android:id="@+id/lnWV"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-                <Button
-                android:id="@+id/btnWV"
-                android:drawableLeft="@drawable/ic_search_black_24dp"
-                android:text="@string/view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-                <TextView
-                android:visibility="gone"
-                android:id="@+id/txtWV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-            <LinearLayout
-            android:id="@+id/lnAF"
-            android:orientation="vertical"
+            android:orientation="horizontal"
+            android:layout_marginStart="22dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/lnWVKD"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <Button
-                android:id="@+id/btnAF"
-                android:drawableLeft="@drawable/ic_file_download_black_24dp"
-                android:text="@string/file"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                    android:id="@+id/btnWVKD"
+                    android:drawableLeft="@drawable/ic_search_black_24dp"
+                    android:text="@string/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
                 <TextView
-                android:id="@+id/txtAF"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    android:visibility="gone"
+                    android:id="@+id/txtWVKD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnAFKD"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnAFKD"
+                    android:drawableLeft="@drawable/ic_file_download_black_24dp"
+                    android:text="@string/file"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txtAFKD"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -222,22 +223,16 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btnCancelM"
+                android:id="@+id/btnCancelMKD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reject"/>
 
             <Button
-                android:id="@+id/btnApproveM"
+                android:id="@+id/btnApproveMKD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/approve"/>
-
-            <Button
-                android:id="@+id/btnKordinasiM"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/kordinasi"/>
 
         </LinearLayout>
 
