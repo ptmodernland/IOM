@@ -18,6 +18,7 @@
     <string name="menu">Menu </string>
     <string name="menu_list">Menu List</string>
     <string name="menu_kordinasi">Menu List Kordinasi</string>
+    <string name="menu_rekomendasi">Menu Rekomendasi</string>
     <string name="menu_approv">Menu Approve</string>
     <string name="main_menu">Main Menu </string>
 
@@ -30,9 +31,11 @@
     <string name="list_npv">List Net Present Value</string>
     <string name="list_pembelian">List Pembelian</string>
     <string name="list_permohonan">List Permohonan</string>
+    <string name="list_rekomendasi">List Rekomendasi</string>
     <string name="approve">Approved </string>
     <string name="reject">Rejected </string>
     <string name="kordinasi">Kordinasi </string>
+    <string name="rekomendasi">Rekomendasi </string>
     <string name="list">List </string>
     <string name="memo">Memo </string>
     <string name="permo">Permohonan </string>

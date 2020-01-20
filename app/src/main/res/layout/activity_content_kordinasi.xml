@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/txtDashboard"
-                android:text="@string/menu_list"
+                android:text="@string/list_rekomendasi"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"

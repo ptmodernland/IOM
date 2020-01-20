@@ -190,7 +190,7 @@
                 android:hint="@string/komen"
                 android:lines="10"
                 android:maxLines="15"
-                android:minLines="5" />
+                android:minLines="3" />
 
         </TableRow>
 
@@ -273,6 +273,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/approve"/>
+
+        <Button
+            android:id="@+id/btnKordinasiP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rekomendasi"/>
 
     </LinearLayout>
 

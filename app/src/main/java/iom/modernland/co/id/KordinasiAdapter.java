@@ -31,7 +31,7 @@ public class KordinasiAdapter extends RecyclerView.Adapter<KordinasiViewHolder> 
 
         if (m.status.equals("K")){
 
-            kordinasiViewHolder.txtStatus.setText("Kordinasi");
+            kordinasiViewHolder.txtStatus.setText("Waiting");
 
         }
         if (m.status.equals("C")){

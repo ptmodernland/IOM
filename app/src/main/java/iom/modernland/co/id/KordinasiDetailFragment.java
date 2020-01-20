@@ -61,6 +61,7 @@ public class KordinasiDetailFragment extends Fragment {
         final TextView txtTanggal = (TextView) x.findViewById(R.id.txtTanggalKD);
         final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenisKD);
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihalKD);
+        final EditText tCatatanKD = (EditText) x.findViewById(R.id.tCatatanKD);
         final TextView txtWVKD = (TextView) x.findViewById(R.id.txtWVKD);
         final TextView txtAFKD = (TextView) x.findViewById(R.id.txtAFKD);
         final LinearLayout lnAFKD = (LinearLayout) x.findViewById(R.id.lnAFKD);
@@ -227,8 +228,6 @@ public class KordinasiDetailFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        EditText tCatatanKD = (EditText) x.findViewById(R.id.tCatatanKD);
-
                         final String isiKomen = tCatatanKD.getText().toString();
 
                         OkHttpClient postman = new OkHttpClient();
@@ -340,9 +339,8 @@ public class KordinasiDetailFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        EditText tCatatan = (EditText) x.findViewById(R.id.tCatatan);
 
-                        final String isiKomen = tCatatan.getText().toString();
+                        final String isiKomen = tCatatanKD.getText().toString();
 
                         OkHttpClient postman = new OkHttpClient();
 
@@ -360,7 +358,7 @@ public class KordinasiDetailFragment extends Fragment {
 
                         Request request = new Request.Builder()
                                 .post(body)
-                                .url(Setting.IP + "proses_cancel_memo.php")
+                                .url(Setting.IP + "proses_cancel_kordinasi.php")
                                 .build();
 
                         final ProgressDialog pd = new ProgressDialog(

@@ -103,7 +103,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/pemberit"
+                        android:text="@string/iom"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -146,7 +146,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/pemberit"
+                        android:text="@string/iom"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -195,7 +195,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/kordinasi"
+                        android:text="@string/rekomendasi"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 

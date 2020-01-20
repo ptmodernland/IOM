@@ -30,7 +30,7 @@ import ru.nikartm.support.ImageBadgeView;
 public class HomePermohonanActivity extends AppCompatActivity {
 
     private ImageBadgeView imageBadgeView;
-
+    private ImageBadgeView imageBadgeViewKordP;
     private int value = 0;
 
     @Override
@@ -39,7 +39,7 @@ public class HomePermohonanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_permohonan);
 
         imageBadgeView = findViewById(R.id.ibv_icon5);
-
+        imageBadgeViewKordP = findViewById(R.id.ibv_iconKordP);
 
         SharedPreferences sp = getSharedPreferences("DATALOGIN", 0);
 
@@ -80,6 +80,7 @@ public class HomePermohonanActivity extends AppCompatActivity {
                     JSONObject j = new JSONObject(hasil);
                     boolean st = j.getBoolean("status");
                     final int total = j.getInt("total");
+                    final int totalKordinasi = j.getInt("total_kordinasi");
 
                     if(st == false)
                     {
@@ -100,6 +101,7 @@ public class HomePermohonanActivity extends AppCompatActivity {
                                 pd.dismiss();
 
                                 initIconWithBadges(total);
+                                initIconWithBadgesKordP(totalKordinasi);
 
                             }
                         });
@@ -112,8 +114,6 @@ public class HomePermohonanActivity extends AppCompatActivity {
         });
 
         LinearLayout menuUserLogout = (LinearLayout) findViewById(R.id.menuUserLogoutPBJ);
-        LinearLayout menuUserExit = (LinearLayout) findViewById(R.id.menuUserExitPBJ);
-
         menuUserLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -234,6 +234,8 @@ public class HomePermohonanActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        LinearLayout menuUserExit = (LinearLayout) findViewById(R.id.menuUserExitPBJ);
         menuUserExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -263,6 +265,7 @@ public class HomePermohonanActivity extends AppCompatActivity {
 
             }
         });
+        */
     }
 
     public void ApprovePermohonan(View view) {
@@ -275,6 +278,12 @@ public class HomePermohonanActivity extends AppCompatActivity {
     public void listPermohonan(View view) {
 
         Intent i = new Intent(HomePermohonanActivity.this, ContentListPBJActivity.class);
+        startActivity(i);
+    }
+
+    public void KordinasiPBJ(View view) {
+
+        Intent i = new Intent(HomePermohonanActivity.this, ContentKordinasiPBJActivity.class);
         startActivity(i);
     }
 
@@ -292,4 +301,20 @@ public class HomePermohonanActivity extends AppCompatActivity {
                 .setShowCounter(true)
                 .setBadgePadding(4);
     }
+
+    private void initIconWithBadgesKordP(int totalKordinasi) {
+        value = totalKordinasi;
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
+        imageBadgeViewKordP.setBadgeValue(value)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+    }
+
 }

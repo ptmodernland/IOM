@@ -165,6 +165,79 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
+                    android:id="@+id/LnKordinasiP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:onClick="KordinasiPBJ"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ru.nikartm.support.ImageBadgeView
+                        android:id="@+id/ibv_iconKordP"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center"
+                        tools:ibv_badgeValue="0"
+                        tools:ibv_badgeTextSize="16dp"
+                        tools:ibv_badgePadding="5dp"
+                        tools:ibv_badgePosition="top_right"
+                        tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                        android:src="@drawable/teamwork" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/list"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rekomendasi"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <!--
+                <LinearLayout
+                    android:id="@+id/menuUserExitPBJ"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/arrow_right" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exit"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+                -->
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
                     android:id="@+id/menuUserLogoutPBJ"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -184,39 +257,6 @@
                         android:text="@string/logout"
                         android:textColor="#6f6f6f"
                         android:layout_marginBottom="10dp"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:id="@+id/menuUserExitPBJ"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/arrow_right" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/exit"
-                        android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
                 </LinearLayout>

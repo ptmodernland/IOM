@@ -1,6 +1,7 @@
 package iom.modernland.co.id;
 
 
+import android.app.Dialog;
 import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,6 +67,8 @@ public class ApproveDetailPBJFragment extends Fragment {
         final TextView txtAFP = (TextView) x.findViewById(R.id.txtAFP);
         final LinearLayout lnAFP = (LinearLayout) x.findViewById(R.id.lnAFP);
         final Button btnAFP = (Button) x.findViewById(R.id.btnAFP);
+        final Button btnKordinasi = (Button) x.findViewById(R.id.btnKordinasiP);
+        final Button btnApprove = (Button) x.findViewById(R.id.btnApproveP);
 
         OkHttpClient postman = new OkHttpClient();
 
@@ -110,6 +114,7 @@ public class ApproveDetailPBJFragment extends Fragment {
                     final String departemen = go.getString("departemen");
                     final String lama = go.getString("lama");
                     final String pending = go.getString("pending");
+                    final String status = go.getString("status");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -145,6 +150,17 @@ public class ApproveDetailPBJFragment extends Fragment {
 
                             }
 
+                            if ("K".equals(status)){
+
+                                btnApprove.setVisibility(View.INVISIBLE);
+                                btnKordinasi.setVisibility(View.INVISIBLE);
+
+                            }
+                            else if ("T".equals(status)){
+
+
+                            }
+
                             pd.dismiss();
                         }
                     });
@@ -155,7 +171,6 @@ public class ApproveDetailPBJFragment extends Fragment {
             }
         });
 
-        Button btnApprove = (Button) x.findViewById(R.id.btnApproveP);
         btnApprove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -268,6 +283,109 @@ public class ApproveDetailPBJFragment extends Fragment {
                 });
 
                 abp.show();
+            }
+        });
+
+        btnKordinasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+                final View mView = getLayoutInflater().inflate(R.layout.dialog_pilih_head, null);
+
+                mBuilder.setView(mView);
+
+                AlertDialog dialog = mBuilder.create();
+                dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        final Spinner spnPilihHead = (Spinner) mView.findViewById(R.id.spnHead);
+                        final String headPilihan = spnPilihHead.getSelectedItem().toString();
+
+                        OkHttpClient postman = new OkHttpClient();
+
+                        RequestBody body = new MultipartBody.Builder()
+                                .setType(MultipartBody.FORM)
+                                .addFormDataPart("nomor", nopermintaan)
+                                .addFormDataPart("head", headPilihan)
+                                .build();
+
+                        Request request = new Request.Builder()
+                                .post(body)
+                                .url(Setting.IP + "proses_kordinasi_pbj.php")
+                                .build();
+
+                        final ProgressDialog pd = new ProgressDialog(
+                                getActivity()
+                        );
+                        pd.setMessage("Please Wait");
+                        pd.setTitle("Loading Approve...");
+                        pd.setIcon(R.drawable.ic_check_black_24dp);
+                        pd.show();
+
+                        postman.newCall(request).enqueue(new Callback() {
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getActivity(),
+                                                "Please Try Again",
+                                                Toast.LENGTH_LONG).show();
+                                        pd.dismiss();
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+                                String hasil = response.body().string();
+                                try {
+                                    JSONObject j = new JSONObject(hasil);
+                                    boolean st = j.getBoolean("status");
+
+                                    if(st == false)
+                                    {
+                                        final String p = j.getString("pesan");
+                                        getActivity().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getActivity(),
+                                                        p, Toast.LENGTH_LONG).show();
+                                                pd.dismiss();
+                                            }
+                                        });
+                                    }
+                                    else {
+
+                                        getActivity().runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getActivity().getApplicationContext(),
+                                                        "Kordinasi ke Bagian terkait sudah dikirimkan!",
+                                                        Toast.LENGTH_LONG).show();
+
+                                                getActivity().getSupportFragmentManager()
+                                                        .popBackStackImmediate();
+
+                                                pd.dismiss();
+                                            }
+                                        });
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        });
+
+                        //Toast.makeText(getActivity(),
+                        //        "Head yang dipilih: " + headPilihan,
+                        //        Toast.LENGTH_LONG).show();
+                    }
+                });
+                dialog.show();
             }
         });
 

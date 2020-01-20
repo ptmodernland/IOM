@@ -40,7 +40,6 @@ import okhttp3.Response;
 public class ListMemoFragment extends Fragment {
 
     public ListMemoFragment() {
-
         // Required empty public constructor
     }
 

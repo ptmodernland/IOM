@@ -41,7 +41,6 @@ public class HomeUserActivity extends AppCompatActivity {
         imageBadgeView = findViewById(R.id.ibv_icon4);
         imageBadgeViewKordM = findViewById(R.id.ibv_iconKordM);
 
-
         SharedPreferences sp = getSharedPreferences("DATALOGIN", 0);
 
         String username      = sp.getString("username", "");
