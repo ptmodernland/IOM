@@ -77,14 +77,14 @@ public class HomePermohonanActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 String hasil = response.body().string();
                 try {
-                    JSONObject j = new JSONObject(hasil);
-                    boolean st = j.getBoolean("status");
-                    final int total = j.getInt("total");
-                    final int totalKordinasi = j.getInt("total_kordinasi");
+                    JSONObject jpk = new JSONObject(hasil);
+                    boolean st = jpk.getBoolean("status");
+                    final int total = jpk.getInt("total");
+                    final int totalKordinasi = jpk.getInt("total_kordinasi");
 
                     if(st == false)
                     {
-                        final String p = j.getString("pesan");
+                        final String p = jpk.getString("pesan");
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {

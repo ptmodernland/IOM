@@ -156,6 +156,12 @@ public class ApproveDetailPBJFragment extends Fragment {
                                 btnKordinasi.setVisibility(View.INVISIBLE);
 
                             }
+                            else if ("C".equals(status)){
+
+                                btnApprove.setVisibility(View.INVISIBLE);
+                                btnKordinasi.setVisibility(View.INVISIBLE);
+
+                            }
                             else if ("T".equals(status)){
 
 
@@ -304,10 +310,16 @@ public class ApproveDetailPBJFragment extends Fragment {
 
                         OkHttpClient postman = new OkHttpClient();
 
+                        SharedPreferences sp = getActivity()
+                                .getSharedPreferences("DATALOGIN", 0);
+
+                        String username_apr      = sp.getString("username", "");
+
                         RequestBody body = new MultipartBody.Builder()
                                 .setType(MultipartBody.FORM)
                                 .addFormDataPart("nomor", nopermintaan)
                                 .addFormDataPart("head", headPilihan)
+                                .addFormDataPart("username", username_apr)
                                 .build();
 
                         Request request = new Request.Builder()
@@ -553,7 +565,25 @@ public class ApproveDetailPBJFragment extends Fragment {
 
                 dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
 
-                Uri uri = Uri.parse("https://reminder.modernland.co.id/iom/assets/file/"
+                Uri uri = Uri.parse("https://approval.modernland.co.id/assets/file/"
+                        + attch_lampiran);
+
+                DownloadManager.Request request = new DownloadManager.Request(uri);
+
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+
+                Long reference = dm.enqueue(request);
+            }
+        });
+
+        btnAFP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String attch_lampiran = txtAFP.getText().toString();
+
+                dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
+
+                Uri uri = Uri.parse("https://approval.modernland.co.id/assets/file/"
                         + attch_lampiran);
 
                 DownloadManager.Request request = new DownloadManager.Request(uri);

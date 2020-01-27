@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,15 +62,25 @@ public class KordinasiDetailFragment extends Fragment {
         final TextView txtTanggal = (TextView) x.findViewById(R.id.txtTanggalKD);
         final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenisKD);
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihalKD);
-        final EditText tCatatanKD = (EditText) x.findViewById(R.id.tCatatanKD);
+        final TextView txtUserKor = (TextView) x.findViewById(R.id.txtUserKD);
+        final TextView txtStatusKor = (TextView) x.findViewById(R.id.txtStatusKD);
+
         final TextView txtWVKD = (TextView) x.findViewById(R.id.txtWVKD);
         final TextView txtAFKD = (TextView) x.findViewById(R.id.txtAFKD);
         final LinearLayout lnAFKD = (LinearLayout) x.findViewById(R.id.lnAFKD);
+
+        final TableRow tabStatusKD = (TableRow) x.findViewById(R.id.tabStatusKD);
+        final TableRow tabUserKD = (TableRow) x.findViewById(R.id.tabUserKD);
 
         final Button btnApproveKD = (Button) x.findViewById(R.id.btnApproveMKD);
         final Button btnCancelKD = (Button) x.findViewById(R.id.btnCancelMKD);
 
         OkHttpClient postman = new OkHttpClient();
+
+        SharedPreferences sp = getActivity()
+                .getSharedPreferences("DATALOGIN", 0);
+
+        final String username_apr      = sp.getString("username", "");
 
         Request r = new Request.Builder()
                 .get()
@@ -112,6 +123,13 @@ public class KordinasiDetailFragment extends Fragment {
                     final String jenis = jo.getString("jenis");
                     final String perihal = jo.getString("perihal");
                     final String lampiran = jo.getString("attch_lampiran");
+                    final String status = jo.getString("status");
+                    final String status_kor = jo.getString("status_kor");
+                    final String approve_kor = jo.getString("approve_kor");
+                    final String approve = jo.getString("approve");
+                    final String komen = jo.getString("komen");
+
+                    final EditText tCatatanKD = (EditText) x.findViewById(R.id.tCatatanKD);
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -141,6 +159,60 @@ public class KordinasiDetailFragment extends Fragment {
                                 txtWVKD.setText(id);
 
                                 lnAFKD.setVisibility(View.INVISIBLE);
+
+                            }
+                            if (("K".equals(status)) && (!approve_kor.equals(username_apr))){
+
+                                tabStatusKD.setVisibility(View.INVISIBLE);
+                                tabUserKD.setVisibility(View.INVISIBLE);
+                                tCatatanKD.setEnabled(false);
+
+                            }
+
+                            else if (("K".equals(status)) && (approve_kor.equals(username_apr))){
+
+                                btnApproveKD.setVisibility(View.INVISIBLE);
+                                btnCancelKD.setVisibility(View.INVISIBLE);
+                                tabStatusKD.setVisibility(View.INVISIBLE);
+                                tabUserKD.setVisibility(View.INVISIBLE);
+
+                            }
+
+                            if ("C".equals(status)){
+
+                                btnApproveKD.setVisibility(View.INVISIBLE);
+                                btnCancelKD.setVisibility(View.INVISIBLE);
+                                tCatatanKD.setEnabled(false);
+                                tCatatanKD.setText(komen);
+                                txtUserKor.setText(approve_kor);
+                                txtStatusKor.setText("Rejected");
+
+
+                            }
+                            if ("Y".equals(status)){
+
+                                btnApproveKD.setVisibility(View.INVISIBLE);
+                                btnCancelKD.setVisibility(View.INVISIBLE);
+                                tCatatanKD.setEnabled(false);
+                                tCatatanKD.setText(komen);
+                                txtUserKor.setText(approve_kor);
+                                txtStatusKor.setText("Approved");
+
+
+                            }
+                            if ("T".equals(status)){
+
+
+                            }
+                            if ("Y".equals(status_kor)){
+
+                                btnApproveKD.setVisibility(View.INVISIBLE);
+                                btnCancelKD.setVisibility(View.INVISIBLE);
+                                tCatatanKD.setEnabled(false);
+                                tCatatanKD.setText(komen);
+                                txtUserKor.setText(approve_kor);
+                                txtStatusKor.setText("Approved");
+
 
                             }
 
@@ -227,6 +299,8 @@ public class KordinasiDetailFragment extends Fragment {
                 ab.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        final EditText tCatatanKD = (EditText) x.findViewById(R.id.tCatatanKD);
 
                         final String isiKomen = tCatatanKD.getText().toString();
 
@@ -339,6 +413,7 @@ public class KordinasiDetailFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+                        final EditText tCatatanKD = (EditText) x.findViewById(R.id.tCatatanKD);
 
                         final String isiKomen = tCatatanKD.getText().toString();
 

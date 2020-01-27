@@ -28,6 +28,16 @@ public class ApproveAdapter extends RecyclerView.Adapter<ApproveViewHolder> {
     public void onBindViewHolder(@NonNull ApproveViewHolder approveViewHolder, int i) {
 
         ListMemo a = data.get(i);
+
+        if (a.status.equals("C")){
+            approveViewHolder.txtStatusap.setText("Not Recommended");
+        }
+        if (a.status.equals("T")){
+            approveViewHolder.txtStatusap.setText("Waiting Approved");
+        }
+        if (a.status.equals("K")){
+            approveViewHolder.txtStatusap.setText("Waiting Approval Recommendation");
+        }
         approveViewHolder.txtNomorap.setText(a.nomor);
         approveViewHolder.txtIDap.setText(a.id_iom);
         approveViewHolder.txtPerihalap.setText(a.perihal + "");

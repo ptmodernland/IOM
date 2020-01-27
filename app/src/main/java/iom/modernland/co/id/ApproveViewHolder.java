@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class ApproveViewHolder extends RecyclerView.ViewHolder {
 
-    TextView txtNomorap, txtPerihalap, txtIDap;
+    TextView txtNomorap, txtPerihalap, txtStatusap, txtIDap;
 
     public ApproveViewHolder(@NonNull final View itemView) {
         super(itemView);
@@ -16,6 +16,7 @@ public class ApproveViewHolder extends RecyclerView.ViewHolder {
         txtIDap = (TextView) itemView.findViewById(R.id.txtIDap);
         txtNomorap = (TextView) itemView.findViewById(R.id.txtNomorap);
         txtPerihalap = (TextView) itemView.findViewById(R.id.txtPerihalap);
+        txtStatusap = (TextView) itemView.findViewById(R.id.txtStatusap);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

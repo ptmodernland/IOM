@@ -81,6 +81,7 @@
     <string name="perihal">Perihal </string>
     <string name="karyawan">Karyawan </string>
     <string name="departemen">Departemen </string>
+    <string name="detail">Detail</string>
 
 
     <string-array name="head">

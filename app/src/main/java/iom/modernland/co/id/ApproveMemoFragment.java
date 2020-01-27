@@ -101,6 +101,7 @@ public class ApproveMemoFragment extends Fragment {
                         l.id_iom = jo.getString("id_iom");
                         l.nomor = jo.getString("nomor");
                         l.perihal = jo.getString("perihal");
+                        l.status = jo.getString("status");
 
                         adapter.data.add(l);
                     }

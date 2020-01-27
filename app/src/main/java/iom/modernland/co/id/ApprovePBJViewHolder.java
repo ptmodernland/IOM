@@ -8,13 +8,14 @@ import android.widget.TextView;
 
 public class ApprovePBJViewHolder extends RecyclerView.ViewHolder {
 
-    TextView txtNoPermo, txtJenisPermo;
+    TextView txtNoPermo, txtJenisPermo, txtStatusPermo;
 
     public ApprovePBJViewHolder(@NonNull final View itemView) {
         super(itemView);
 
         txtNoPermo = (TextView) itemView.findViewById(R.id.txtNoPermoA);
         txtJenisPermo = (TextView) itemView.findViewById(R.id.txtJenisPermoA);
+        txtStatusPermo = (TextView) itemView.findViewById(R.id.txtStatusPermoA);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,5 +6,5 @@ public class ListMemo {
     public String nomor;
     public String perihal;
     public String status;
-
+    public String status_kor;
 }

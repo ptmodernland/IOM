@@ -98,6 +98,7 @@ public class ApprovePBJFragment extends Fragment {
 
                         p.nomor = ko.getString("no_permintaan");
                         p.jenis = ko.getString("jenis");
+                        p.status = ko.getString("status");
 
                         adapter.data.add(p);
                     }

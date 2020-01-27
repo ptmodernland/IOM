@@ -39,6 +39,11 @@ public class KordinasiAdapter extends RecyclerView.Adapter<KordinasiViewHolder> 
             kordinasiViewHolder.txtStatus.setText("Reject");
 
         }
+        if (m.status_kor.equals("Y")){
+
+            kordinasiViewHolder.txtStatus.setText("Approved");
+
+        }
 
 
         kordinasiViewHolder.txtNomor.setText(m.nomor);

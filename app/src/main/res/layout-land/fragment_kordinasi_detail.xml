@@ -141,6 +141,42 @@
 
             </TableRow>
 
+            <TableRow
+                android:id="@+id/tabStatusKD">
+
+                <TextView
+                    android:text="@string/status"
+                    android:textColor="#000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"/>
+
+                <TextView
+                    android:id="@+id/txtStatusKD"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tabUserKD">
+
+                <TextView
+                    android:text="@string/nama"
+                    android:textColor="#000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"/>
+
+                <TextView
+                    android:id="@+id/txtUserKD"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </TableRow>
+
             <TableRow>
 
                 <TextView

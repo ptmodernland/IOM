@@ -70,7 +70,7 @@ public class ListDetailFragment extends Fragment {
 
         final ProgressDialog pd = new ProgressDialog(getActivity());
         pd.setMessage("Please wait ...");
-        pd.setTitle("Loading Ticket ...");
+        pd.setTitle("Loading IOM ...");
         pd.setIcon(R.drawable.ic_check_black_24dp);
         pd.setCancelable(true);
         pd.show();
@@ -207,7 +207,7 @@ public class ListDetailFragment extends Fragment {
 
                 dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
 
-                Uri uri = Uri.parse("https://reminder.modernland.co.id/iom/assets/file/"
+                Uri uri = Uri.parse("https://approval.modernland.co.id/assets/file/"
                         + attch_lampiran);
 
                 DownloadManager.Request request = new DownloadManager.Request(uri);

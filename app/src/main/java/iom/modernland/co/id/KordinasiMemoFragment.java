@@ -99,6 +99,7 @@ public class KordinasiMemoFragment extends Fragment {
                         l.nomor = jo.getString("nomor");
                         l.perihal = jo.getString("perihal");
                         l.status = jo.getString("status");
+                        l.status_kor = jo.getString("status_kor");
 
                         adapter.data.add(l);
                     }

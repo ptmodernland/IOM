@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,6 +56,8 @@ public class KordinasiDetailPBJFragment extends Fragment {
 
         final TextView txtNoPermintaan = (TextView) x.findViewById(R.id.txtNoPermoAdKD);
         final TextView txtTanggal = (TextView) x.findViewById(R.id.txtTanggalAdKD);
+        final TextView txtLama = (TextView) x.findViewById(R.id.txtLamaPengajuKD);
+        final TextView txtPending = (TextView) x.findViewById(R.id.txtLamaPedingKD);
         final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenisPermoAdKD);
         final TextView txtKaryawan = (TextView) x.findViewById(R.id.txtKaryawanAdKD);
         final TextView txtJabatan = (TextView) x.findViewById(R.id.txtJabatanAdKD);
@@ -62,12 +65,22 @@ public class KordinasiDetailPBJFragment extends Fragment {
         final EditText tCatatan = (EditText) x.findViewById(R.id.tCatatanPBJKD);
         final TextView txtWVP = (TextView) x.findViewById(R.id.txtWVPKD);
         final TextView txtAFP = (TextView) x.findViewById(R.id.txtAFPKD);
+        final TextView txtUserKor = (TextView) x.findViewById(R.id.txtUserPBJKD);
+        final TextView txtStatusKor = (TextView) x.findViewById(R.id.txtStatusPBJKD);
         final LinearLayout lnAFP = (LinearLayout) x.findViewById(R.id.lnAFPKD);
+
+        final TableRow tabStatusKD = (TableRow) x.findViewById(R.id.tabStatusPBJKD);
+        final TableRow tabUserKD = (TableRow) x.findViewById(R.id.tabUserPBJKD);
 
         final Button btnApproveKD = (Button) x.findViewById(R.id.btnApprovePKD);
         final Button btnCancelKD = (Button) x.findViewById(R.id.btnCancelPKD);
 
         OkHttpClient postman = new OkHttpClient();
+
+        SharedPreferences sp = getActivity()
+                .getSharedPreferences("DATALOGIN", 0);
+
+        final String username_apr      = sp.getString("username", "");
 
         Request r = new Request.Builder()
                 .get()
@@ -109,6 +122,12 @@ public class KordinasiDetailPBJFragment extends Fragment {
                     final String nama_user = go.getString("namaUser");
                     final String jabatan = go.getString("jabatan");
                     final String departemen = go.getString("departemen");
+                    final String lama = go.getString("lama");
+                    final String pending = go.getString("pending");
+                    final String status = go.getString("status");
+                    final String approve_kor = go.getString("approve_kor");
+                    final String approve = go.getString("approve");
+                    final String komen = go.getString("komen");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -124,6 +143,8 @@ public class KordinasiDetailPBJFragment extends Fragment {
                                 txtDepartemen.setText(departemen);
                                 txtAFP.setText(lampiran);
                                 txtWVP.setText(no_permintaan);
+                                txtLama.setText(lama + " hari");
+                                txtPending.setText(pending + " hari");
 
                             } else {
 
@@ -134,8 +155,43 @@ public class KordinasiDetailPBJFragment extends Fragment {
                                 txtJabatan.setText(jabatan);
                                 txtDepartemen.setText(departemen);
                                 txtWVP.setText(no_permintaan);
+                                txtLama.setText("\n" + lama + " hari");
+                                txtPending.setText(pending + " hari");
 
                                 lnAFP.setVisibility(View.INVISIBLE);
+
+                            }
+
+                            if (("K".equals(status)) && (!approve_kor.equals(username_apr))){
+
+                                btnApproveKD.setVisibility(View.INVISIBLE);
+                                btnCancelKD.setVisibility(View.INVISIBLE);
+                                tabStatusKD.setVisibility(View.INVISIBLE);
+                                tabUserKD.setVisibility(View.INVISIBLE);
+                                tCatatan.setVisibility(View.INVISIBLE);
+
+                            }
+
+                            else if (("K".equals(status)) && (approve_kor.equals(username_apr))){
+
+                                tabStatusKD.setVisibility(View.INVISIBLE);
+                                tabUserKD.setVisibility(View.INVISIBLE);
+
+                            }
+
+                            if ("C".equals(status)){
+
+                                btnApproveKD.setVisibility(View.INVISIBLE);
+                                btnCancelKD.setVisibility(View.INVISIBLE);
+                                tCatatan.setEnabled(false);
+                                tCatatan.setText(komen);
+                                txtUserKor.setText(approve_kor);
+                                txtStatusKor.setText("Rejected");
+
+
+                            }
+                            if ("T".equals(status)){
+
 
                             }
 

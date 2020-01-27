@@ -80,14 +80,9 @@ public class ApproveDetailFragment extends Fragment {
 
         OkHttpClient postman = new OkHttpClient();
 
-        SharedPreferences sp = getActivity()
-                .getSharedPreferences("DATALOGIN", 0);
-
-        String username      = sp.getString("username", "");
-
         Request r = new Request.Builder()
                 .get()
-                .url(Setting.IP + "get_memo.php?idiom=" + id +"&user=" + username)
+                .url(Setting.IP + "get_memo.php?idiom=" + id)
                 .build();
 
         final ProgressDialog pd = new ProgressDialog(getActivity());
@@ -127,7 +122,6 @@ public class ApproveDetailFragment extends Fragment {
                     final String perihal = jo.getString("perihal");
                     final String lampiran = jo.getString("attch_lampiran");
                     final String status = jo.getString("status");
-                    final Boolean kordinasi = jo.getBoolean("kordinasi");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -162,6 +156,12 @@ public class ApproveDetailFragment extends Fragment {
                             }
 
                             if ("K".equals(status)){
+
+                                btnApprove.setVisibility(View.INVISIBLE);
+                                btnKordinasi.setVisibility(View.INVISIBLE);
+
+                            }
+                            else if ("C".equals(status)){
 
                                 btnApprove.setVisibility(View.INVISIBLE);
                                 btnKordinasi.setVisibility(View.INVISIBLE);
@@ -378,10 +378,16 @@ public class ApproveDetailFragment extends Fragment {
 
                         OkHttpClient postman = new OkHttpClient();
 
+                        SharedPreferences sp = getActivity()
+                                .getSharedPreferences("DATALOGIN", 0);
+
+                        String username_apr      = sp.getString("username", "");
+
                         RequestBody body = new MultipartBody.Builder()
                                 .setType(MultipartBody.FORM)
                                 .addFormDataPart("nomor", nomormemo)
                                 .addFormDataPart("head", headPilihan)
+                                .addFormDataPart("username", username_apr)
                                 .build();
 
                         Request request = new Request.Builder()
@@ -628,7 +634,7 @@ public class ApproveDetailFragment extends Fragment {
 
                 dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
 
-                Uri uri = Uri.parse("https://reminder.modernland.co.id/iom/assets/file/"
+                Uri uri = Uri.parse("https://approval.modernland.co.id/assets/file/"
                         + attch_lampiran);
 
                 DownloadManager.Request request = new DownloadManager.Request(uri);
@@ -646,7 +652,7 @@ public class ApproveDetailFragment extends Fragment {
 
                 dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
 
-                Uri uri = Uri.parse("https://reminder.modernland.co.id/iom/assets/file/"
+                Uri uri = Uri.parse("https://approval.modernland.co.id/assets/file/"
                         + attch_lampiran);
 
                 DownloadManager.Request request = new DownloadManager.Request(uri);
