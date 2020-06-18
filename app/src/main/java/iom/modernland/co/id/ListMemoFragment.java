@@ -107,6 +107,9 @@ public class ListMemoFragment extends Fragment {
                         l.perihal = jo.getString("perihal");
                         l.status = jo.getString("status");
 
+                        l.status_email = jo.getString("status_email");
+                        l.kordinasi = jo.getString("kordinasi");
+
                         adapter.data.add(l);
                     }
                     getActivity().runOnUiThread(new Runnable() {

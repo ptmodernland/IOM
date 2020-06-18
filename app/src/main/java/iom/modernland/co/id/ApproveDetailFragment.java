@@ -40,7 +40,6 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -298,73 +297,8 @@ public class ApproveDetailFragment extends Fragment {
         btnKordinasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
-                final View mView = getLayoutInflater().inflate(R.layout.dialog_pilih_head, null);
-
-                /*
-                OkHttpClient postman = new OkHttpClient();
-
-                Request request = new Request.Builder()
-                        .get()
-                        .url(Setting.IP + "get_head.php")
-                        .build();
-
-                final ProgressDialog pd = new ProgressDialog(getActivity());
-                pd.setMessage("Please wait");
-                pd.setTitle("Loading ...");
-                pd.setIcon(R.drawable.ic_check_black_24dp);
-                pd.setCancelable(false);
-                pd.show();
-
-                postman.newCall(request).enqueue(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        getActivity().runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getActivity(),
-                                        "Please Try Again",
-                                        Toast.LENGTH_SHORT).show();
-                                pd.dismiss();
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        String hasil = response.body().string();
-                        try {
-                            JSONArray j = new JSONArray(hasil);
-
-                            final ArrayAdapter<String> adapter = new ArrayAdapter<String>();
-                            final ArrayList<ListHead> data = new ArrayList<>();
-
-                            for (int i = 0;i < j.length();i++)
-                            {
-                                JSONObject jo = j.getJSONObject(i);
-                                ListHead l = new ListHead();
-
-                                l.namaUser = jo.getString("namaUser");
-
-                                data.add(l);
-                            }
-
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    pd.dismiss();
-
-                                    spnPilihHead.setAdapter(adapter);
-                                }
-                            });
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-
-                */
+                /*AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+                final View mView = getLayoutInflater().inflate(R.layout.list_head, null);
 
                 mBuilder.setView(mView);
 
@@ -373,8 +307,8 @@ public class ApproveDetailFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        final Spinner spnPilihHead = (Spinner) mView.findViewById(R.id.spnHead);
-                        final String headPilihan = spnPilihHead.getSelectedItem().toString();
+                        //final Spinner spnPilihHead = (Spinner) mView.findViewById(R.id.spnHead);
+                        //final String headPilihan = spnPilihHead.getSelectedItem().toString();
 
                         OkHttpClient postman = new OkHttpClient();
 
@@ -385,8 +319,8 @@ public class ApproveDetailFragment extends Fragment {
 
                         RequestBody body = new MultipartBody.Builder()
                                 .setType(MultipartBody.FORM)
-                                .addFormDataPart("nomor", nomormemo)
-                                .addFormDataPart("head", headPilihan)
+                                //.addFormDataPart("nomor", nomormemo)
+                                //.addFormDataPart("head", headPilihan)
                                 .addFormDataPart("username", username_apr)
                                 .build();
 
@@ -465,7 +399,19 @@ public class ApproveDetailFragment extends Fragment {
                         //        Toast.LENGTH_LONG).show();
                     }
                 });
-                dialog.show();
+                dialog.show();*/
+                String id_iom = txtWV.getText().toString();
+                String nomornya = txtNomor.getText().toString();
+
+                Bundle b = new Bundle();
+                b.putString("idiomnya",id_iom);
+                b.putString("nomornya",nomornya);
+
+                Intent i = new Intent(getActivity(),
+                        DialogHeadActivity.class);
+
+                i.putExtras(b);
+                startActivity(i);
             }
         });
 

@@ -305,8 +305,8 @@ public class ApproveDetailPBJFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        final Spinner spnPilihHead = (Spinner) mView.findViewById(R.id.spnHead);
-                        final String headPilihan = spnPilihHead.getSelectedItem().toString();
+                        //final Spinner spnPilihHead = (Spinner) mView.findViewById(R.id.spnHead);
+                        //final String headPilihan = spnPilihHead.getSelectedItem().toString();
 
                         OkHttpClient postman = new OkHttpClient();
 
@@ -317,8 +317,8 @@ public class ApproveDetailPBJFragment extends Fragment {
 
                         RequestBody body = new MultipartBody.Builder()
                                 .setType(MultipartBody.FORM)
-                                .addFormDataPart("nomor", nopermintaan)
-                                .addFormDataPart("head", headPilihan)
+                                //.addFormDataPart("nomor", nopermintaan)
+                                //.addFormDataPart("head", headPilihan)
                                 .addFormDataPart("username", username_apr)
                                 .build();
 

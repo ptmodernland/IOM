@@ -10,7 +10,7 @@ import android.content.pm.PackageManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
-import android.os.Handler;
+//import android.os.Handler;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -19,7 +19,7 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.text.format.Formatter;
 import android.view.View;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
@@ -30,7 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.UUID;
+//import java.util.UUID;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -120,14 +120,14 @@ public class LoginActivity extends AppCompatActivity {
 
         final String isiuser = etUsername.getText().toString();
         final String isipass = etPassword.getText().toString();
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        String token = refreshedToken.toString();
+        final String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        //String token = refreshedToken.getText().toString();
 
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String imeiNumber = telephonyManager.getImei();
-        String softwareVersion = telephonyManager.getDeviceSoftwareVersion();
-        String simSerial = telephonyManager.getSimSerialNumber();
-        String subscribeId = telephonyManager.getSubscriberId();
+        //String imeiNumber = telephonyManager.getImei();
+        //String softwareVersion = telephonyManager.getDeviceSoftwareVersion();
+        //String simSerial = telephonyManager.getSimSerialNumber();
+        //String subscribeId = telephonyManager.getSubscriberId();
 
         PHONE_type = telephonyManager.getPhoneType();
 
@@ -150,15 +150,15 @@ public class LoginActivity extends AppCompatActivity {
         WifiInfo info = wifiManager.getConnectionInfo();
         String address = info.getMacAddress();
         String IP = Formatter.formatIpAddress(info.getIpAddress());
-        String Imei = UUID.randomUUID().toString();
+        //String Imei = UUID.randomUUID().toString();
 
 
-        if (token.length() == 0) {
+        /*if (refreshedToken.length() == 0) {
             Toast.makeText(getApplicationContext(),
                     "Token Ga Dapat",
                     Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
 
 
         //Toast.makeText(getApplicationContext(),
@@ -186,9 +186,9 @@ public class LoginActivity extends AppCompatActivity {
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("username", isiuser)
                 .addFormDataPart("password", isipass)
-                .addFormDataPart("token", token)
-                .addFormDataPart("simserial",simSerial)
-                .addFormDataPart("imei",imeiNumber)
+                .addFormDataPart("token", refreshedToken)
+                //.addFormDataPart("simserial",simSerial)
+                //.addFormDataPart("imei",imeiNumber)
                 .addFormDataPart("address", address)
                 .addFormDataPart("ip", IP)
                 .addFormDataPart("brand", Build.BRAND)

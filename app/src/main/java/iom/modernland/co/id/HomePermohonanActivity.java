@@ -80,7 +80,7 @@ public class HomePermohonanActivity extends AppCompatActivity {
                     JSONObject jpk = new JSONObject(hasil);
                     boolean st = jpk.getBoolean("status");
                     final int total = jpk.getInt("total");
-                    final int totalKordinasi = jpk.getInt("total_kordinasi");
+                    //final int totalKordinasi = jpk.getInt("total_kordinasi");
 
                     if(st == false)
                     {
@@ -101,7 +101,7 @@ public class HomePermohonanActivity extends AppCompatActivity {
                                 pd.dismiss();
 
                                 initIconWithBadges(total);
-                                initIconWithBadgesKordP(totalKordinasi);
+                                //initIconWithBadgesKordP(totalKordinasi);
 
                             }
                         });

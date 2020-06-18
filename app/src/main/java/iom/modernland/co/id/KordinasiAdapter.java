@@ -17,7 +17,7 @@ public class KordinasiAdapter extends RecyclerView.Adapter<KordinasiViewHolder> 
     public KordinasiViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         View l = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.card_memo, viewGroup, false);
+                .inflate(R.layout.card_kordinasi, viewGroup, false);
 
         KordinasiViewHolder k = new KordinasiViewHolder(l);
 
@@ -29,26 +29,19 @@ public class KordinasiAdapter extends RecyclerView.Adapter<KordinasiViewHolder> 
 
         ListMemo m = data.get(i);
 
-        if (m.status.equals("K")){
-
-            kordinasiViewHolder.txtStatus.setText("Waiting");
-
+        if (m.status_kor.equals("Y") && m.status_email.equals("T")  ){
+            kordinasiViewHolder.txtStatus.setText("Waiting Approved Cordination");
         }
-        if (m.status.equals("C")){
-
-            kordinasiViewHolder.txtStatus.setText("Reject");
-
+        if (m.status_kor.equals("T") && m.status_email.equals("T")  ){
+            kordinasiViewHolder.txtStatus.setText("Approved Cordination");
         }
-        if (m.status_kor.equals("Y")){
-
-            kordinasiViewHolder.txtStatus.setText("Approved");
-
-        }
-
-
         kordinasiViewHolder.txtNomor.setText(m.nomor);
         kordinasiViewHolder.txtID.setText(m.id_iom);
+        kordinasiViewHolder.txtFrom.setText(m.namaUser);
+        kordinasiViewHolder.txtUsername.setText(m.approve);
         kordinasiViewHolder.txtPerihal.setText(m.perihal + "");
+        kordinasiViewHolder.txtUsername.setVisibility(View.GONE);
+
     }
 
     @Override

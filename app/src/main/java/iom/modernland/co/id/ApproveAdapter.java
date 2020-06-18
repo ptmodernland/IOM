@@ -29,14 +29,14 @@ public class ApproveAdapter extends RecyclerView.Adapter<ApproveViewHolder> {
 
         ListMemo a = data.get(i);
 
-        if (a.status.equals("C")){
-            approveViewHolder.txtStatusap.setText("Not Recommended");
-        }
-        if (a.status.equals("T")){
+        if (a.status.equals("Y") && a.status_email.equals("T") && a.kordinasi.equals("T")){
             approveViewHolder.txtStatusap.setText("Waiting Approved");
         }
-        if (a.status.equals("K")){
-            approveViewHolder.txtStatusap.setText("Waiting Approval Recommendation");
+        if (a.status.equals("Y") && a.status_email.equals("T") && a.kordinasi.equals("Y")){
+            approveViewHolder.txtStatusap.setText("Recommended Approved");
+        }
+        if (a.status.equals("Y") && a.status_email.equals("T") && a.kordinasi.equals("C")){
+            approveViewHolder.txtStatusap.setText("Not Recommended Cordination");
         }
         approveViewHolder.txtNomorap.setText(a.nomor);
         approveViewHolder.txtIDap.setText(a.id_iom);

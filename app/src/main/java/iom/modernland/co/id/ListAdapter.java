@@ -29,18 +29,18 @@ public class ListAdapter extends RecyclerView.Adapter<MemoViewHolder> {
 
         ListMemo m = data.get(i);
 
-        if (m.status.equals("T")){
-
+        if (m.status.equals("C")){
+            memoViewHolder.txtStatus.setText("Not Recommended");
+        }
+        if (m.status.equals("T") && m.status_email.equals("T") && m.kordinasi.equals("T")){
             memoViewHolder.txtStatus.setText("Approved");
-
         }
-
-        else if (m.status.equals("C")){
-
-            memoViewHolder.txtStatus.setText("Rejected");
-
+        if (m.status.equals("T") && m.status_email.equals("T") && m.kordinasi.equals("Y")){
+            memoViewHolder.txtStatus.setText("Recommended Cordination");
         }
-
+        if (m.status.equals("Y") && m.status_email.equals("T") && m.kordinasi.equals("C")){
+            memoViewHolder.txtStatus.setText("Not Recommended Cordination");
+        }
         memoViewHolder.txtNomor.setText(m.nomor);
         memoViewHolder.txtID.setText(m.id_iom);
         memoViewHolder.txtPerihal.setText(m.perihal + "");

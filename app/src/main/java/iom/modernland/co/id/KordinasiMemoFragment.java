@@ -98,8 +98,11 @@ public class KordinasiMemoFragment extends Fragment {
                         l.id_iom = jo.getString("id_iom");
                         l.nomor = jo.getString("nomor");
                         l.perihal = jo.getString("perihal");
-                        l.status = jo.getString("status");
+                        l.approve = jo.getString("approve");
                         l.status_kor = jo.getString("status_kor");
+                        l.status_email = jo.getString("status_email");
+                        l.namaUser = jo.getString("namaUser");
+                        l.approve = jo.getString("approve");
 
                         adapter.data.add(l);
                     }

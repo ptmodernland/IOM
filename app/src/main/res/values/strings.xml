@@ -82,7 +82,10 @@
     <string name="karyawan">Karyawan </string>
     <string name="departemen">Departemen </string>
     <string name="detail">Detail</string>
-
+    <string name="status_memo">Status Memo </string>
+    <string name="status_email">Status Email </string>
+    <string name="pilih_head">Pilih Head</string>
+    <string name="from">Dari</string>
 
     <string-array name="head">
         <item>--Pilih Head--</item>
@@ -92,6 +95,10 @@
         <item>Dharma Mitra</item>
         <item>Jamal</item>
         <item>Rifky Andryan</item>
+        <item>Hendra</item>
+        <item>Lusia Widywastuti</item>
+        <item>Bardan Garut Atmaja</item>
+        <item>Arie Susilo</item>
     </string-array>
 
 
