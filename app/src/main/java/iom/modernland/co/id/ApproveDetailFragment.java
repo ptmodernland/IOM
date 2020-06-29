@@ -193,7 +193,7 @@ public class ApproveDetailFragment extends Fragment {
                 dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        
+
                         final TextView passwordUser = (TextView) mView.findViewById(R.id.etPassword);
                         final String isiPassword = passwordUser.getText().toString();
 

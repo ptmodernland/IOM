@@ -54,6 +54,7 @@
 
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="pin">Pin</string>
     <string name="remember">Remember Me</string>
     <string name="nomor">Nomor </string>
     <string name="kode_unit">Kode Unit </string>
