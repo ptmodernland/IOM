@@ -402,4 +402,5 @@ public class MainRedActivity extends AppCompatActivity {
         v_flipper.setOutAnimation(this,android.R.anim.slide_out_right);
 
     }
+
 }

@@ -42,6 +42,8 @@ import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
+    String IP_ISI = "";
+    String address = "";
     String strPhoneType = "";
     int PHONE_type;
     TelephonyManager telephonyManager;
@@ -124,10 +126,6 @@ public class LoginActivity extends AppCompatActivity {
         //String token = refreshedToken.getText().toString();
 
         telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        //String imeiNumber = telephonyManager.getImei();
-        //String softwareVersion = telephonyManager.getDeviceSoftwareVersion();
-        //String simSerial = telephonyManager.getSimSerialNumber();
-        //String subscribeId = telephonyManager.getSubscriberId();
 
         PHONE_type = telephonyManager.getPhoneType();
 
@@ -148,8 +146,22 @@ public class LoginActivity extends AppCompatActivity {
         WifiManager wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
         WifiInfo info = wifiManager.getConnectionInfo();
-        String address = info.getMacAddress();
+        //String address = info.getMacAddress();
         String IP = Formatter.formatIpAddress(info.getIpAddress());
+        String address_wifi = Utils.getMACAddress("wlan0");
+        String address_lan =  Utils.getMACAddress("eth0");
+        String IP_LOKAL = Utils.getIPAddress(true); // IPv4
+
+        if (IP_LOKAL==""){
+             IP_ISI = IP;
+             address = address_lan;
+
+        }
+        else{
+            IP_ISI = IP_LOKAL;
+            address = address_wifi;
+        }
+
         //String Imei = UUID.randomUUID().toString();
 
 
@@ -190,7 +202,7 @@ public class LoginActivity extends AppCompatActivity {
                 //.addFormDataPart("simserial",simSerial)
                 //.addFormDataPart("imei",imeiNumber)
                 .addFormDataPart("address", address)
-                .addFormDataPart("ip", IP)
+                .addFormDataPart("ip", IP_ISI)
                 .addFormDataPart("brand", Build.BRAND)
                 .addFormDataPart("model", Build.MODEL)
                 .addFormDataPart("phonetype", strPhoneType)

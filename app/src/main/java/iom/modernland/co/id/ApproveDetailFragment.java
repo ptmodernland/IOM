@@ -184,15 +184,18 @@ public class ApproveDetailFragment extends Fragment {
         btnApprove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder ab = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+                final View mView = getLayoutInflater().inflate(R.layout.approve_password, null);
 
-                ab.create();
-                ab.setTitle("Confirmation");
-                ab.setIcon(R.drawable.ic_check_black_24dp);
-                ab.setMessage("Apakah Anda Akan Menyetujui?");
-                ab.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                mBuilder.setView(mView);
+
+                AlertDialog dialog = mBuilder.create();
+                dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        
+                        final TextView passwordUser = (TextView) mView.findViewById(R.id.etPassword);
+                        final String isiPassword = passwordUser.getText().toString();
 
                         EditText tCatatan = (EditText) x.findViewById(R.id.tCatatan);
 
@@ -209,6 +212,7 @@ public class ApproveDetailFragment extends Fragment {
                                 .setType(MultipartBody.FORM)
                                 .addFormDataPart("komen", isiKomen)
                                 .addFormDataPart("nomor", nomormemo)
+                                .addFormDataPart("passwordUser", isiPassword)
                                 .addFormDataPart("id_user", id_user)
                                 .build();
 
@@ -264,7 +268,7 @@ public class ApproveDetailFragment extends Fragment {
                                             @Override
                                             public void run() {
                                                 Toast.makeText(getActivity().getApplicationContext(),
-                                                        "Pengajuan Sudah disetujui!",
+                                                        "Iom Berhasil DIsetujui!",
                                                         Toast.LENGTH_LONG).show();
 
                                                 getActivity().getSupportFragmentManager()
@@ -278,19 +282,17 @@ public class ApproveDetailFragment extends Fragment {
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
+
                             }
                         });
 
+                        //Toast.makeText(getActivity(),
+                        //        "Head yang dipilih: " + headPilihan,
+                        //        Toast.LENGTH_LONG).show();
                     }
                 });
-                ab.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                dialog.show();
 
-                    }
-                });
-
-                ab.show();
             }
         });
 
