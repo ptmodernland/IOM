@@ -83,7 +83,7 @@ public class MainRedActivity extends AppCompatActivity {
                            //           Toast.LENGTH_SHORT).show();
                            //}
 
-                            if (isi1.length() == 0) {
+                            /*if (isi1.length() == 0) {
                                 Toast.makeText(MainRedActivity.this,
                                         "Password masih kosong",
                                         Toast.LENGTH_SHORT).show();
@@ -103,7 +103,7 @@ public class MainRedActivity extends AppCompatActivity {
                                        "New Password must same with Confirmation",
                                        Toast.LENGTH_SHORT).show();
                                return;
-                           }
+                           }*/
 
                             // buka postman
                             OkHttpClient postman = new OkHttpClient();
@@ -118,7 +118,7 @@ public class MainRedActivity extends AppCompatActivity {
                                     .setType(MultipartBody.FORM)
                                     .addFormDataPart("id_user", id_user)
                                     .addFormDataPart("password", isi1)
-                                    .addFormDataPart("confirm_password", isi1)
+                                    .addFormDataPart("confirm_password", isi2)
                                     .addFormDataPart("pin", isiPin)
                                     .build();
 
@@ -188,8 +188,6 @@ public class MainRedActivity extends AppCompatActivity {
                                                     finish();
                                                 }
                                             });
-
-
                                         }
 
                                     } catch (JSONException e) {
