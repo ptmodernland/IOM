@@ -71,9 +71,11 @@ public class MainRedActivity extends AppCompatActivity {
 
                             final TextInputEditText mNewPass = (TextInputEditText) mView.findViewById(R.id.newPassword);
                             final TextInputEditText mConfirmPass = (TextInputEditText) mView.findViewById(R.id.confirmPassword);
+                            final TextInputEditText mNewPin = (TextInputEditText) mView.findViewById(R.id.newPin);
 
                             final String isi1 = mNewPass.getText().toString();
                             final String isi2 = mConfirmPass.getText().toString();
+                            final String isiPin = mNewPin.getText().toString();
 
                            //if(isi1.isEmpty() && isi2.isEmpty()){
                            //    Toast.makeText(MainRedActivity.this,
@@ -116,6 +118,8 @@ public class MainRedActivity extends AppCompatActivity {
                                     .setType(MultipartBody.FORM)
                                     .addFormDataPart("id_user", id_user)
                                     .addFormDataPart("password", isi1)
+                                    .addFormDataPart("confirm_password", isi1)
+                                    .addFormDataPart("pin", isiPin)
                                     .build();
 
                             // request (POST + tujuan)
