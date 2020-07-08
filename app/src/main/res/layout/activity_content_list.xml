@@ -49,7 +49,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="130dp">
 
             <FrameLayout
                 android:id="@+id/frameMemo"
@@ -68,7 +68,7 @@
                 fab:menu_animationDelayPerItem="55"
                 fab:menu_backgroundColor="@android:color/transparent"
                 fab:menu_buttonSpacing="0dp"
-                fab:menu_colorNormal="#da3c2f"
+                fab:menu_colorNormal="#25DA3C2F"
                 fab:menu_colorPressed="#dc4b3f"
                 fab:menu_colorRipple="#99d4d4d4"
                 fab:menu_fab_label=""
