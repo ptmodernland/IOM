@@ -49,7 +49,11 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="160dp">
+            android:layout_marginTop="170dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <FrameLayout
                 android:id="@+id/frameApprove"
@@ -120,15 +124,6 @@
                     fab:fab_label="Menu Utama"
                     fab:fab_size="mini" />
 
-                <!--
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabBackA"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_chevron_left_black_24dp"
-                    fab:fab_label="Back"
-                    fab:fab_size="mini" />
-                -->
             </com.github.clans.fab.FloatingActionMenu>
 
 
