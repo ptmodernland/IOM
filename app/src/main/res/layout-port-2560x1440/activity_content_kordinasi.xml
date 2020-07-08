@@ -14,7 +14,7 @@
 
 
         <RelativeLayout
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="32dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/txtDashboard"
-                android:text="@string/menu_list"
+                android:text="@string/list_rekomendasi"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
@@ -48,11 +48,10 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp">
+            android:layout_marginTop="120dp">
 
             <FrameLayout
                 android:id="@+id/frameKordinasi"
-                android:layout_marginRight="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -64,15 +63,15 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="11dp"
                 android:layout_marginRight="11dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="150dp"
+                android:layout_marginBottom="200dp"
                 fab:menu_animationDelayPerItem="55"
                 fab:menu_backgroundColor="@android:color/transparent"
                 fab:menu_buttonSpacing="0dp"
                 fab:menu_colorNormal="#da3c2f"
                 fab:menu_colorPressed="#dc4b3f"
                 fab:menu_colorRipple="#99d4d4d4"
-                fab:menu_fab_size="mini"
+                fab:menu_fab_label=""
+                fab:menu_fab_size="normal"
                 fab:menu_icon="@drawable/fab_add"
                 fab:menu_labels_colorNormal="#333"
                 fab:menu_labels_colorPressed="#444"
@@ -101,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_exit_to_app_black_24dp"
-                    fab:fab_label="Close Aplication"
+                    fab:fab_label="Close App"
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
