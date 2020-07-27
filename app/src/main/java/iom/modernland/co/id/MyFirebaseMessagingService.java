@@ -45,14 +45,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             } else {
                 // Handle message within 10 seconds
-
+                sendNotification(remoteMessage.getNotification().getBody(),click_action,idnya,nomornya);
             }
 
         }
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
-
+            sendNotification(remoteMessage.getNotification().getBody(),click_action,idnya,nomornya);
         }
 
         // Also if you intend on generating your own notifications as a result of a received FCM

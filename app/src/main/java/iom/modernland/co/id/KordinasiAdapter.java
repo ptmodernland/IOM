@@ -38,6 +38,7 @@ public class KordinasiAdapter extends RecyclerView.Adapter<KordinasiViewHolder> 
         kordinasiViewHolder.txtNomor.setText(m.nomor);
         kordinasiViewHolder.txtID.setText(m.id_iom);
         kordinasiViewHolder.txtFrom.setText(m.namaUser);
+        kordinasiViewHolder.txtTo.setText(m.UserKordinasi);
         kordinasiViewHolder.txtUsername.setText(m.approve);
         kordinasiViewHolder.txtPerihal.setText(m.perihal + "");
         kordinasiViewHolder.txtUsername.setVisibility(View.GONE);

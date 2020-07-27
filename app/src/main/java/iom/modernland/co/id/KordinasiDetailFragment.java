@@ -79,7 +79,7 @@ public class KordinasiDetailFragment extends Fragment {
         SharedPreferences sp = getActivity()
                 .getSharedPreferences("DATALOGIN", 0);
 
-        //final String username_apr      = sp.getString("username", "");
+        final String username_apr      = sp.getString("username", "");
 
         Request r = new Request.Builder()
                 .get()
@@ -151,6 +151,7 @@ public class KordinasiDetailFragment extends Fragment {
                                 else{
                                     txtStatusKD.setText("Kordinasi Di Batalkan");
                                 }
+
                             } else {
 
                                 txtNomor.setText(nomor);
@@ -181,6 +182,10 @@ public class KordinasiDetailFragment extends Fragment {
 
                             }
 
+                            if (username.equals(username_apr)){
+                                btnApproveKD.setVisibility(View.INVISIBLE);
+                                btnCancelKD.setVisibility(View.INVISIBLE);
+                            }
 
                             pd.dismiss();
                         }

@@ -1,5 +1,6 @@
 package iom.modernland.co.id;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +9,7 @@ import android.widget.TextView;
 
 public class KordinasiViewHolder extends RecyclerView.ViewHolder {
 
-    TextView txtNomor, txtPerihal, txtStatus, txtID,txtFrom,txtUsername;
+    TextView txtNomor, txtPerihal, txtStatus, txtID,txtFrom,txtUsername,txtTo;
 
     public KordinasiViewHolder(@NonNull final View itemView) {
         super(itemView);
@@ -19,6 +20,8 @@ public class KordinasiViewHolder extends RecyclerView.ViewHolder {
         txtStatus = (TextView) itemView.findViewById(R.id.txtStatus);
         txtFrom = (TextView) itemView.findViewById(R.id.txtFrom);
         txtUsername = (TextView) itemView.findViewById(R.id.txtUsername);
+        txtTo = (TextView) itemView.findViewById(R.id.txtTo);
+
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

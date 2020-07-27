@@ -87,7 +87,8 @@
     <string name="status_email">Status Email </string>
     <string name="pilih_head">Pilih Head</string>
     <string name="from">Dari</string>
-
+    <string name="to">Tujuan</string>
+    
     <string-array name="head">
         <item>--Pilih Head--</item>
         <item>LH. Freddy Chan</item>

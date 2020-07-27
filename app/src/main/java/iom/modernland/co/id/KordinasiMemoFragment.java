@@ -103,6 +103,7 @@ public class KordinasiMemoFragment extends Fragment {
                         l.status_email = jo.getString("status_email");
                         l.namaUser = jo.getString("namaUser");
                         l.approve = jo.getString("approve");
+                        l.UserKordinasi = jo.getString("UserKordinasi");
 
                         adapter.data.add(l);
                     }
