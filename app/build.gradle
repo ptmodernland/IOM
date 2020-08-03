@@ -7,7 +7,7 @@ android {
         applicationId "iom.modernland.co.id"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 2
+        versionCode 3
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -40,8 +40,8 @@ dependencies {
 
     implementation 'com.mcxiaoke.volley:library-aar:1.0.0' /*tambahan volley library*/
 
-    implementation 'com.google.firebase:firebase-core:11.0.2'
-    implementation 'com.google.firebase:firebase-messaging:11.0.2'
+    implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

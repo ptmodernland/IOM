@@ -1,5 +1,6 @@
 package iom.modernland.co.id;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -23,8 +24,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-
-
+        super .onMessageReceived(remoteMessage);
         Map<String, String> data = remoteMessage.getData();
         String idnya = data.get("idnya");
         String nomornya = data.get("nomornya");
@@ -73,6 +73,18 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         String channelId = getString(R.string.default_notification_channel_id);
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        // Since android Oreo notification channel is needed.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            @SuppressLint("WrongConstant") NotificationChannel channel = new NotificationChannel(channelId,
+                    "Channel human readable title",
+                    NotificationManager.IMPORTANCE_MAX);
+            notificationManager.createNotificationChannel(channel);
+        }
+
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
                         .setSmallIcon(R.drawable.ic_home_black_24dp)
@@ -81,20 +93,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
                         .setAutoCancel(true)
                         .setSound(defaultSoundUri)
+                        .setCategory(NotificationCompat.CATEGORY_REMINDER)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setContentIntent(pendingIntent);
 
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(1 /* ID of notification */, notificationBuilder.build());
 
-        // Since android Oreo notification channel is needed.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(channelId,
-                    "Channel human readable title",
-                    NotificationManager.IMPORTANCE_DEFAULT);
-            notificationManager.createNotificationChannel(channel);
-        }
-
-        notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
 
 }
