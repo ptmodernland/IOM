@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -36,7 +37,7 @@ import okhttp3.Response;
 public class MainRedActivity extends AppCompatActivity {
 
     TextView nameuser, walletuser;
-    LinearLayout menuiom, menupbj, menunpv;
+    LinearLayout menuiom, menupbj, menunpv, menusetting;
     ViewFlipper v_flipper;
     DrawerLayout drawermain;
     NavigationView navmain;
@@ -352,6 +353,7 @@ public class MainRedActivity extends AppCompatActivity {
         menuiom = (LinearLayout) findViewById(R.id.menugIom);
         menupbj = (LinearLayout) findViewById(R.id.menugPbj);
         menunpv = (LinearLayout) findViewById(R.id.menugNpv);
+        menusetting = (LinearLayout) findViewById(R.id.menugSetting);
 
         int images[] = {R.drawable.slider1mdln,
                 R.drawable.slider2mdln};
@@ -366,7 +368,6 @@ public class MainRedActivity extends AppCompatActivity {
         menuiom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(MainRedActivity.this, HomeUserActivity.class);
                 startActivity(i);
             }
@@ -385,8 +386,15 @@ public class MainRedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainRedActivity.this, HomeNPVActivity.class);
                 startActivity(i);
+            }
+        });
 
-
+        menusetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //drawermain.openDrawer(Gravity.LEFT);
+                if(!drawermain.isDrawerOpen(Gravity.START)) drawermain.openDrawer(Gravity.START);
+                else drawermain.closeDrawer(Gravity.END);
             }
         });
 

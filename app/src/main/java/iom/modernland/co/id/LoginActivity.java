@@ -146,7 +146,6 @@ public class LoginActivity extends AppCompatActivity {
         WifiManager wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
         WifiInfo info = wifiManager.getConnectionInfo();
-        //String address = info.getMacAddress();
         String IP = Formatter.formatIpAddress(info.getIpAddress());
         String address_wifi = Utils.getMACAddress("wlan0");
         String address_lan =  Utils.getMACAddress("eth0");
@@ -162,36 +161,6 @@ public class LoginActivity extends AppCompatActivity {
             address = address_wifi;
         }
 
-        //String Imei = UUID.randomUUID().toString();
-
-
-        /*if (refreshedToken.length() == 0) {
-            Toast.makeText(getApplicationContext(),
-                    "Token Ga Dapat",
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }*/
-
-
-        //Toast.makeText(getApplicationContext(),
-        //        "Nomor Imei " + imeiNumber + "\n"
-        //                + strPhoneType + "\n"
-        //                + softwareVersion + "\n"
-        //                + simSerial + "\n"
-        //                + subscribeId + "\n"
-        //                + Build.MANUFACTURER + "\n"
-        //                + Build.MODEL + "\n"
-        //                + Build.SERIAL + "\n"
-        //                 + Build.BRAND,
-        //        Toast.LENGTH_LONG).show();
-
-
-        //Intent i = new Intent(getApplicationContext(),
-        //        HomeUserActivity.class);
-        //startActivity(i);
-        //finish();
-
-
         OkHttpClient postman = new OkHttpClient();
 
         RequestBody body = new MultipartBody.Builder()
@@ -199,8 +168,6 @@ public class LoginActivity extends AppCompatActivity {
                 .addFormDataPart("username", isiuser)
                 .addFormDataPart("password", isipass)
                 .addFormDataPart("token", refreshedToken)
-                //.addFormDataPart("simserial",simSerial)
-                //.addFormDataPart("imei",imeiNumber)
                 .addFormDataPart("address", address)
                 .addFormDataPart("ip", IP_ISI)
                 .addFormDataPart("brand", Build.BRAND)
