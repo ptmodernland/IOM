@@ -88,8 +88,22 @@
     <string name="pilih_head">Pilih Head</string>
     <string name="from">Dari</string>
     <string name="to">Tujuan</string>
-    <string name="setting">Pengaturan</string>
-    
+    <string name="setting">Setting</string>
+    <string name="dashboard_kategori">Kategori Iom</string>
+
+    <string name="marketing">Marketing</string>
+    <string name="club">Club</string>
+    <string name="finance">Finance</string>
+    <string name="quality">Quality</string>
+    <string name="surveyor">Surveyor</string>
+    <string name="legal">Legal</string>
+    <string name="purchasing">Purchase</string>
+    <string name="business">Business</string>
+    <string name="develop">Develop</string>
+    <string name="project">Project</string>
+    <string name="promosi">Promosi</string>
+    <string name="hrd">Hrd</string>
+
     <string-array name="head">
         <item>--Pilih Head--</item>
         <item>LH. Freddy Chan</item>

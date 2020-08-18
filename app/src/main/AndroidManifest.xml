@@ -57,6 +57,9 @@
         <activity android:name=".HomeTestDetailActivity" />
         <activity android:name=".HomeTestActivity" />
         <activity android:name=".HomeUserActivity" />
+        <activity android:name=".KategoriIomActivity" />
+        <activity android:name=".ContentKategoriActivity" />
+
         <activity android:name=".HomePermohonanActivity" />
         <activity android:name=".WebViewActivity" />
         <activity android:name=".HomeNPVActivity" />

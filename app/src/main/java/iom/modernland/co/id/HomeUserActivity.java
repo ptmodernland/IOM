@@ -414,13 +414,21 @@ public class HomeUserActivity extends AppCompatActivity {
     }
 
     public void ApproveMemo(View view) {
+        SharedPreferences spl = (HomeUserActivity.this)
+                .getSharedPreferences("DATALOGIN", 0);
+        String level      = spl.getString("level", "");
+        if(level.equals("shead")){
+            Intent i = new Intent(HomeUserActivity.this, KategoriIomActivity.class);
+            startActivity(i);
+        }
+        else{
+            Intent i = new Intent(HomeUserActivity.this, ContentApproveActivity.class);
+            startActivity(i);
+        }
 
-        Intent i = new Intent(HomeUserActivity.this, ContentApproveActivity.class);
-        startActivity(i);
     }
 
     public void KordinasiMemo(View view) {
-
         Intent i = new Intent(HomeUserActivity.this, ContentKordinasiActivity.class);
         startActivity(i);
     }

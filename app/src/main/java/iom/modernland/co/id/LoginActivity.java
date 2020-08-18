@@ -253,6 +253,20 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         }
 
+                        if (lvl.equals("shead")){
+
+                            Intent i = new Intent(getApplicationContext(),
+                                    MainRedActivity.class);
+
+                            i.putExtra("id_user", iduser);
+                            i.putExtra("user", isiuser);
+                            i.putExtra("nama", nama);
+                            i.putExtra("level",lvl);
+
+                            startActivity(i);
+                            finish();
+                        }
+
                         /*else if (lvl.equals("administrasi")){
 
                             Intent i = new Intent(getApplicationContext(),

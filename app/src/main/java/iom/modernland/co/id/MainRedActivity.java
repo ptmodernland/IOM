@@ -78,34 +78,6 @@ public class MainRedActivity extends AppCompatActivity {
                             final String isi2 = mConfirmPass.getText().toString();
                             final String isiPin = mNewPin.getText().toString();
 
-                           //if(isi1.isEmpty() && isi2.isEmpty()){
-                           //    Toast.makeText(MainRedActivity.this,
-                           //            "Please fill any empty fields",
-                           //           Toast.LENGTH_SHORT).show();
-                           //}
-
-                            /*if (isi1.length() == 0) {
-                                Toast.makeText(MainRedActivity.this,
-                                        "Password masih kosong",
-                                        Toast.LENGTH_SHORT).show();
-                                return;
-                            }
-
-                            if (isi2.length() == 0)
-                            {
-                                Toast.makeText(MainRedActivity.this,
-                                        "Confirm Password masih kosong",
-                                        Toast.LENGTH_SHORT).show();
-                                return;
-                            }
-
-                           if(!isi1.equals(isi2)) {
-                               Toast.makeText(MainRedActivity.this,
-                                       "New Password must same with Confirmation",
-                                       Toast.LENGTH_SHORT).show();
-                               return;
-                           }*/
-
                             // buka postman
                             OkHttpClient postman = new OkHttpClient();
 
