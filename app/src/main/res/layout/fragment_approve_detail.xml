@@ -9,8 +9,8 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingTop="5dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
         android:background="#fff"
         android:stretchColumns="2">
 
@@ -116,6 +116,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/kategori"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtKategori"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </TableRow>
 
         <TableRow>

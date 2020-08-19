@@ -103,6 +103,7 @@
     <string name="project">Project</string>
     <string name="promosi">Promosi</string>
     <string name="hrd">Hrd</string>
+    <string name="kategori">Kategori</string>
 
     <string-array name="head">
         <item>--Pilih Head--</item>

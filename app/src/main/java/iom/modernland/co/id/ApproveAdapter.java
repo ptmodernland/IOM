@@ -1,5 +1,6 @@
 package iom.modernland.co.id;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,10 +20,13 @@ public class ApproveAdapter extends RecyclerView.Adapter<ApproveViewHolder> {
         View l = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.card_approve, viewGroup, false);
 
-        ApproveViewHolder a = new ApproveViewHolder(l);
 
-        return a;
+            ApproveViewHolder a = new ApproveViewHolder(l);
+            return a;
+
     }
+
+
 
     @Override
     public void onBindViewHolder(@NonNull ApproveViewHolder approveViewHolder, int i) {
@@ -41,6 +45,7 @@ public class ApproveAdapter extends RecyclerView.Adapter<ApproveViewHolder> {
         approveViewHolder.txtNomorap.setText(a.nomor);
         approveViewHolder.txtIDap.setText(a.id_iom);
         approveViewHolder.txtPerihalap.setText(a.perihal + "");
+        approveViewHolder.txtKategori.setText(a.kategori);
 
     }
 

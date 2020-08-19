@@ -7,11 +7,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-public class ApproveViewHolder extends RecyclerView.ViewHolder {
+public class ApproveKategoriViewHolder extends RecyclerView.ViewHolder {
 
     TextView txtNomorap, txtPerihalap, txtStatusap, txtIDap,txtKategori;
 
-    public ApproveViewHolder(@NonNull final View itemView) {
+    public ApproveKategoriViewHolder(@NonNull final View itemView) {
         super(itemView);
 
         txtIDap = (TextView) itemView.findViewById(R.id.txtIDap);
@@ -24,7 +24,7 @@ public class ApproveViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
-                ContentApproveActivity c = (ContentApproveActivity) itemView.getContext();
+                ContentKategoriActivity c = (ContentKategoriActivity) itemView.getContext();
 
                 String id = txtIDap.getText().toString();
                 String nomor = txtNomorap.getText().toString();

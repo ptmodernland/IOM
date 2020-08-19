@@ -76,6 +76,7 @@ public class ApproveDetailFragment extends Fragment {
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihal);
         final TextView txtWV = (TextView) x.findViewById(R.id.txtWV);
         final TextView txtAF = (TextView) x.findViewById(R.id.txtAF);
+        final TextView txtKategori = (TextView) x.findViewById(R.id.txtKategori);
         final LinearLayout lnAF = (LinearLayout) x.findViewById(R.id.lnAF);
         final Button btnAF = (Button) x.findViewById(R.id.btnAF);
         final Button btnKordinasi = (Button) x.findViewById(R.id.btnKordinasiM);
@@ -125,6 +126,7 @@ public class ApproveDetailFragment extends Fragment {
                     final String perihal = jo.getString("perihal");
                     final String lampiran = jo.getString("attch_lampiran");
                     final String status = jo.getString("status");
+                    final String kategori = jo.getString("kategori_iom");
 
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
@@ -141,7 +143,7 @@ public class ApproveDetailFragment extends Fragment {
                                 txtPerihal.setText(perihal);
                                 txtWV.setText(id);
                                 txtAF.setText(lampiran);
-
+                                txtKategori.setText(kategori);
 
                             } else {
 
@@ -155,7 +157,7 @@ public class ApproveDetailFragment extends Fragment {
                                 txtWV.setText(id);
 
                                 lnAF.setVisibility(View.INVISIBLE);
-
+                                txtKategori.setText(kategori);
                             }
 
                             if ("K".equals(status)){

@@ -37,7 +37,6 @@
         </TableRow>
 
         <TableRow>
-
             <TextView
                 android:text="@string/perihal"
                 android:textColor="#000"
@@ -47,6 +46,21 @@
 
             <TextView
                 android:id="@+id/txtPerihalap"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/kategori"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtKategori"
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

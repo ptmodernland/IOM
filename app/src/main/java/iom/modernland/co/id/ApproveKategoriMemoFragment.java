@@ -92,7 +92,8 @@ public class ApproveKategoriMemoFragment extends Fragment {
                 try {
                     JSONArray j = new JSONArray(hasil);
 
-                    final ApproveAdapter adapter = new ApproveAdapter();
+                    final ApproveKategoriAdapter adapter = new ApproveKategoriAdapter();
+
                     adapter.data = new ArrayList<ListMemo>();
                     for (int i = 0;i < j.length();i++)
                     {
@@ -105,6 +106,7 @@ public class ApproveKategoriMemoFragment extends Fragment {
                         l.status = jo.getString("status");
                         l.status_email = jo.getString("status_email");
                         l.kordinasi = jo.getString("kordinasi");
+                        l.kategori = jo.getString("kategori_iom");
 
                         adapter.data.add(l);
                     }

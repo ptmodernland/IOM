@@ -12,4 +12,5 @@ public class ListMemo {
     public String approve;
     public String namaUser;
     public String UserKordinasi;
+    public String kategori;
 }

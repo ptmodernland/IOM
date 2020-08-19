@@ -30,15 +30,32 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import ru.nikartm.support.BadgePosition;
+import ru.nikartm.support.ImageBadgeView;
 
 public class KategoriIomActivity extends AppCompatActivity  {
 
+
+    private ImageBadgeView imageBadgeViewMarketingClub,imageBadgeViewFinance,imageBadgeViewQs,imageBadgeViewLegal;
+    private ImageBadgeView imageBadgeViewPurchasing,imageBadgeViewBdd,imageBadgeViewProject,imageBadgeViewPromosi;
+    private ImageBadgeView imageBadgeViewMarketing,imageBadgeViewHrd;
     DrawerLayout drawermain;
     NavigationView navmain;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kategori_iom);
+
+        imageBadgeViewMarketingClub = findViewById(R.id.iMarketingClub);
+        imageBadgeViewFinance = findViewById(R.id.iFinance);
+        imageBadgeViewQs = findViewById(R.id.iQs);
+        imageBadgeViewLegal = findViewById(R.id.iLegal);
+        imageBadgeViewPurchasing = findViewById(R.id.iPurchasing);
+        imageBadgeViewBdd = findViewById(R.id.iBdd);
+        imageBadgeViewProject = findViewById(R.id.iProject);
+        imageBadgeViewPromosi = findViewById(R.id.iPromosi);
+        imageBadgeViewMarketing = findViewById(R.id.iMarketing);
+        imageBadgeViewHrd = findViewById(R.id.iHrd);
 
         drawermain = (DrawerLayout) findViewById(R.id.drawerMain);
         navmain = (NavigationView) findViewById(R.id.navMain);
@@ -48,8 +65,6 @@ public class KategoriIomActivity extends AppCompatActivity  {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 if (menuItem.getItemId() == R.id.menuChange) {
 
-                    //Intent i = new Intent(MainRedActivity.this, ChangePAsswordActivity.class);
-                    //startActivity(i);
 
                     AlertDialog.Builder mBuilder = new AlertDialog.Builder(KategoriIomActivity.this);
                     final View mView = getLayoutInflater().inflate(R.layout.dialog_change_password,null);
@@ -312,12 +327,89 @@ public class KategoriIomActivity extends AppCompatActivity  {
                 return false;
             }
         });
+
+        SharedPreferences sp = getSharedPreferences("DATALOGIN", 0);
+        String username      = sp.getString("username", "");
+
+        OkHttpClient postman = new OkHttpClient();
+        Request request = new Request.Builder()
+                .get()
+                .url(Setting.IP + "counter_kategori.php?username=" + username)
+                .build();
+
+        final ProgressDialog pd = new ProgressDialog(KategoriIomActivity.this);
+        pd.setMessage("Please wait");
+        pd.setTitle("Loading ...");
+        pd.setIcon(R.drawable.ic_check_black_24dp);
+        pd.setCancelable(false);
+        pd.show();
+
+        postman.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Please Try Again",
+                                Toast.LENGTH_SHORT).show();
+                        pd.dismiss();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String hasil = response.body().string();
+                try {
+                    JSONObject j = new JSONObject(hasil);
+                    boolean st = j.getBoolean("status");
+                    final int total_marketing_club = j.getInt("total_marketing_club");
+                    final int total_finance = j.getInt("total_finance");
+                    final int total_qs = j.getInt("total_qs");
+                    final int total_legal = j.getInt("total_legal");
+                    final int total_purchasing = j.getInt("total_purchasing");
+                    final int total_bdd = j.getInt("total_bdd");
+                    final int total_project = j.getInt("total_project");
+                    final int total_promosi = j.getInt("total_promosi");
+                    final int total_marketing = j.getInt("total_marketing");
+                    final int total_hrd = j.getInt("total_hrd");
+
+                    if(st == false)
+                    {
+                        final String p = j.getString("pesan");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(),
+                                        p, Toast.LENGTH_LONG).show();
+                                pd.dismiss();
+                            }
+                        });
+                    }
+                    else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                pd.dismiss();
+                                initIconWithBadges(total_marketing_club,total_finance,total_qs,total_legal,total_purchasing,total_bdd,total_project,total_promosi,total_marketing,total_hrd);
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
     }
 
     public void MarketingClub(View view) {
         SharedPreferences.Editor sp
                 = getSharedPreferences("DATALOGIN",0).edit();
         sp.putString("divisi","1");
+        sp.putString("class_action","lHead");
         sp.commit();
         Intent i = new Intent(KategoriIomActivity.this, ContentKategoriActivity.class);
         startActivity(i);
@@ -401,5 +493,119 @@ public class KategoriIomActivity extends AppCompatActivity  {
         sp.commit();
         Intent i = new Intent(KategoriIomActivity.this, ContentKategoriActivity.class);
         startActivity(i);
+    }
+
+    private void initIconWithBadges(int total, int total_finance,int total_qs,int total_legal,int total_purchasing,int total_bdd,int total_project,int total_promosi,int total_marketing,int total_hrd) {
+        //value = total;
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
+        imageBadgeViewMarketingClub.setBadgeValue(total)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewFinance.setBadgeValue(total_finance)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewQs.setBadgeValue(total_qs)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewLegal.setBadgeValue(total_legal)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewPurchasing.setBadgeValue(total_purchasing)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewBdd.setBadgeValue(total_bdd)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewProject.setBadgeValue(total_project)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewPromosi.setBadgeValue(total_promosi)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewMarketing.setBadgeValue(total_marketing)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewHrd.setBadgeValue(total_hrd)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
     }
 }

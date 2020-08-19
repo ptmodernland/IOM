@@ -43,7 +43,6 @@
         <activity android:name=".ContentApproveActivity">
             <intent-filter>
                 <action android:name="iom.modernland.co.id_TARGET_IOM" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -57,7 +56,12 @@
         <activity android:name=".HomeTestDetailActivity" />
         <activity android:name=".HomeTestActivity" />
         <activity android:name=".HomeUserActivity" />
-        <activity android:name=".KategoriIomActivity" />
+        <activity android:name=".KategoriIomActivity">
+            <intent-filter>
+                <action android:name="iom.modernland.co.id_TARGET_IOM_KATEGORI" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ContentKategoriActivity" />
 
         <activity android:name=".HomePermohonanActivity" />

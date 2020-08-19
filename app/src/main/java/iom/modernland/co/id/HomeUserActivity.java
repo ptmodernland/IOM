@@ -417,6 +417,12 @@ public class HomeUserActivity extends AppCompatActivity {
         SharedPreferences spl = (HomeUserActivity.this)
                 .getSharedPreferences("DATALOGIN", 0);
         String level      = spl.getString("level", "");
+
+        SharedPreferences.Editor sp
+                = getSharedPreferences("DATALOGIN",0).edit();
+        sp.putString("class_action","Head");
+        sp.commit();
+
         if(level.equals("shead")){
             Intent i = new Intent(HomeUserActivity.this, KategoriIomActivity.class);
             startActivity(i);
