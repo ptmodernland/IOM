@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/txtDashboard"
                 android:text="@string/dashboardmemo"
-                android:textSize="22sp"
+                android:textSize="24sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -32,7 +32,7 @@
                 android:id="@+id/txtDashboardPBJ"
                 android:text="@string/dashboard_kategori"
                 android:layout_below="@id/txtDashboard"
-                android:textSize="22sp"
+                android:textSize="26sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -105,15 +105,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/marketing"
+                            android:text="@string/Billionaire"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/club"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                     </LinearLayout>
 
@@ -154,8 +154,13 @@
                             android:layout_height="wrap_content"
                             android:text="@string/finance"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
-
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Accounting"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp" />
 
                     </LinearLayout>
 
@@ -194,16 +199,16 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/quality"
+                            android:text="@string/quantity"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/surveyor"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
 
                     </LinearLayout>
@@ -217,6 +222,151 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:alignmentMode="alignMargins"
+                android:columnCount="3"
+                android:columnOrderPreserved="false">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/LnTown"
+                        android:layout_width="match_parent"
+                        android:layout_height="184dp"
+                        android:gravity="center"
+                        android:onClick="Town"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ru.nikartm.support.ImageBadgeView
+                            android:id="@+id/iTown"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_gravity="center"
+                            tools:ibv_badgeValue="0"
+                            tools:ibv_badgeTextSize="16dp"
+                            tools:ibv_badgePadding="5dp"
+                            tools:ibv_badgePosition="top_right"
+                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                            android:src="@drawable/town_management_andro" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Town"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Management"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/LnProject"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:onClick="Project"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ru.nikartm.support.ImageBadgeView
+                            android:id="@+id/iProject"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_gravity="center"
+                            tools:ibv_badgeValue="0"
+                            tools:ibv_badgeTextSize="16dp"
+                            tools:ibv_badgePadding="5dp"
+                            tools:ibv_badgePosition="top_right"
+                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                            android:src="@drawable/project_andro" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/project"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:id="@+id/LnHrd"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:onClick="Hrd"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ru.nikartm.support.ImageBadgeView
+                            android:id="@+id/iHrd"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_gravity="center"
+                            tools:ibv_badgeValue="0"
+                            tools:ibv_badgeTextSize="16dp"
+                            tools:ibv_badgePadding="5dp"
+                            tools:ibv_badgePosition="top_right"
+                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                            android:src="@drawable/hrd_andro" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/human"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/resource"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:layout_marginTop="10dp"
                 android:columnCount="3"
                 android:columnOrderPreserved="false">
 
@@ -255,9 +405,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/legal"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
-
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Operation"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp" />
 
                     </LinearLayout>
 
@@ -298,7 +453,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/purchasing"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
 
                     </LinearLayout>
@@ -340,14 +495,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/business"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/develop"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
 
                     </LinearLayout>
@@ -362,7 +517,8 @@
                 android:alignmentMode="alignMargins"
                 android:layout_marginTop="10dp"
                 android:columnCount="3"
-                android:columnOrderPreserved="false">
+                android:columnOrderPreserved="false"
+                android:rowCount="5">
 
                 <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
@@ -373,16 +529,16 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
-                        android:id="@+id/LnProject"
+                        android:id="@+id/LnLanded"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:onClick="Project"
+                        android:onClick="Landed"
                         android:orientation="vertical"
                         android:padding="16dp">
 
                         <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iProject"
+                            android:id="@+id/iLanded"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_marginTop="20dp"
@@ -392,56 +548,21 @@
                             tools:ibv_badgePadding="5dp"
                             tools:ibv_badgePosition="top_right"
                             tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/project_andro" />
+                            android:src="@drawable/landed_project_andro" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/project"
+                            android:text="@string/Landed"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:id="@+id/LnPromosi"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:onClick="Promosi"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iPromosi"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/promosi_andro" />
+                            android:textSize="15sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/promosi"
+                            android:text="@string/Project"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
-
+                            android:textSize="15sp" />
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
@@ -481,22 +602,11 @@
                             android:layout_height="wrap_content"
                             android:text="@string/marketing"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
-
-            </GridLayout>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:layout_marginTop="10dp"
-                android:columnCount="1"
-                android:columnOrderPreserved="false"
-                android:rowCount="5">
 
                 <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
@@ -507,16 +617,16 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
-                        android:id="@+id/LnHrd"
+                        android:id="@+id/LnPermit"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:onClick="Hrd"
+                        android:onClick="Permit"
                         android:orientation="vertical"
                         android:padding="16dp">
 
                         <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iHrd"
+                            android:id="@+id/iPermit"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_marginTop="20dp"
@@ -526,22 +636,80 @@
                             tools:ibv_badgePadding="5dp"
                             tools:ibv_badgePosition="top_right"
                             tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/hrd_andro" />
+                            android:src="@drawable/permit_sertification_andro" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/hrd"
+                            android:text="@string/Permit"
                             android:textColor="#6f6f6f"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Sertification"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp" />
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
 
-
-
             </GridLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:layout_marginTop="10dp"
+                    android:columnCount="1"
+                    android:columnOrderPreserved="false"
+                    android:rowCount="5">
+
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:id="@+id/LnPromosi"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:onClick="Promosi"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iPromosi"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/promosi_andro" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/promosi"
+                                android:textColor="#6f6f6f"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </GridLayout>
             </LinearLayout>
         </ScrollView>
 

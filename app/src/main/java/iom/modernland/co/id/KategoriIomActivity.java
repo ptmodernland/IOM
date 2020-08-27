@@ -38,7 +38,7 @@ public class KategoriIomActivity extends AppCompatActivity  {
 
     private ImageBadgeView imageBadgeViewMarketingClub,imageBadgeViewFinance,imageBadgeViewQs,imageBadgeViewLegal;
     private ImageBadgeView imageBadgeViewPurchasing,imageBadgeViewBdd,imageBadgeViewProject,imageBadgeViewPromosi;
-    private ImageBadgeView imageBadgeViewMarketing,imageBadgeViewHrd;
+    private ImageBadgeView imageBadgeViewMarketing,imageBadgeViewHrd,imageBadgeViewTown,imageBadgeViewLanded,imageBadgeViewPermit;
     DrawerLayout drawermain;
     NavigationView navmain;
 
@@ -56,6 +56,9 @@ public class KategoriIomActivity extends AppCompatActivity  {
         imageBadgeViewPromosi = findViewById(R.id.iPromosi);
         imageBadgeViewMarketing = findViewById(R.id.iMarketing);
         imageBadgeViewHrd = findViewById(R.id.iHrd);
+        imageBadgeViewTown = findViewById(R.id.iTown);
+        imageBadgeViewLanded = findViewById(R.id.iLanded);
+        imageBadgeViewPermit = findViewById(R.id.iPermit);
 
         drawermain = (DrawerLayout) findViewById(R.id.drawerMain);
         navmain = (NavigationView) findViewById(R.id.navMain);
@@ -374,6 +377,9 @@ public class KategoriIomActivity extends AppCompatActivity  {
                     final int total_promosi = j.getInt("total_promosi");
                     final int total_marketing = j.getInt("total_marketing");
                     final int total_hrd = j.getInt("total_hrd");
+                    final int total_landed = j.getInt("total_landed");
+                    final int total_town = j.getInt("total_town");
+                    final int total_permit = j.getInt("total_permit");
 
                     if(st == false)
                     {
@@ -392,7 +398,7 @@ public class KategoriIomActivity extends AppCompatActivity  {
                             @Override
                             public void run() {
                                 pd.dismiss();
-                                initIconWithBadges(total_marketing_club,total_finance,total_qs,total_legal,total_purchasing,total_bdd,total_project,total_promosi,total_marketing,total_hrd);
+                                initIconWithBadges(total_marketing_club,total_finance,total_qs,total_legal,total_purchasing,total_bdd,total_project,total_promosi,total_marketing,total_hrd,total_landed,total_town,total_permit);
                             }
                         });
                     }
@@ -495,7 +501,33 @@ public class KategoriIomActivity extends AppCompatActivity  {
         startActivity(i);
     }
 
-    private void initIconWithBadges(int total, int total_finance,int total_qs,int total_legal,int total_purchasing,int total_bdd,int total_project,int total_promosi,int total_marketing,int total_hrd) {
+    public void Town(View view) {
+        SharedPreferences.Editor sp
+                = getSharedPreferences("DATALOGIN",0).edit();
+        sp.putString("divisi","11");
+        sp.commit();
+        Intent i = new Intent(KategoriIomActivity.this, ContentKategoriActivity.class);
+        startActivity(i);
+    }
+
+    public void Landed(View view) {
+        SharedPreferences.Editor sp
+                = getSharedPreferences("DATALOGIN",0).edit();
+        sp.putString("divisi","12");
+        sp.commit();
+        Intent i = new Intent(KategoriIomActivity.this, ContentKategoriActivity.class);
+        startActivity(i);
+    }
+
+    public void Permit(View view) {
+        SharedPreferences.Editor sp
+                = getSharedPreferences("DATALOGIN",0).edit();
+        sp.putString("divisi","13");
+        sp.commit();
+        Intent i = new Intent(KategoriIomActivity.this, ContentKategoriActivity.class);
+        startActivity(i);
+    }
+    private void initIconWithBadges(int total, int total_finance,int total_qs,int total_legal,int total_purchasing,int total_bdd,int total_project,int total_promosi,int total_marketing,int total_hrd,int total_landed,int total_town,int total_permit) {
         //value = total;
         Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
         imageBadgeViewMarketingClub.setBadgeValue(total)
@@ -598,6 +630,39 @@ public class KategoriIomActivity extends AppCompatActivity  {
                 .setBadgePadding(4);
 
         imageBadgeViewHrd.setBadgeValue(total_hrd)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewLanded.setBadgeValue(total_landed)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewTown.setBadgeValue(total_town)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+
+        imageBadgeViewPermit.setBadgeValue(total_permit)
                 .setBadgeOvalAfterFirst(true)
                 .setBadgeTextSize(16)
                 .setMaxBadgeValue(999)

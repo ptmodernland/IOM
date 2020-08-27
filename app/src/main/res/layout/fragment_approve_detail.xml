@@ -14,22 +14,7 @@
         android:background="#fff"
         android:stretchColumns="2">
 
-        <TableRow>
 
-            <TextView
-                android:text="@string/nomor"
-                android:textColor="#000"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"/>
-
-            <TextView
-                android:id="@+id/txtNomord"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="5dp" />
-
-        </TableRow>
 
         <TableRow>
 
@@ -104,17 +89,17 @@
         <TableRow>
 
             <TextView
-                android:text="@string/perihal"
+                android:text="@string/nomor"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
 
             <TextView
-                android:id="@+id/txtPerihal"
-                android:layout_marginLeft="5dp"
+                android:id="@+id/txtNomord"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp" />
 
         </TableRow>
 
@@ -132,23 +117,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </TableRow>
-
         <TableRow>
 
             <TextView
-                android:text="@string/jenis"
+                android:text="@string/perihal"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
 
             <TextView
-                android:id="@+id/txtJenis"
+                android:id="@+id/txtPerihal"
                 android:layout_marginLeft="5dp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
         </TableRow>
+
 
         <TableRow>
 
@@ -178,6 +163,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_marginLeft="25dp"
         android:layout_height="match_parent">
 
         <LinearLayout

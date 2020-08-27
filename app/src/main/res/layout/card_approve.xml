@@ -21,20 +21,20 @@
             android:visibility="gone"/>
 
         <TableRow>
-
             <TextView
-                android:text="@string/nomor"
+                android:text="@string/kategori"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
 
             <TextView
-                android:id="@+id/txtNomorap"
+                android:id="@+id/txtKategori"
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </TableRow>
+
 
         <TableRow>
             <TextView
@@ -52,15 +52,16 @@
         </TableRow>
 
         <TableRow>
+
             <TextView
-                android:text="@string/kategori"
+                android:text="@string/nomor"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
 
             <TextView
-                android:id="@+id/txtKategori"
+                android:id="@+id/txtNomorap"
                 android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

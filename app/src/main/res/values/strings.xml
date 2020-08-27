@@ -22,8 +22,8 @@
     <string name="menu_approv">Menu Approve</string>
     <string name="main_menu">Main Menu </string>
 
-    <string name="iom">IOM</string>
-    <string name="npv">NPV</string>
+    <string name="iom">Approval IOM</string>
+    <string name="npv">Approve NPV</string>
     <string name="permohonan">PBJ</string>
 
     <string name="approve_memo">Approve Memo</string>
@@ -32,13 +32,14 @@
     <string name="list_pembelian">List Pembelian</string>
     <string name="list_permohonan">List Permohonan</string>
     <string name="list_rekomendasi">List Rekomendasi</string>
-    <string name="approve">Approved </string>
+    <string name="wait">Wait For </string>
     <string name="reject">Rejected </string>
     <string name="kordinasi">Kordinasi </string>
-    <string name="rekomendasi">Rekomendasi </string>
-    <string name="list">List </string>
+    <string name="rekomendasi">Recomendation </string>
+    <string name="list">History </string>
+    <string name="lists">List </string>
     <string name="memo">Memo </string>
-    <string name="permo">Permohonan </string>
+    <string name="permo">Approval Permohonan </string>
     <string name="pemberit">Pemberitahuan </string>
     <string name="pembel">Pembelian </string>
 
@@ -94,16 +95,27 @@
     <string name="marketing">Marketing</string>
     <string name="club">Club</string>
     <string name="finance">Finance</string>
-    <string name="quality">Quality</string>
+    <string name="quantity">Quantity</string>
     <string name="surveyor">Surveyor</string>
     <string name="legal">Legal</string>
-    <string name="purchasing">Purchase</string>
+    <string name="purchasing">Purchasing</string>
     <string name="business">Business</string>
-    <string name="develop">Develop</string>
-    <string name="project">Project</string>
+    <string name="develop">Development</string>
+    <string name="project">Technical</string>
     <string name="promosi">Promosi</string>
-    <string name="hrd">Hrd</string>
+    <string name="human">Human</string>
+    <string name="resource">Resource</string>
     <string name="kategori">Kategori</string>
+    <string name="Accounting">Accounting</string>
+    <string name="Operation">Operation</string>
+    <string name="Billionaire">Billionaire</string>
+    <string name="Town">Town</string>
+    <string name="Management">Management</string>
+    <string name="Landed">Landed</string>
+    <string name="Project">Project</string>
+    <string name="Permit">Permit</string>
+    <string name="Sertification">Sertification</string>
+    <string name="approve">Approved</string>
 
     <string-array name="head">
         <item>--Pilih Head--</item>
