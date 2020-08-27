@@ -72,7 +72,7 @@ public class ApproveDetailFragment extends Fragment {
         final TextView txtCc = (TextView) x.findViewById(R.id.txtCc);
         final TextView txtDari = (TextView) x.findViewById(R.id.txtDari);
         final TextView txtTanggal = (TextView) x.findViewById(R.id.txtTanggal);
-        final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenis);
+        //final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenis);
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihal);
         final TextView txtWV = (TextView) x.findViewById(R.id.txtWV);
         final TextView txtAF = (TextView) x.findViewById(R.id.txtAF);
@@ -122,7 +122,7 @@ public class ApproveDetailFragment extends Fragment {
                     final String cc = jo.getString("cc");
                     final String dari = jo.getString("dari");
                     final String tanggal = jo.getString("tanggal");
-                    final String jenis = jo.getString("jenis");
+                    //final String jenis = jo.getString("jenis");
                     final String perihal = jo.getString("perihal");
                     final String lampiran = jo.getString("attch_lampiran");
                     final String status = jo.getString("status");
@@ -139,7 +139,7 @@ public class ApproveDetailFragment extends Fragment {
                                 txtCc.setText(cc);
                                 txtDari.setText(dari);
                                 txtTanggal.setText(tanggal);
-                                txtJenis.setText(jenis);
+                                //txtJenis.setText(jenis);
                                 txtPerihal.setText(perihal);
                                 txtWV.setText(id);
                                 txtAF.setText(lampiran);
@@ -152,7 +152,7 @@ public class ApproveDetailFragment extends Fragment {
                                 txtCc.setText(cc);
                                 txtDari.setText(dari);
                                 txtTanggal.setText(tanggal);
-                                txtJenis.setText(jenis);
+                                //txtJenis.setText(jenis);
                                 txtPerihal.setText(perihal);
                                 txtWV.setText(id);
 
