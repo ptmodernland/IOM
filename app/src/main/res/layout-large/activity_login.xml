@@ -100,7 +100,6 @@
                 android:onClick="prosesLogin"
                 android:text="@string/login"
                 android:fontFamily="@font/helvetica"
-                android:fontFamily="@font/helvetica"
                 android:textColor="#fff"
                 android:textSize="21dp" />
 
