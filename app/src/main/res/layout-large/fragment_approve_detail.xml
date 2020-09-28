@@ -17,6 +17,7 @@
 
             <TextView
                 android:text="@string/nomor"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -25,6 +26,7 @@
 
             <TextView
                 android:id="@+id/txtNomord"
+                android:fontFamily="@font/helvetica"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textSize="22dp"
@@ -36,6 +38,7 @@
 
             <TextView
                 android:text="@string/kepada"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -44,6 +47,7 @@
 
             <TextView
                 android:id="@+id/txtKepada"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:paddingRight="100dp"
                 android:textSize="22dp"
@@ -56,6 +60,7 @@
 
             <TextView
                 android:text="@string/cc"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -64,6 +69,7 @@
 
             <TextView
                 android:id="@+id/txtCc"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -75,6 +81,7 @@
 
             <TextView
                 android:text="@string/dari"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -84,6 +91,7 @@
 
             <TextView
                 android:id="@+id/txtDari"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -95,6 +103,7 @@
 
             <TextView
                 android:text="@string/tanggal"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -103,6 +112,7 @@
 
             <TextView
                 android:id="@+id/txtTanggal"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -114,6 +124,7 @@
 
             <TextView
                 android:text="@string/perihal"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -122,6 +133,7 @@
 
             <TextView
                 android:id="@+id/txtPerihal"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:textSize="22dp"
                 android:layout_width="wrap_content"
@@ -133,6 +145,7 @@
 
             <TextView
                 android:text="@string/jenis"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -141,6 +154,7 @@
 
             <TextView
                 android:id="@+id/txtJenis"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -152,6 +166,7 @@
 
             <TextView
                 android:text="@string/catatan"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -160,6 +175,7 @@
 
             <EditText
                 android:id="@+id/tCatatan"
+                android:fontFamily="@font/helvetica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="100dp"
@@ -190,6 +206,7 @@
                 android:id="@+id/btnWV"
                 android:drawableLeft="@drawable/ic_search_black_24dp"
                 android:text="@string/view"
+                android:fontFamily="@font/helvetica"
                 android:textSize="21dp"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content" />
@@ -212,6 +229,7 @@
                 android:id="@+id/btnAF"
                 android:drawableLeft="@drawable/ic_file_download_black_24dp"
                 android:text="@string/file"
+                android:fontFamily="@font/helvetica"
                 android:textSize="21dp"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"/>
@@ -238,6 +256,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="21dp"
+            android:fontFamily="@font/helvetica"
             android:text="@string/reject"/>
 
         <Button
@@ -245,7 +264,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="21dp"
+            android:fontFamily="@font/helvetica"
             android:text="@string/approve"/>
+        <Button
+            android:id="@+id/btnKordinasiM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
+            android:textSize="21dp"
+            android:text="@string/kordinasi"/>
 
     </LinearLayout>
 

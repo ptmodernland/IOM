@@ -20,6 +20,7 @@
 
             <TextView
                 android:text="@string/kepada"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
 
             <TextView
                 android:id="@+id/txtKepada"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:paddingRight="100dp"
                 android:layout_width="wrap_content"
@@ -38,6 +40,7 @@
 
             <TextView
                 android:text="@string/cc"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -45,6 +48,7 @@
 
             <TextView
                 android:id="@+id/txtCc"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -55,6 +59,7 @@
 
             <TextView
                 android:text="@string/dari"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,6 +68,7 @@
 
             <TextView
                 android:id="@+id/txtDari"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -73,6 +79,7 @@
 
             <TextView
                 android:text="@string/tanggal"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,6 +87,7 @@
 
             <TextView
                 android:id="@+id/txtTanggal"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -90,6 +98,7 @@
 
             <TextView
                 android:text="@string/nomor"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,6 +106,7 @@
 
             <TextView
                 android:id="@+id/txtNomord"
+                android:fontFamily="@font/helvetica"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp" />
@@ -106,6 +116,7 @@
         <TableRow>
             <TextView
                 android:text="@string/kategori"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -113,6 +124,7 @@
 
             <TextView
                 android:id="@+id/txtKategori"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -121,6 +133,7 @@
 
             <TextView
                 android:text="@string/perihal"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,6 +141,7 @@
 
             <TextView
                 android:id="@+id/txtPerihal"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -139,6 +153,7 @@
 
             <TextView
                 android:text="@string/catatan"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -146,6 +161,7 @@
 
             <EditText
                 android:id="@+id/tCatatan"
+                android:fontFamily="@font/helvetica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="100dp"
@@ -176,6 +192,7 @@
                 android:id="@+id/btnWV"
                 android:drawableLeft="@drawable/ic_search_black_24dp"
                 android:text="@string/view"
+                android:fontFamily="@font/helvetica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -197,6 +214,7 @@
                 android:id="@+id/btnAF"
                 android:drawableLeft="@drawable/ic_file_download_black_24dp"
                 android:text="@string/file"
+                android:fontFamily="@font/helvetica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -231,18 +249,21 @@
             android:id="@+id/btnCancelM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
             android:text="@string/reject"/>
 
         <Button
             android:id="@+id/btnApproveM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
             android:text="@string/approve"/>
 
         <Button
             android:id="@+id/btnKordinasiM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
             android:text="@string/rekomendasi"/>
 
     </LinearLayout>

@@ -21,21 +21,13 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/txtDashboard"
-                android:text="@string/dashboardmemo"
-                android:textSize="24sp"
-                android:textColor="#FFFFFF"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
                 android:id="@+id/txtDashboardPBJ"
-                android:text="@string/dashboard_kategori"
-                android:layout_below="@id/txtDashboard"
-                android:textSize="26sp"
-                android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica"
+                android:text="@string/dashboard_kategori"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp" />
 
             <TextView
                 android:layout_marginTop="6dp"
@@ -106,12 +98,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/Billionaire"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/club"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -153,12 +147,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/finance"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/Accounting"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -200,6 +196,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/quantity"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -207,6 +204,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/surveyor"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -258,6 +256,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/helvetica"
                             android:text="@string/Town"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
@@ -266,6 +265,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/Management"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -307,6 +307,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/project"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -348,12 +349,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/human"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/resource"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -404,6 +407,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/legal"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -411,6 +415,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/Operation"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -452,6 +457,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/purchasing"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -494,6 +500,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/business"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -501,6 +508,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/develop"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -554,6 +562,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/Landed"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -561,6 +570,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/Project"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -601,6 +611,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/marketing"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -642,6 +653,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/Permit"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
 
@@ -649,6 +661,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/Sertification"
+                            android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp" />
                     </LinearLayout>
@@ -701,6 +714,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/promosi"
+                                android:fontFamily="@font/helvetica"
                                 android:textColor="#6f6f6f"
                                 android:textSize="15sp" />
 

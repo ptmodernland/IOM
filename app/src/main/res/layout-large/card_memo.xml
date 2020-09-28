@@ -24,6 +24,7 @@
 
             <TextView
                 android:text="@string/nomor"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -32,6 +33,7 @@
 
             <TextView
                 android:id="@+id/txtNomor"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="10dp"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -42,6 +44,7 @@
 
             <TextView
                 android:text="@string/perihal"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -50,6 +53,7 @@
 
             <TextView
                 android:id="@+id/txtPerihal"
+                android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="10dp"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -60,6 +64,7 @@
 
             <TextView
                 android:text="@string/status"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_width="match_parent"
@@ -68,6 +73,7 @@
 
             <TextView
                 android:id="@+id/txtStatus"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#000"
                 android:textSize="22dp"
                 android:layout_marginLeft="10dp"

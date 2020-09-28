@@ -23,6 +23,7 @@
             <TextView
                 android:id="@+id/txtPilihHead"
                 android:text="@string/pilih_head"
+                android:fontFamily="@font/helvetica"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"

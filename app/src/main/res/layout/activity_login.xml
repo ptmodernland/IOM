@@ -78,6 +78,7 @@
                 android:layout_below="@id/password"
                 android:layout_marginLeft="12dp"
                 android:hint="@string/remember"
+                android:fontFamily="@font/helvetica"
                 android:textColorHint="#1e3c73"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
@@ -94,6 +95,7 @@
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/button_gradient"
                 android:text="@string/login"
+                android:fontFamily="@font/helvetica"
                 android:textColor="#fff"/>
 
 
@@ -114,6 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="47dp"
             android:text="@string/modernland_apps"
+            android:fontFamily="@font/helvetica"
             android:textColor="#fff"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"

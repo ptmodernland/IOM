@@ -21,18 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/txtDashboard"
-                android:text="@string/dashboardmemo"
-                android:textSize="22sp"
-                android:textColor="#FFFFFF"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/txtDashboardPBJ"
                 android:text="@string/dashboard_iom"
-                android:layout_below="@id/txtDashboard"
+                android:fontFamily="@font/helvetica"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
@@ -98,6 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/wait"
+                        android:fontFamily="@font/helvetica"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -105,6 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/iom"
+                        android:fontFamily="@font/helvetica"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -141,6 +136,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/list"
+                        android:fontFamily="@font/helvetica"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -148,6 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/iom"
+                        android:fontFamily="@font/helvetica"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -190,6 +187,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/lists"
+                        android:fontFamily="@font/helvetica"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -197,6 +195,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/rekomendasi"
+                        android:fontFamily="@font/helvetica"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -264,6 +263,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/setting"
+                        android:fontFamily="@font/helvetica"
                         android:textColor="#6f6f6f"
                         android:layout_marginBottom="10dp"
                         android:textSize="18sp" />
