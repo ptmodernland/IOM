@@ -9,30 +9,12 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
         android:background="#fff"
         android:stretchColumns="2">
 
-        <TableRow>
 
-            <TextView
-                android:text="@string/nomor"
-                android:fontFamily="@font/helvetica"
-                android:textColor="#000"
-                android:textSize="22dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"/>
-
-            <TextView
-                android:id="@+id/txtNomord"
-                android:fontFamily="@font/helvetica"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textSize="22dp"
-                android:layout_marginLeft="5dp" />
-
-        </TableRow>
 
         <TableRow>
 
@@ -40,7 +22,6 @@
                 android:text="@string/kepada"
                 android:fontFamily="@font/helvetica"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -50,7 +31,6 @@
                 android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
                 android:paddingRight="100dp"
-                android:textSize="22dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -62,7 +42,6 @@
                 android:text="@string/cc"
                 android:fontFamily="@font/helvetica"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -71,7 +50,6 @@
                 android:id="@+id/txtCc"
                 android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -83,7 +61,6 @@
                 android:text="@string/dari"
                 android:fontFamily="@font/helvetica"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -93,7 +70,6 @@
                 android:id="@+id/txtDari"
                 android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -105,7 +81,6 @@
                 android:text="@string/tanggal"
                 android:fontFamily="@font/helvetica"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -114,7 +89,6 @@
                 android:id="@+id/txtTanggal"
                 android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -123,10 +97,44 @@
         <TableRow>
 
             <TextView
+                android:text="@string/nomor"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtNomord"
+                android:fontFamily="@font/helvetica"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp" />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/kategori"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtKategori"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow>
+
+            <TextView
                 android:text="@string/perihal"
                 android:fontFamily="@font/helvetica"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -135,32 +143,11 @@
                 android:id="@+id/txtPerihal"
                 android:fontFamily="@font/helvetica"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
         </TableRow>
 
-        <TableRow>
-
-            <TextView
-                android:text="@string/jenis"
-                android:fontFamily="@font/helvetica"
-                android:textColor="#000"
-                android:textSize="22dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"/>
-
-            <TextView
-                android:id="@+id/txtJenis"
-                android:fontFamily="@font/helvetica"
-                android:layout_marginLeft="5dp"
-                android:textSize="22dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </TableRow>
 
         <TableRow>
 
@@ -168,7 +155,6 @@
                 android:text="@string/catatan"
                 android:fontFamily="@font/helvetica"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -180,7 +166,6 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="100dp"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:gravity="top|left"
                 android:hint="@string/komen"
                 android:lines="10"
@@ -194,6 +179,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_marginLeft="25dp"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -207,8 +193,7 @@
                 android:drawableLeft="@drawable/ic_search_black_24dp"
                 android:text="@string/view"
                 android:fontFamily="@font/helvetica"
-                android:textSize="21dp"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
@@ -230,8 +215,7 @@
                 android:drawableLeft="@drawable/ic_file_download_black_24dp"
                 android:text="@string/file"
                 android:fontFamily="@font/helvetica"
-                android:textSize="21dp"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <TextView
@@ -245,17 +229,26 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent">
 
         <Button
             android:id="@+id/btnCancelM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="21dp"
             android:fontFamily="@font/helvetica"
             android:text="@string/reject"/>
 
@@ -263,16 +256,15 @@
             android:id="@+id/btnApproveM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="21dp"
             android:fontFamily="@font/helvetica"
             android:text="@string/approve"/>
+
         <Button
             android:id="@+id/btnKordinasiM"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/helvetica"
-            android:textSize="21dp"
-            android:text="@string/kordinasi"/>
+            android:text="@string/rekomendasi"/>
 
     </LinearLayout>
 

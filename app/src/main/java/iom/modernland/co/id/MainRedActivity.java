@@ -37,7 +37,7 @@ import okhttp3.Response;
 public class MainRedActivity extends AppCompatActivity {
 
     TextView nameuser, walletuser;
-    LinearLayout menuiom, menupbj, menunpv, menusetting;
+    //LinearLayout menuiom, menupbj, menunpv, menuperubahan;
     ViewFlipper v_flipper;
     DrawerLayout drawermain;
     NavigationView navmain;
@@ -322,10 +322,6 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
-        menuiom = (LinearLayout) findViewById(R.id.menugIom);
-        menupbj = (LinearLayout) findViewById(R.id.menugPbj);
-        menunpv = (LinearLayout) findViewById(R.id.menugNpv);
-        menusetting = (LinearLayout) findViewById(R.id.menugSetting);
 
         int images[] = {R.drawable.slider1mdln,
                 R.drawable.slider2mdln};
@@ -334,8 +330,15 @@ public class MainRedActivity extends AppCompatActivity {
         for (int i =0; i<images.length; i++){
             fliverImages(images[i]);
         }
-        for (int image: images)
+
+        for (int image: images) {
             fliverImages(image);
+        }
+
+        LinearLayout menuiom = (LinearLayout) findViewById(R.id.menugIom);
+        LinearLayout menupbj = (LinearLayout) findViewById(R.id.menugPbj);
+        LinearLayout menunpv = (LinearLayout) findViewById(R.id.menugNpv);
+        LinearLayout menuperubahan = (LinearLayout) findViewById(R.id.menugSetting);
 
         menuiom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -361,12 +364,23 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
-        menusetting.setOnClickListener(new View.OnClickListener() {
+        menunpv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //drawermain.openDrawer(Gravity.LEFT);
-                if(!drawermain.isDrawerOpen(Gravity.START)) drawermain.openDrawer(Gravity.START);
-                else drawermain.closeDrawer(Gravity.END);
+                Intent i = new Intent(MainRedActivity.this, HomeNPVActivity.class);
+                startActivity(i);
+            }
+        });
+
+       menuperubahan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!drawermain.isDrawerOpen(Gravity.START)) {
+                    drawermain.openDrawer(Gravity.START);
+                }
+                else {
+                    drawermain.closeDrawer(Gravity.END);
+                }
             }
         });
 

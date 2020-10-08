@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
                 break;
 
             case (TelephonyManager.PHONE_TYPE_NONE) :
-                strPhoneType = "NONE";
+                strPhoneType = "TABLET";
                 break;
         }
 
