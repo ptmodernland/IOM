@@ -364,13 +364,13 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
-        menunpv.setOnClickListener(new View.OnClickListener() {
+        /*menunpv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainRedActivity.this, HomeNPVActivity.class);
                 startActivity(i);
             }
-        });
+        });*/
 
        menuperubahan.setOnClickListener(new View.OnClickListener() {
             @Override

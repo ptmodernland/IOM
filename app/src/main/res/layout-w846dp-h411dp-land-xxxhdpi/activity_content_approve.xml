@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgappsgrey"
-    tools:context=".ContentApproveActivity">
+    tools:context=".ContentApproveActivity"
+    tools:ignore="MissingDefaultResource">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <RelativeLayout
             android:layout_marginTop="22dp"
@@ -22,18 +22,16 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/txtMenuAM"
+                android:id="@+id/txtDashboard"
                 android:text="@string/menu_approv"
-                android:fontFamily="@font/helvetica"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_below="@id/txtMenuAM"
+                android:layout_below="@id/txtDashboard"
                 android:text="@string/dashboard_iom"
-                android:fontFamily="@font/helvetica"
                 android:textSize="22sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
@@ -60,7 +58,7 @@
                 android:layout_height="wrap_content" />
 
             <com.github.clans.fab.FloatingActionMenu
-                android:id="@+id/menuFAMA"
+                android:id="@+id/menuFAM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -100,15 +98,15 @@
                 fab:menu_showShadow="true">
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabExitA"
+                    android:id="@+id/menuFabExit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_exit_to_app_black_24dp"
-                    fab:fab_label="Close Aplication"
+                    fab:fab_label="Close App"
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabLogoutA"
+                    android:id="@+id/menuFabLogout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_repeat_black_24dp"
@@ -116,18 +114,27 @@
                     fab:fab_size="mini" />
 
                 <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/menuFabMainA"
+                    android:id="@+id/menuFabMain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_home_black_24dp"
                     fab:fab_label="Menu Utama"
                     fab:fab_size="mini" />
+
+                <!--
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/menuFabBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_chevron_left_black_24dp"
+                    fab:fab_label="Back"
+                    fab:fab_size="mini" />
+                -->
             </com.github.clans.fab.FloatingActionMenu>
 
 
         </RelativeLayout>
 
     </LinearLayout>
-
 
 </RelativeLayout>

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgappsgrey"
-    tools:context=".ContentApproveActivity">
+    tools:context=".ContentApproveActivity"
+    tools:ignore="MissingDefaultResource">
 
     <LinearLayout
         android:orientation="vertical"
@@ -51,7 +52,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="160dp" />
+            android:layout_marginTop="145dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"

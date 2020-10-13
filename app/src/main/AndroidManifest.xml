@@ -22,17 +22,19 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ContentKordinasiPBJActivity"></activity>
+
         <activity android:name=".ChangePAsswordActivity" />
+
         <activity android:name=".MainRedActivity" />
         <activity
             android:name=".ContentApproveNPVActivity"
             android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="iom.modernland.co.id_TARGET_NPV" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ContentApprovePBJActivity">
             <intent-filter>
                 <action android:name="iom.modernland.co.id_TARGET_PBJ" />
@@ -40,12 +42,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ContentApproveActivity">
+
+        <activity android:name=".ContentApproveActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="iom.modernland.co.id_TARGET_IOM" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ContentKordinasiActivity">
             <intent-filter>
                 <action android:name="iom.modernland.co.id_TARGET_IOM_KORDINASI" />
@@ -53,25 +58,36 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity android:name=".HomeTestDetailActivity" />
+
         <activity android:name=".HomeTestActivity" />
-        <activity android:name=".HomeUserActivity" />
+
+        <activity android:name=".HomeUserActivity"/>
+
         <activity android:name=".KategoriIomActivity">
             <intent-filter>
                 <action android:name="iom.modernland.co.id_TARGET_IOM_KATEGORI" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ContentKategoriActivity" />
 
         <activity android:name=".HomePermohonanActivity" />
+
         <activity android:name=".WebViewActivity" />
+
         <activity android:name=".HomeNPVActivity" />
+
         <activity
             android:name=".ContentListNpvActivity"
             android:configChanges="orientation|screenSize" />
+
         <activity android:name=".ContentListPBJActivity" />
+
         <activity android:name=".ContentListActivity" />
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,8 +95,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".DialogHeadActivity" />
+
         <activity android:name=".MainActivity" />
+
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
