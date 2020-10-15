@@ -49,7 +49,7 @@
             android:layout_below="@+id/relatif1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="155dp"
+            android:layout_marginTop="115dp"
             android:id="@+id/scroll1">
 
             <LinearLayout
@@ -267,7 +267,7 @@
                             android:text="@string/Management"
                             android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
+                            android:textSize="13sp" />
 
                     </LinearLayout>
 
@@ -417,7 +417,7 @@
                             android:text="@string/Operation"
                             android:fontFamily="@font/helvetica"
                             android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
+                            android:textSize="13sp" />
 
                     </LinearLayout>
 
@@ -438,7 +438,7 @@
                         android:gravity="center"
                         android:onClick="Purchasing"
                         android:orientation="vertical"
-                        android:padding="16dp">
+                        android:padding="13dp">
 
                         <ru.nikartm.support.ImageBadgeView
                             android:id="@+id/iPurchasing"

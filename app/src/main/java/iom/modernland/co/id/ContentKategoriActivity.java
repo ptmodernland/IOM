@@ -34,7 +34,7 @@ public class ContentKategoriActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_content_approve);
+        setContentView(R.layout.activity_content_approves);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameApprove, new ApproveKategoriMemoFragment())
                 .addToBackStack(null)

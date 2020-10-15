@@ -8,6 +8,12 @@
     android:id="@+id/drawerMain"
     tools:context=".MainRedActivity">
 
+    <ScrollView
+        android:layout_below="@+id/relatif1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scroll1">
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -58,6 +64,8 @@
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/nameuser" />
+
+
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -225,7 +233,7 @@
         </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
-
+    </ScrollView>
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_gravity="start"

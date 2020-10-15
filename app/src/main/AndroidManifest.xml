@@ -43,8 +43,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ContentApproveActivity"
-            android:configChanges="orientation|screenSize">
+        <activity android:name=".ContentApproveActivity">
             <intent-filter>
                 <action android:name="iom.modernland.co.id_TARGET_IOM" />
                 <category android:name="android.intent.category.DEFAULT" />
