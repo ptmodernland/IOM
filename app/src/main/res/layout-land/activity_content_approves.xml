@@ -51,17 +51,25 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp" />
+            android:layout_marginTop="25dp" />
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ScrollView
+                android:layout_below="@+id/relatif1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scroll1">
+
             <FrameLayout
                 android:id="@+id/frameApprove"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></FrameLayout>
-
+            </ScrollView>
             <com.github.clans.fab.FloatingActionMenu
                 android:id="@+id/menuFAMA"
                 android:layout_width="wrap_content"
