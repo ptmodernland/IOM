@@ -49,7 +49,7 @@
             android:layout_below="@+id/relatif1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="115dp"
+            android:layout_marginTop="85dp"
             android:id="@+id/scroll1">
 
             <LinearLayout
@@ -57,618 +57,618 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:columnCount="3"
-                android:columnOrderPreserved="false">
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="3"
+                    android:columnOrderPreserved="false">
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="184dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:id="@+id/LnMarketingClub"
-                        android:layout_width="match_parent"
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
                         android:layout_height="184dp"
-                        android:gravity="center"
-                        android:onClick="MarketingClub"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
 
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iMarketingClub"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/marketing_andro" />
+                        <LinearLayout
+                            android:id="@+id/LnMarketingClub"
+                            android:layout_width="match_parent"
+                            android:layout_height="184dp"
+                            android:gravity="center"
+                            android:onClick="MarketingClub"
+                            android:orientation="vertical"
+                            android:padding="12dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Billionaire"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/club"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iMarketingClub"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/marketing_andro" />
 
-                    </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Billionaire"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/club"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
 
-                </android.support.v7.widget.CardView>
+                        </LinearLayout>
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:id="@+id/LnFinance"
+                            android:layout_width="match_parent"
+                            android:layout_height="184dp"
+                            android:gravity="center"
+                            android:onClick="Finance"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iFinance"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/finance_andro" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/finance"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Accounting"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:id="@+id/LnQs"
+                            android:layout_width="match_parent"
+                            android:layout_height="184dp"
+                            android:gravity="center"
+                            android:onClick="Qs"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iQs"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/qs_andro" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/quantity"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/surveyor"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </GridLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
+                    android:layout_marginTop="10dp"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="3"
+                    android:columnOrderPreserved="false">
 
-                    <LinearLayout
-                        android:id="@+id/LnFinance"
-                        android:layout_width="match_parent"
-                        android:layout_height="184dp"
-                        android:gravity="center"
-                        android:onClick="Finance"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
 
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iFinance"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/finance_andro" />
+                        <LinearLayout
+                            android:id="@+id/LnTown"
+                            android:layout_width="match_parent"
+                            android:layout_height="184dp"
+                            android:gravity="center"
+                            android:onClick="Town"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/finance"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Accounting"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iTown"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/town_management_andro" />
 
-                    </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/helvetica"
+                                android:text="@string/Town"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
 
-                </android.support.v7.widget.CardView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Management"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:id="@+id/LnProject"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:onClick="Project"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iProject"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/project_andro" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/project"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:id="@+id/LnHrd"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:onClick="Hrd"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iHrd"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/hrd_andro" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/human"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/resource"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </GridLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
+                    android:alignmentMode="alignMargins"
+                    android:layout_marginTop="10dp"
+                    android:columnCount="3"
+                    android:columnOrderPreserved="false">
 
-                    <LinearLayout
-                        android:id="@+id/LnQs"
-                        android:layout_width="match_parent"
-                        android:layout_height="184dp"
-                        android:gravity="center"
-                        android:onClick="Qs"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
 
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iQs"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/qs_andro" />
+                        <LinearLayout
+                            android:id="@+id/LnLegal"
+                            android:layout_width="match_parent"
+                            android:layout_height="184dp"
+                            android:gravity="center"
+                            android:onClick="Legal"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/quantity"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iLegal"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/legal_andro" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/surveyor"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/legal"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Operation"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:id="@+id/LnPurchasing"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:onClick="Purchasing"
+                            android:orientation="vertical"
+                            android:padding="13dp">
+
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iPurchasing"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/purchasing_andro" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/purchasing"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
 
 
-                    </LinearLayout>
+                        </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                    </android.support.v7.widget.CardView>
 
-            </GridLayout>
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:alignmentMode="alignMargins"
-                android:columnCount="3"
-                android:columnOrderPreserved="false">
+                        <LinearLayout
+                            android:id="@+id/LnBdd"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:onClick="Bdd"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iBdd"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/bdd_andro" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/business"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/develop"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </GridLayout>
+
+                <GridLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
+                    android:alignmentMode="alignMargins"
+                    android:layout_marginTop="10dp"
+                    android:columnCount="3"
+                    android:columnOrderPreserved="false"
+                    android:rowCount="5">
 
-                    <LinearLayout
-                        android:id="@+id/LnTown"
-                        android:layout_width="match_parent"
-                        android:layout_height="184dp"
-                        android:gravity="center"
-                        android:onClick="Town"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
 
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iTown"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/town_management_andro" />
+                        <LinearLayout
+                            android:id="@+id/LnLanded"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:onClick="Landed"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/helvetica"
-                            android:text="@string/Town"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iLanded"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/landed_project_andro" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Management"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="13sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Landed"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
 
-                    </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Project"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+                        </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                    </android.support.v7.widget.CardView>
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
 
-                    <LinearLayout
-                        android:id="@+id/LnProject"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:onClick="Project"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        <LinearLayout
+                            android:id="@+id/LnMarketing"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:onClick="Marketing"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iProject"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/project_andro" />
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iMarketing"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/marketing_andro" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/project"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/marketing"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
 
-                    </LinearLayout>
+                        </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                    </android.support.v7.widget.CardView>
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="12dp"
+                        app:cardElevation="6dp">
 
-                    <LinearLayout
-                        android:id="@+id/LnHrd"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:onClick="Hrd"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                        <LinearLayout
+                            android:id="@+id/LnPermit"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:onClick="Permit"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iHrd"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/hrd_andro" />
+                            <ru.nikartm.support.ImageBadgeView
+                                android:id="@+id/iPermit"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_gravity="center"
+                                tools:ibv_badgeValue="0"
+                                tools:ibv_badgeTextSize="16dp"
+                                tools:ibv_badgePadding="5dp"
+                                tools:ibv_badgePosition="top_right"
+                                tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                                android:src="@drawable/permit_sertification_andro" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/human"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/resource"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-                    </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Permit"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
 
-                </android.support.v7.widget.CardView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Sertification"
+                                android:fontFamily="@font/helvetica"
+                                android:textColor="#6f6f6f"
+                                android:textSize="12sp" />
+                        </LinearLayout>
 
-            </GridLayout>
+                    </android.support.v7.widget.CardView>
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:layout_marginTop="10dp"
-                android:columnCount="3"
-                android:columnOrderPreserved="false">
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:id="@+id/LnLegal"
-                        android:layout_width="match_parent"
-                        android:layout_height="184dp"
-                        android:gravity="center"
-                        android:onClick="Legal"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iLegal"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/legal_andro" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/legal"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Operation"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="13sp" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:id="@+id/LnPurchasing"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:onClick="Purchasing"
-                        android:orientation="vertical"
-                        android:padding="13dp">
-
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iPurchasing"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/purchasing_andro" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/purchasing"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:id="@+id/LnBdd"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:onClick="Bdd"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iBdd"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/bdd_andro" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/business"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/develop"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-            </GridLayout>
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:layout_marginTop="10dp"
-                android:columnCount="3"
-                android:columnOrderPreserved="false"
-                android:rowCount="5">
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:id="@+id/LnLanded"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:onClick="Landed"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iLanded"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/landed_project_andro" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Landed"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Project"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:id="@+id/LnMarketing"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:onClick="Marketing"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iMarketing"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/marketing_andro" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/marketing"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:id="@+id/LnPermit"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:onClick="Permit"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <ru.nikartm.support.ImageBadgeView
-                            android:id="@+id/iPermit"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            tools:ibv_badgeValue="0"
-                            tools:ibv_badgeTextSize="16dp"
-                            tools:ibv_badgePadding="5dp"
-                            tools:ibv_badgePosition="top_right"
-                            tools:ibv_badgeBackground="@drawable/rectangle_rounded"
-                            android:src="@drawable/permit_sertification_andro" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Permit"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/Sertification"
-                            android:fontFamily="@font/helvetica"
-                            android:textColor="#6f6f6f"
-                            android:textSize="15sp" />
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-            </GridLayout>
+                </GridLayout>
 
                 <GridLayout
                     android:layout_width="match_parent"
@@ -699,8 +699,8 @@
 
                             <ru.nikartm.support.ImageBadgeView
                                 android:id="@+id/iPromosi"
-                                android:layout_width="80dp"
-                                android:layout_height="80dp"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
                                 android:layout_marginTop="20dp"
                                 android:layout_gravity="center"
                                 tools:ibv_badgeValue="0"
@@ -716,7 +716,7 @@
                                 android:text="@string/promosi"
                                 android:fontFamily="@font/helvetica"
                                 android:textColor="#6f6f6f"
-                                android:textSize="15sp" />
+                                android:textSize="12sp" />
 
                         </LinearLayout>
 

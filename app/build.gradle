@@ -7,13 +7,17 @@ android {
         applicationId "iom.modernland.co.id"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 8
+        versionCode 10
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+
+            // Enables resource shrinking, which is performed by the
+            // Android Gradle plugin.
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
