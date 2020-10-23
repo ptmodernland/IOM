@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -75,10 +76,10 @@ public class ApproveDetailFragment extends Fragment {
         //final TextView txtJenis = (TextView) x.findViewById(R.id.txtJenis);
         final TextView txtPerihal = (TextView) x.findViewById(R.id.txtPerihal);
         final TextView txtWV = (TextView) x.findViewById(R.id.txtWV);
-        final TextView txtAF = (TextView) x.findViewById(R.id.txtAF);
+        final TextView txtdownload_file = (TextView) x.findViewById(R.id.txtdownload_file);
         final TextView txtKategori = (TextView) x.findViewById(R.id.txtKategori);
-        final LinearLayout lnAF = (LinearLayout) x.findViewById(R.id.lnAF);
-        final Button btnAF = (Button) x.findViewById(R.id.btnAF);
+        final TextView download_file = (TextView) x.findViewById(R.id.download_file);
+        //final Button btnAF = (Button) x.findViewById(R.id.btnAF);
         final Button btnKordinasi = (Button) x.findViewById(R.id.btnKordinasiM);
         final Button btnApprove = (Button) x.findViewById(R.id.btnApproveM);
 
@@ -142,9 +143,9 @@ public class ApproveDetailFragment extends Fragment {
                                 //txtJenis.setText(jenis);
                                 txtPerihal.setText(perihal);
                                 txtWV.setText(id);
-                                txtAF.setText(lampiran);
+                                txtdownload_file.setText(lampiran);
                                 txtKategori.setText(kategori);
-
+                                txtdownload_file.setPaintFlags(txtdownload_file.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                             } else {
 
                                 txtNomor.setText(nomor);
@@ -152,11 +153,11 @@ public class ApproveDetailFragment extends Fragment {
                                 txtCc.setText(cc);
                                 txtDari.setText(dari);
                                 txtTanggal.setText(tanggal);
-                                //txtJenis.setText(jenis);
+                                //txtdownload_file.setText(jenis);
                                 txtPerihal.setText(perihal);
                                 txtWV.setText(id);
-
-                                lnAF.setVisibility(View.INVISIBLE);
+                                txtdownload_file.setVisibility(View.INVISIBLE);
+                                download_file.setVisibility(View.INVISIBLE);
                                 txtKategori.setText(kategori);
                             }
 
@@ -557,29 +558,8 @@ public class ApproveDetailFragment extends Fragment {
             }
         });
 
-        Button btnWv = (Button) x.findViewById(R.id.btnWV);
-        btnWv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String id_iom = txtWV.getText().toString();
-
-                WebViewFragment wv = new WebViewFragment();
-
-                Bundle b = new Bundle();
-                b.putString("idiomnya",id_iom);
-
-                wv.setArguments(b);
-
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frameApprove, wv)
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
-
-        LinearLayout lnWv = (LinearLayout) x.findViewById(R.id.lnWV);
-        lnWv.setOnClickListener(new View.OnClickListener() {
+        TextView  txtview_detail = (TextView) x.findViewById(R.id.txtview_detail);
+        txtview_detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String id_iom = txtWV.getText().toString();
@@ -600,7 +580,8 @@ public class ApproveDetailFragment extends Fragment {
         });
 
 
-        lnAF.setOnClickListener(new View.OnClickListener() {
+
+        /*lnAF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String attch_lampiran = txtAF.getText().toString();
@@ -616,12 +597,13 @@ public class ApproveDetailFragment extends Fragment {
 
                 Long reference = dm.enqueue(request);
             }
-        });
+        });*/
 
-        btnAF.setOnClickListener(new View.OnClickListener() {
+
+        txtdownload_file.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String attch_lampiran = txtAF.getText().toString();
+                String attch_lampiran = txtdownload_file.getText().toString();
 
                 dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
 

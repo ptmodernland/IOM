@@ -14,6 +14,8 @@
         android:background="#fff"
         android:stretchColumns="2">
 
+
+
         <TableRow>
 
             <TextView
@@ -127,6 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </TableRow>
+
         <TableRow>
 
             <TextView
@@ -146,6 +149,57 @@
 
         </TableRow>
 
+        <TableRow>
+
+            <TextView
+                android:text="@string/view_detail"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtview_detail"
+                android:text="@string/klik_view_detail"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:textColor="#A62222"
+                android:linksClickable="true"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/download_file"
+                android:text="@string/download_file"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtdownload_file"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:textColor="#A62222"
+                android:linksClickable="true"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtWV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
 
         <TableRow>
 
@@ -174,7 +228,7 @@
 
     </TableLayout>
 
-    <LinearLayout
+    <!--<LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_marginLeft="25dp"
@@ -224,7 +278,7 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -265,7 +319,5 @@
             android:text="@string/rekomendasi"/>
 
     </LinearLayout>
-
-
 
 </LinearLayout>

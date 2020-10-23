@@ -1,9 +1,11 @@
 package iom.modernland.co.id;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TextInputEditText;
@@ -21,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,10 +36,14 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import ru.nikartm.support.BadgePosition;
+import ru.nikartm.support.ImageBadgeView;
 
 public class MainRedActivity extends AppCompatActivity {
 
     TextView nameuser, walletuser;
+    private ImageBadgeView imageBadgeView;
+    private int value = 0;
     //LinearLayout menuiom, menupbj, menunpv, menuperubahan;
     ViewFlipper v_flipper;
     DrawerLayout drawermain;
@@ -52,6 +59,7 @@ public class MainRedActivity extends AppCompatActivity {
 
         drawermain = (DrawerLayout) findViewById(R.id.drawerMain);
         navmain = (NavigationView) findViewById(R.id.navMain);
+        imageBadgeView = findViewById(R.id.ibv_icon4);
 
         navmain.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -323,6 +331,75 @@ public class MainRedActivity extends AppCompatActivity {
         });
 
 
+        SharedPreferences sp = getSharedPreferences("DATALOGIN", 0);
+
+        String username      = sp.getString("username", "");
+
+        OkHttpClient postman = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .get()
+                .url(Setting.IP + "counter_memo.php?username=" + username)
+                .build();
+
+        final ProgressDialog pd = new ProgressDialog(MainRedActivity.this);
+        pd.setMessage("Please wait");
+        pd.setTitle("Loading ...");
+        pd.setIcon(R.drawable.ic_check_black_24dp);
+        pd.setCancelable(false);
+        pd.show();
+
+        postman.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Please Try Again",
+                                Toast.LENGTH_SHORT).show();
+                        pd.dismiss();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String hasil = response.body().string();
+                try {
+                    JSONObject j = new JSONObject(hasil);
+                    boolean st = j.getBoolean("status");
+                    final int total = j.getInt("total");
+
+                    if(st == false)
+                    {
+                        final String p = j.getString("pesan");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(),
+                                        p, Toast.LENGTH_LONG).show();
+                                pd.dismiss();
+                            }
+                        });
+                    }
+                    else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                initIconWithBadges(total);
+                                pd.dismiss();
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+
         int images[] = {R.drawable.slider1mdln,
                 R.drawable.slider2mdln};
         v_flipper = findViewById(R.id.v_flipper);
@@ -384,6 +461,21 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initIconWithBadges(int total) {
+        value = total;
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
+        imageBadgeView.setBadgeValue(value)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
     }
 
     public  void  fliverImages(int images){
