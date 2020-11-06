@@ -460,6 +460,24 @@ public class ApproveDetailFragment extends Fragment {
 
                         EditText tCatatan = (EditText) x.findViewById(R.id.tCatatan);
 
+                        WifiManager wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+
+                        WifiInfo info = wifiManager.getConnectionInfo();
+                        String IP = Formatter.formatIpAddress(info.getIpAddress());
+                        String address_wifi = Utils.getMACAddress("wlan0");
+                        String address_lan =  Utils.getMACAddress("eth0");
+                        String IP_LOKAL = Utils.getIPAddress(true); // IPv4
+
+                        if (IP_LOKAL==""){
+                            IP_ISI = IP;
+                            address = address_lan;
+
+                        }
+                        else{
+                            IP_ISI = IP_LOKAL;
+                            address = address_wifi;
+                        }
+
                         final String isiKomen = tCatatan.getText().toString();
 
                         OkHttpClient postman = new OkHttpClient();
@@ -474,6 +492,8 @@ public class ApproveDetailFragment extends Fragment {
                                 .addFormDataPart("komen", isiKomen)
                                 .addFormDataPart("nomor", nomormemo)
                                 .addFormDataPart("id_user", id_user)
+                                .addFormDataPart("ipaddres", IP_ISI)
+                                .addFormDataPart("macaddress", address)
                                 .build();
 
                         Request request = new Request.Builder()

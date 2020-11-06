@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ApproveDetailPOFragment">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:background="#fff"
+        android:stretchColumns="2">
+
+        <TableRow>
+            <TextView
+                android:text="@string/no_po"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtNoPO"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:paddingRight="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/no_ref"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtNoRef"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/po_date"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+
+            <TextView
+                android:id="@+id/txtTglPO"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/desc_po"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+
+            <TextView
+                android:id="@+id/txtDescPO"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/dept_usr"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtDeptUser"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/supplier"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtSupplier"
+                android:fontFamily="@font/helvetica"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp" />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/adv_pay"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtAdvPay"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/prog_pay"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtProgPay"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/diskon"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtDiskon"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:text="@string/view_detail"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtview_detail"
+                android:text="@string/klik_view_detail"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:textColor="#A62222"
+                android:linksClickable="true"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/download_file"
+                android:text="@string/download_file"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtdownload_file"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:textColor="#A62222"
+                android:linksClickable="true"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtWV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/catatan"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <EditText
+                android:id="@+id/tCatatan"
+                android:fontFamily="@font/helvetica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="100dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="top|left"
+                android:hint="@string/komen"
+                android:lines="10"
+                android:maxLines="15"
+                android:minLines="5" />
+
+        </TableRow>
+
+    </TableLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnCancelM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/reject"/>
+
+        <Button
+            android:id="@+id/btnApproveM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/approve"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

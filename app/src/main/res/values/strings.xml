@@ -125,6 +125,12 @@
 
     <string name="desc_po">Descripsi PO</string>
     <string name="no_po">Nomor PO</string>
+    <string name="no_ref">Nomor Ref</string>
+    <string name="po_date">Tanggal PO</string>
+    <string name="dept_usr">Departement User</string>
+    <string name="supplier">Nama Supplier</string>
+    <string name="adv_pay">Advance Payment</string>
+    <string name="prog_pay">Progres Payment</string>
 
     <string-array name="head">
         <item>--Pilih Head--</item>

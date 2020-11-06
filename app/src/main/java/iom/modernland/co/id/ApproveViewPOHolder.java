@@ -23,12 +23,12 @@ public class ApproveViewPOHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
-                ContentApproveActivity c = (ContentApproveActivity) itemView.getContext();
+                ContentApprovePOActivity c = (ContentApprovePOActivity) itemView.getContext();
 
                 String id = txtIDpo.getText().toString();
                 String nomor = txtNomorPO.getText().toString();
 
-                ApproveDetailFragment ad = new ApproveDetailFragment();
+                ApproveDetailPOFragment ad = new ApproveDetailPOFragment();
 
                 Bundle b = new Bundle();
                 b.putString("idnya",id);
