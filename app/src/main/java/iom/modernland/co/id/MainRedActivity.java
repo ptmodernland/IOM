@@ -42,7 +42,7 @@ import ru.nikartm.support.ImageBadgeView;
 public class MainRedActivity extends AppCompatActivity {
 
     TextView nameuser, walletuser;
-    private ImageBadgeView imageBadgeView;
+    private ImageBadgeView imageBadgeView, imageBadgeViewPO;
     private int value = 0;
     //LinearLayout menuiom, menupbj, menunpv, menuperubahan;
     ViewFlipper v_flipper;
@@ -60,6 +60,7 @@ public class MainRedActivity extends AppCompatActivity {
         drawermain = (DrawerLayout) findViewById(R.id.drawerMain);
         navmain = (NavigationView) findViewById(R.id.navMain);
         imageBadgeView = findViewById(R.id.ibv_icon4);
+        imageBadgeViewPO = findViewById(R.id.ibv_icon5);
 
         navmain.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -399,6 +400,67 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
+        Request requestPO = new Request.Builder()
+                .get()
+                .url(Setting.IP + "counter_po.php?username=" + username)
+                .build();
+
+        final ProgressDialog pds = new ProgressDialog(MainRedActivity.this);
+        pds.setMessage("Please wait");
+        pds.setTitle("Loading ...");
+        pds.setIcon(R.drawable.ic_check_black_24dp);
+        pds.setCancelable(false);
+        pds.show();
+
+        postman.newCall(requestPO).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Please Try Again",
+                                Toast.LENGTH_SHORT).show();
+                        pds.dismiss();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String hasil = response.body().string();
+                try {
+                    JSONObject j = new JSONObject(hasil);
+                    boolean st = j.getBoolean("status");
+                    final int total = j.getInt("total");
+
+                    if(st == false)
+                    {
+                        final String p = j.getString("pesan");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(),
+                                        p, Toast.LENGTH_LONG).show();
+                                pds.dismiss();
+                            }
+                        });
+                    }
+                    else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                initIconWithBadgesPO(total);
+                                pds.dismiss();
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
 
         int images[] = {R.drawable.slider1mdln,
                 R.drawable.slider2mdln};
@@ -416,6 +478,7 @@ public class MainRedActivity extends AppCompatActivity {
         LinearLayout menupbj = (LinearLayout) findViewById(R.id.menugPbj);
         LinearLayout menunpv = (LinearLayout) findViewById(R.id.menugNpv);
         LinearLayout menuperubahan = (LinearLayout) findViewById(R.id.menugSetting);
+        LinearLayout menupo = (LinearLayout) findViewById(R.id.menugPO);
 
         menuiom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -441,6 +504,14 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
+        menupo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainRedActivity.this, HomePOActivity.class);
+                startActivity(i);
+            }
+        });
+
         /*menunpv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -461,6 +532,21 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initIconWithBadgesPO(int total) {
+        value = total;
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
+        imageBadgeViewPO.setBadgeValue(value)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
     }
 
     private void initIconWithBadges(int total) {

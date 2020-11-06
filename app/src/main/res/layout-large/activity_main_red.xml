@@ -183,6 +183,37 @@
                 android:weightSum="3">
 
                 <LinearLayout
+                    android:id="@+id/menugPO"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ru.nikartm.support.ImageBadgeView
+                        android:id="@+id/ibv_icon5"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_gravity="center"
+                        tools:ibv_badgeValue="0"
+                        tools:ibv_badgeTextSize="16dp"
+                        tools:ibv_badgePadding="5dp"
+                        tools:ibv_badgePosition="top_right"
+                        tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                        android:src="@drawable/gambar_po" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/po"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="#172646"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/menugSetting"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

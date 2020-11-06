@@ -88,6 +88,13 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ContentApprovePOActivity">
+            <intent-filter>
+                <action android:name="iom.modernland.co.id_TARGET_PO" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".ContentKordinasiActivity">
             <intent-filter>
                 <action android:name="iom.modernland.co.id_TARGET_IOM_KORDINASI" />
@@ -101,6 +108,8 @@
         <activity android:name=".HomeTestActivity" />
 
         <activity android:name=".HomeUserActivity"/>
+
+        <activity android:name=".HomePOActivity"/>
 
         <activity android:name=".KategoriIomActivity">
             <intent-filter>

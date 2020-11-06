@@ -43,7 +43,7 @@ public class ApproveMemoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View x = inflater.inflate(R.layout.fragment_approve_memo, container, false);
+        View x = inflater.inflate(R.layout.fragment_approve_po, container, false);
 
         final RecyclerView rvApprove = (RecyclerView) x.findViewById(R.id.rvApprove);
 

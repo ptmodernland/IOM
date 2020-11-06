@@ -25,6 +25,7 @@
     <string name="iom">Approval IOM</string>
     <string name="npv">Approve NPV</string>
     <string name="permohonan">PBJ</string>
+    <string name="a_po">Approve PO</string>
 
     <string name="approve_memo">Approve Memo</string>
     <string name="list_memo">List Memo</string>
@@ -91,6 +92,7 @@
     <string name="to">Tujuan</string>
     <string name="setting">Setting</string>
     <string name="dashboard_kategori">Kategori Iom</string>
+    <string name="dashboard_po">Kategori Purchase Order</string>
 
     <string name="marketing">Marketing</string>
     <string name="club">Club</string>
@@ -119,7 +121,10 @@
     <string name="view_detail">View Detail</string>
     <string name="download_file">Download File</string>
     <string name="klik_view_detail"><u>Klik Disini</u></string>
+    <string name="po">Purchase Order</string>
 
+    <string name="desc_po">Descripsi PO</string>
+    <string name="no_po">Nomor PO</string>
 
     <string-array name="head">
         <item>--Pilih Head--</item>
