@@ -29,14 +29,8 @@ public class ApprovePBJAdapter extends RecyclerView.Adapter<ApprovePBJViewHolder
 
         ListPermohonan av = data.get(i);
 
-        if (av.status.equals("C")){
-            approvePBJViewHolder.txtStatusPermo.setText("Not Recommended");
-        }
-        if (av.status.equals("T")){
+        if (av.status.equals("Y") && av.status_email.equals("T")){
             approvePBJViewHolder.txtStatusPermo.setText("Waiting Approved");
-        }
-        if (av.status.equals("K")){
-            approvePBJViewHolder.txtStatusPermo.setText("Waiting Approval Recommendation");
         }
 
         approvePBJViewHolder.txtNoPermo.setText(av.nomor);

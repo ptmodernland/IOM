@@ -8,9 +8,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.format.Formatter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +44,8 @@ import okhttp3.Response;
 public class ApproveDetailPBJFragment extends Fragment {
 
     DownloadManager dm ;
+    String IP_ISI = "";
+    String address = "";
 
     public ApproveDetailPBJFragment() {
         // Required empty public constructor
@@ -180,115 +185,130 @@ public class ApproveDetailPBJFragment extends Fragment {
         btnApprove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+                final View mView = getLayoutInflater().inflate(R.layout.approve_password, null);
 
-                EditText tCatatanAd = (EditText) x.findViewById(R.id.tCatatanPBJ);
+                mBuilder.setView(mView);
 
-                final String isiKomenAd = tCatatanAd.getText().toString();
-
-                AlertDialog.Builder abp = new AlertDialog.Builder(getActivity());
-
-                abp.create();
-                abp.setTitle("Confirmation");
-                abp.setIcon(R.drawable.ic_check_black_24dp);
-                abp.setMessage("Apakah Anda Akan Menyetujui?");
-                abp.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                AlertDialog dialog = mBuilder.create();
+                dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        OkHttpClient postman = new OkHttpClient();
+                        WifiManager wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
-                        SharedPreferences sp = getActivity()
-                                .getSharedPreferences("DATALOGIN", 0);
+                        WifiInfo info = wifiManager.getConnectionInfo();
+                        String IP = Formatter.formatIpAddress(info.getIpAddress());
+                        String address_wifi = Utils.getMACAddress("wlan0");
+                        String address_lan =  Utils.getMACAddress("eth0");
+                        String IP_LOKAL = Utils.getIPAddress(true); // IPv4
 
-                        String id_user      = sp.getString("id_user", "");
+                        if (IP_LOKAL==""){
+                            IP_ISI = IP;
+                            address = address_lan;
 
-                        RequestBody body = new MultipartBody.Builder()
-                                .setType(MultipartBody.FORM)
-                                .addFormDataPart("komenad", isiKomenAd)
-                                .addFormDataPart("no_permintaan", nopermintaan)
-                                .addFormDataPart("id_user", id_user)
-                                .build();
+                        }
+                        else{
+                            IP_ISI = IP_LOKAL;
+                            address = address_wifi;
+                        }
 
-                        Request request = new Request.Builder()
-                                .post(body)
-                                .url(Setting.IP + "proses_approve_pbj.php")
-                                .build();
+                        final TextView passwordUser = (TextView) mView.findViewById(R.id.etPassword);
+                        final String isiPassword = passwordUser.getText().toString();
 
-                        final ProgressDialog pd = new ProgressDialog(
-                                getActivity()
-                        );
-                        pd.setMessage("Please Wait");
-                        pd.setTitle("Loading Approve...");
-                        pd.setIcon(R.drawable.ic_check_black_24dp);
-                        pd.show();
+                        EditText tCatatanAd = (EditText) x.findViewById(R.id.tCatatanPBJ);
 
-                        postman.newCall(request).enqueue(new Callback() {
-                            @Override
-                            public void onFailure(Call call, IOException e) {
-                                getActivity().runOnUiThread(new Runnable() {
+                        final String isiKomenAd = tCatatanAd.getText().toString();
+
+                                OkHttpClient postman = new OkHttpClient();
+
+                                SharedPreferences sp = getActivity()
+                                        .getSharedPreferences("DATALOGIN", 0);
+
+                                String id_user      = sp.getString("id_user", "");
+
+                                RequestBody body = new MultipartBody.Builder()
+                                        .setType(MultipartBody.FORM)
+                                        .addFormDataPart("komenad", isiKomenAd)
+                                        .addFormDataPart("no_permintaan", nopermintaan)
+                                        .addFormDataPart("id_user", id_user)
+                                        .addFormDataPart("passwordUser", isiPassword)
+                                        .addFormDataPart("ipaddres", IP_ISI)
+                                        .addFormDataPart("macaddress", address)
+                                        .build();
+
+                                Request request = new Request.Builder()
+                                        .post(body)
+                                        .url(Setting.IP + "proses_approve_pbj.php")
+                                        .build();
+
+                                final ProgressDialog pd = new ProgressDialog(
+                                        getActivity()
+                                );
+                                pd.setMessage("Please Wait");
+                                pd.setTitle("Loading Approve...");
+                                pd.setIcon(R.drawable.ic_check_black_24dp);
+                                pd.show();
+
+                                postman.newCall(request).enqueue(new Callback() {
                                     @Override
-                                    public void run() {
-                                        Toast.makeText(getActivity(),
-                                                "Please Try Again",
-                                                Toast.LENGTH_LONG).show();
-                                        pd.dismiss();
-                                    }
-                                });
-                            }
-
-                            @Override
-                            public void onResponse(Call call, Response response) throws IOException {
-                                String hasil = response.body().string();
-                                try {
-                                    JSONObject j = new JSONObject(hasil);
-                                    boolean st = j.getBoolean("status");
-
-                                    if(st == false)
-                                    {
-                                        final String p = j.getString("pesan");
+                                    public void onFailure(Call call, IOException e) {
                                         getActivity().runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
                                                 Toast.makeText(getActivity(),
-                                                        p, Toast.LENGTH_LONG).show();
-                                                pd.dismiss();
-                                            }
-                                        });
-                                    }
-                                    else {
-
-                                        getActivity().runOnUiThread(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                Toast.makeText(getActivity().getApplicationContext(),
-                                                        "Pengajuan Sudah disetujui!",
+                                                        "Please Try Again",
                                                         Toast.LENGTH_LONG).show();
-
-                                                getActivity().getSupportFragmentManager()
-                                                        .popBackStackImmediate();
-
                                                 pd.dismiss();
                                             }
                                         });
                                     }
 
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
+                                    @Override
+                                    public void onResponse(Call call, Response response) throws IOException {
+                                        String hasil = response.body().string();
+                                        try {
+                                            JSONObject j = new JSONObject(hasil);
+                                            boolean st = j.getBoolean("status");
+
+                                            if(st == false)
+                                            {
+                                                final String p = j.getString("pesan");
+                                                getActivity().runOnUiThread(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        Toast.makeText(getActivity(),
+                                                                p, Toast.LENGTH_LONG).show();
+                                                        pd.dismiss();
+                                                    }
+                                                });
+                                            }
+                                            else {
+
+                                                getActivity().runOnUiThread(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        Toast.makeText(getActivity().getApplicationContext(),
+                                                                "Pengajuan Sudah disetujui!",
+                                                                Toast.LENGTH_LONG).show();
+
+                                                        getActivity().getSupportFragmentManager()
+                                                                .popBackStackImmediate();
+
+                                                        pd.dismiss();
+                                                    }
+                                                });
+                                            }
+
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                });
                             }
                         });
-                    }
-                });
+                dialog.show();
 
-                abp.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getActivity(),
-                                "Pengajuan belum disetujui!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                abp.show();
             }
         });
 

@@ -42,7 +42,7 @@ import ru.nikartm.support.ImageBadgeView;
 public class MainRedActivity extends AppCompatActivity {
 
     TextView nameuser, walletuser;
-    private ImageBadgeView imageBadgeView, imageBadgeViewPO;
+    private ImageBadgeView imageBadgeView, imageBadgeViewPO, imageBadgeViewPermohonan;
     private int value = 0;
     //LinearLayout menuiom, menupbj, menunpv, menuperubahan;
     ViewFlipper v_flipper;
@@ -61,6 +61,7 @@ public class MainRedActivity extends AppCompatActivity {
         navmain = (NavigationView) findViewById(R.id.navMain);
         imageBadgeView = findViewById(R.id.ibv_icon4);
         imageBadgeViewPO = findViewById(R.id.ibv_icon5);
+        imageBadgeViewPermohonan = findViewById(R.id.ibv_icon6);
 
         navmain.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -462,6 +463,68 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
+        Request requestPermohonan = new Request.Builder()
+                .get()
+                .url(Setting.IP + "counter_permohonan.php?username=" + username)
+                .build();
+
+        final ProgressDialog pdp = new ProgressDialog(MainRedActivity.this);
+        pdp.setMessage("Please wait");
+        pdp.setTitle("Loading ...");
+        pdp.setIcon(R.drawable.ic_check_black_24dp);
+        pdp.setCancelable(false);
+        pdp.show();
+
+        postman.newCall(requestPermohonan).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Please Try Again",
+                                Toast.LENGTH_SHORT).show();
+                        pdp.dismiss();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String hasil = response.body().string();
+                try {
+                    JSONObject j = new JSONObject(hasil);
+                    boolean st = j.getBoolean("status");
+                    final int total = j.getInt("total");
+
+                    if(st == false)
+                    {
+                        final String p = j.getString("pesan");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(),
+                                        p, Toast.LENGTH_LONG).show();
+                                pdp.dismiss();
+                            }
+                        });
+                    }
+                    else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                initIconWithBadgesPermohonan(total);
+                                pdp.dismiss();
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
         int images[] = {R.drawable.slider1mdln,
                 R.drawable.slider2mdln};
         v_flipper = findViewById(R.id.v_flipper);
@@ -553,6 +616,21 @@ public class MainRedActivity extends AppCompatActivity {
         value = total;
         Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
         imageBadgeView.setBadgeValue(value)
+                .setBadgeOvalAfterFirst(true)
+                .setBadgeTextSize(16)
+                .setMaxBadgeValue(999)
+                .setBadgeTextFont(typeface)
+                .setBadgeBackground(getResources().getDrawable(R.drawable.rectangle_rounded))
+                .setBadgePosition(BadgePosition.TOP_RIGHT)
+                .setBadgeTextStyle(Typeface.NORMAL)
+                .setShowCounter(true)
+                .setBadgePadding(4);
+    }
+
+    private void initIconWithBadgesPermohonan(int total) {
+        value = total;
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
+        imageBadgeViewPermohonan.setBadgeValue(value)
                 .setBadgeOvalAfterFirst(true)
                 .setBadgeTextSize(16)
                 .setMaxBadgeValue(999)

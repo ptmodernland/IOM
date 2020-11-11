@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/drawerMain"
     android:background="@drawable/bgappsgrey"
     tools:context=".HomePermohonanActivity">
 
@@ -165,26 +166,40 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/menuUserLogoutPBJ"
+                    android:id="@+id/LnKordinasiP"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:onClick="KordinasiPBJ"
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="90dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/arrow_forward" />
+                    <ru.nikartm.support.ImageBadgeView
+                        android:id="@+id/ibv_iconKordP"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center"
+                        tools:ibv_badgeValue="0"
+                        tools:ibv_badgeTextSize="16dp"
+                        tools:ibv_badgePadding="5dp"
+                        tools:ibv_badgePosition="top_right"
+                        tools:ibv_badgeBackground="@drawable/rectangle_rounded"
+                        android:src="@drawable/teamwork" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/logout"
+                        android:text="@string/list"
                         android:textColor="#6f6f6f"
-                        android:layout_marginBottom="30dp"
-                        android:textSize="28sp" />
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rekomendasi"
+                        android:textColor="#6f6f6f"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -200,7 +215,7 @@
                 app:cardElevation="6dp">
 
                 <LinearLayout
-                    android:id="@+id/menuUserExitPBJ"
+                    android:id="@+id/menuUserLogout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -208,18 +223,19 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="90dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/arrow_right" />
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/setting_file" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/exit"
+                        android:text="@string/setting"
+                        android:fontFamily="@font/helvetica"
                         android:textColor="#6f6f6f"
-                        android:layout_marginBottom="30dp"
-                        android:textSize="28sp" />
+                        android:layout_marginBottom="10dp"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -229,4 +245,13 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_gravity="start"
+        android:id="@+id/navMain"
+        app:menu="@menu/app_menu"
+        app:headerLayout="@layout/header_navi"
+        android:layout_height="match_parent">
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

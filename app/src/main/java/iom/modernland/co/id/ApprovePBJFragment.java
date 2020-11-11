@@ -99,7 +99,7 @@ public class ApprovePBJFragment extends Fragment {
                         p.nomor = ko.getString("no_permintaan");
                         p.jenis = ko.getString("jenis");
                         p.status = ko.getString("status");
-
+                        p.status_email = ko.getString("status_email");
                         adapter.data.add(p);
                     }
                     getActivity().runOnUiThread(new Runnable() {

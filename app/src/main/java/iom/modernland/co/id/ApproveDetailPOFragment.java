@@ -324,13 +324,13 @@ public class ApproveDetailPOFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder abc = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+                final View mView = getLayoutInflater().inflate(R.layout.approve_password, null);
 
-                abc.create();
-                abc.setTitle("Confirmation");
-                abc.setIcon(R.drawable.ic_check_black_24dp);
-                abc.setMessage("Apakah Anda Yakin Tidak Menyetujui Pengajuan Ini?");
-                abc.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                mBuilder.setView(mView);
+
+                AlertDialog dialog = mBuilder.create();
+                dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
@@ -443,14 +443,8 @@ public class ApproveDetailPOFragment extends Fragment {
 
                     }
                 });
-                abc.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
 
-                    }
-                });
-
-                abc.show();
+                dialog.show();
             }
         });
 

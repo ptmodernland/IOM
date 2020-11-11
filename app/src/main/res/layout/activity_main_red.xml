@@ -132,6 +132,7 @@
                     android:orientation="vertical">
 
                     <ru.nikartm.support.ImageBadgeView
+                        android:id="@+id/ibv_icon6"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginBottom="8dp"

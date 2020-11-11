@@ -408,7 +408,7 @@ public class HomePOActivity extends AppCompatActivity {
 
     public void listPO(View view) {
 
-        Intent i = new Intent(HomePOActivity.this, ContentListActivity.class);
+        Intent i = new Intent(HomePOActivity.this, ContentListPOActivity.class);
         startActivity(i);
 
     }
