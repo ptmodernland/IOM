@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:title="Menu Utama"
+        android:id="@+id/menuUtama"
+        android:icon="@drawable/ic_home_black_24dp"/>
+
     <item android:title="Change Password"
         android:id="@+id/menuChange"
         android:icon="@drawable/ic_phone_iphone_black_24dp"/>
@@ -12,5 +16,4 @@
     <item android:title="Exit"
         android:id="@+id/menuExit"
         android:icon="@drawable/ic_close_black_24dp"/>
-
 </menu>

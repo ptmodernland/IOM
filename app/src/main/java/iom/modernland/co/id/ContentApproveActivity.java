@@ -60,7 +60,7 @@ public class ContentApproveActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),
-                        HomeUserActivity.class);
+                        MainRedActivity.class);
 
                 startActivity(i);
             }
@@ -215,10 +215,9 @@ public class ContentApproveActivity extends AppCompatActivity {
         });
     }
 
-    //@Override
-   // public void onBackPressed() {
-        //Intent i = new Intent(ContentApproveActivity.this, HomeUserActivity.class);
-       // startActivity(i);
-    //}
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),
+                "Tombol Back Tidak Bisa Digunakan", Toast.LENGTH_LONG).show();
+    }
 
 }

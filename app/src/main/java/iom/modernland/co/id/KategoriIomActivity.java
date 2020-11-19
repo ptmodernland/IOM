@@ -327,6 +327,13 @@ public class KategoriIomActivity extends AppCompatActivity  {
 
                     ab.show();
                 }
+                else if (menuItem.getItemId() == R.id.menuUtama) {
+
+                    Intent i = new Intent(KategoriIomActivity.this, MainRedActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(i);
+                    finish();
+                }
                 return false;
             }
         });
@@ -527,6 +534,7 @@ public class KategoriIomActivity extends AppCompatActivity  {
         Intent i = new Intent(KategoriIomActivity.this, ContentKategoriActivity.class);
         startActivity(i);
     }
+
     private void initIconWithBadges(int total, int total_finance,int total_qs,int total_legal,int total_purchasing,int total_bdd,int total_project,int total_promosi,int total_marketing,int total_hrd,int total_landed,int total_town,int total_permit) {
         //value = total;
         Typeface typeface = Typeface.createFromAsset(getAssets(), "exo_regular.ttf");
@@ -673,4 +681,11 @@ public class KategoriIomActivity extends AppCompatActivity  {
                 .setShowCounter(true)
                 .setBadgePadding(4);
     }
+
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),
+                "Tombol Back Tidak Bisa Digunakan", Toast.LENGTH_LONG).show();
+    }
+
 }
+

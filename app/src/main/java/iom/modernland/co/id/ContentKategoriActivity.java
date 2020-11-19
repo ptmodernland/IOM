@@ -60,7 +60,7 @@ public class ContentKategoriActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),
-                        HomeUserActivity.class);
+                        MainRedActivity.class);
 
                 startActivity(i);
             }

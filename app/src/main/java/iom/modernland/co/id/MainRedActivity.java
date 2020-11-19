@@ -328,6 +328,13 @@ public class MainRedActivity extends AppCompatActivity {
 
                     ab.show();
                 }
+                else if (menuItem.getItemId() == R.id.menuUtama) {
+
+                    Intent i = new Intent(MainRedActivity.this, MainRedActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(i);
+                    finish();
+                }
                 return false;
             }
         });
@@ -652,7 +659,11 @@ public class MainRedActivity extends AppCompatActivity {
 
         v_flipper.setInAnimation(this,android.R.anim.slide_in_left);
         v_flipper.setOutAnimation(this,android.R.anim.slide_out_right);
-
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),
+                "Tombol Back Tidak Bisa Digunakan", Toast.LENGTH_LONG).show();
+    }
 }

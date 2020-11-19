@@ -224,7 +224,7 @@ public class ApproveDetailFragment extends Fragment {
                         EditText tCatatan = (EditText) x.findViewById(R.id.tCatatan);
 
                         final String isiKomen = tCatatan.getText().toString();
-
+                        final String id = getArguments().getString("idnya");
                         OkHttpClient postman = new OkHttpClient();
 
                         SharedPreferences sp = getActivity()
@@ -240,6 +240,7 @@ public class ApproveDetailFragment extends Fragment {
                                 .addFormDataPart("ipaddres", IP_ISI)
                                 .addFormDataPart("macaddress", address)
                                 .addFormDataPart("id_user", id_user)
+                                .addFormDataPart("id_iom", id)
                                 .build();
 
                         Request request = new Request.Builder()
@@ -325,109 +326,7 @@ public class ApproveDetailFragment extends Fragment {
         btnKordinasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
-                final View mView = getLayoutInflater().inflate(R.layout.list_head, null);
 
-                mBuilder.setView(mView);
-
-                AlertDialog dialog = mBuilder.create();
-                dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        //final Spinner spnPilihHead = (Spinner) mView.findViewById(R.id.spnHead);
-                        //final String headPilihan = spnPilihHead.getSelectedItem().toString();
-
-                        OkHttpClient postman = new OkHttpClient();
-
-                        SharedPreferences sp = getActivity()
-                                .getSharedPreferences("DATALOGIN", 0);
-
-                        String username_apr      = sp.getString("username", "");
-
-                        RequestBody body = new MultipartBody.Builder()
-                                .setType(MultipartBody.FORM)
-                                //.addFormDataPart("nomor", nomormemo)
-                                //.addFormDataPart("head", headPilihan)
-                                .addFormDataPart("username", username_apr)
-                                .build();
-
-                        Request request = new Request.Builder()
-                                .post(body)
-                                .url(Setting.IP + "proses_kordinasi.php")
-                                .build();
-
-                        final ProgressDialog pd = new ProgressDialog(
-                                getActivity()
-                        );
-                        pd.setMessage("Please Wait");
-                        pd.setTitle("Loading Approve...");
-                        pd.setIcon(R.drawable.ic_check_black_24dp);
-                        pd.show();
-
-                        postman.newCall(request).enqueue(new Callback() {
-                            @Override
-                            public void onFailure(Call call, IOException e) {
-                                getActivity().runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(getActivity(),
-                                                "Please Try Again",
-                                                Toast.LENGTH_LONG).show();
-                                        pd.dismiss();
-                                    }
-                                });
-                            }
-
-                            @Override
-                            public void onResponse(Call call, Response response) throws IOException {
-                                String hasil = response.body().string();
-                                try {
-                                    JSONObject j = new JSONObject(hasil);
-                                    boolean st = j.getBoolean("status");
-
-                                    if(st == false)
-                                    {
-                                        final String p = j.getString("pesan");
-                                        getActivity().runOnUiThread(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                Toast.makeText(getActivity(),
-                                                        p, Toast.LENGTH_LONG).show();
-                                                pd.dismiss();
-                                            }
-                                        });
-                                    }
-                                    else {
-
-                                        getActivity().runOnUiThread(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                Toast.makeText(getActivity().getApplicationContext(),
-                                                        "Kordinasi ke Bagian terkait sudah dikirimkan!",
-                                                        Toast.LENGTH_LONG).show();
-
-                                                getActivity().getSupportFragmentManager()
-                                                        .popBackStackImmediate();
-
-                                                pd.dismiss();
-                                            }
-                                        });
-                                    }
-
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-                        });
-
-                        //Toast.makeText(getActivity(),
-                        //        "Head yang dipilih: " + headPilihan,
-                        //        Toast.LENGTH_LONG).show();
-                    }
-                });
-                dialog.show();*/
                 String id_iom = txtWV.getText().toString();
                 String nomornya = txtNomor.getText().toString();
 
@@ -448,17 +347,19 @@ public class ApproveDetailFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder abc = new AlertDialog.Builder(getActivity());
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+                final View mView = getLayoutInflater().inflate(R.layout.approve_password, null);
 
-                abc.create();
-                abc.setTitle("Confirmation");
-                abc.setIcon(R.drawable.ic_check_black_24dp);
-                abc.setMessage("Apakah Anda Yakin Tidak Menyetujui Pengajuan Ini?");
-                abc.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                mBuilder.setView(mView);
+
+                AlertDialog dialog = mBuilder.create();
+                dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         EditText tCatatan = (EditText) x.findViewById(R.id.tCatatan);
+                        final TextView passwordUser = (TextView) mView.findViewById(R.id.etPassword);
+                        final String isiPassword = passwordUser.getText().toString();
 
                         WifiManager wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
@@ -479,7 +380,7 @@ public class ApproveDetailFragment extends Fragment {
                         }
 
                         final String isiKomen = tCatatan.getText().toString();
-
+                        final String id = getArguments().getString("idnya");
                         OkHttpClient postman = new OkHttpClient();
 
                         SharedPreferences sp = getActivity()
@@ -494,6 +395,8 @@ public class ApproveDetailFragment extends Fragment {
                                 .addFormDataPart("id_user", id_user)
                                 .addFormDataPart("ipaddres", IP_ISI)
                                 .addFormDataPart("macaddress", address)
+                                .addFormDataPart("id_iom", id)
+                                .addFormDataPart("passwordUser", isiPassword)
                                 .build();
 
                         Request request = new Request.Builder()
@@ -567,14 +470,7 @@ public class ApproveDetailFragment extends Fragment {
 
                     }
                 });
-                abc.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-
-                abc.show();
+                dialog.show();
             }
         });
 
@@ -640,5 +536,6 @@ public class ApproveDetailFragment extends Fragment {
 
         return x;
     }
+
 
 }

@@ -218,4 +218,8 @@ public class ContentListActivity extends AppCompatActivity {
 
     }
 
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),
+                "Tombol Back Tidak Bisa Digunakan", Toast.LENGTH_LONG).show();
+    }
 }
