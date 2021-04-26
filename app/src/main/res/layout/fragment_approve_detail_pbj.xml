@@ -48,14 +48,6 @@
 
         </TableRow>
 
-        <TableRow>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"/>
-
-        </TableRow>
 
         <TableRow>
 
@@ -126,15 +118,6 @@
         <TableRow>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"/>
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
                 android:text="@string/lama"
                 android:textColor="#000"
                 android:layout_width="match_parent"
@@ -170,7 +153,57 @@
                 android:layout_height="wrap_content"/>
 
         </TableRow>
+        <TableRow>
 
+            <TextView
+                android:text="@string/view_detail"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtview_detail"
+                android:text="@string/klik_view_detail"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:textColor="#A62222"
+                android:linksClickable="true"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/download_file"
+                android:text="@string/download_file"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtdownload_file"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:textColor="#A62222"
+                android:linksClickable="true"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtWV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
         <TableRow>
 
             <TextView
@@ -195,66 +228,6 @@
         </TableRow>
 
     </TableLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/lnWVP"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btnWVP"
-                android:drawableLeft="@drawable/ic_search_black_24dp"
-                android:text="@string/view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:visibility="gone"
-                android:id="@+id/txtWVP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lnAFP"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btnAFP"
-                android:drawableLeft="@drawable/ic_file_download_black_24dp"
-                android:text="@string/file"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtAFP"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_column="0"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"

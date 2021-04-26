@@ -31,6 +31,8 @@ public class HeadAdapter extends RecyclerView.Adapter<HeadViewHolder> {
         HeadViewHolder.tHead.setText(ab.namaUser);
         HeadViewHolder.txNomorMemo.setText(ab.nomornya);
         HeadViewHolder.txNomorMemo.setVisibility(View.GONE);
+        HeadViewHolder.txIDMemo.setText(ab.idnya);
+        HeadViewHolder.txIDMemo.setVisibility(View.GONE);
     }
 
     @Override

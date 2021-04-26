@@ -379,6 +379,8 @@ public class MainRedActivity extends AppCompatActivity {
                     JSONObject j = new JSONObject(hasil);
                     boolean st = j.getBoolean("status");
                     final int total = j.getInt("total");
+                    final int total_kordinasi = j.getInt("total_kordinasi");
+                    final int total_keseluruhan = total + total_kordinasi;
 
                     if(st == false)
                     {
@@ -396,7 +398,7 @@ public class MainRedActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                initIconWithBadges(total);
+                                initIconWithBadges(total_keseluruhan);
                                 pd.dismiss();
                             }
                         });
@@ -408,7 +410,7 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
-        Request requestPO = new Request.Builder()
+        /*Request requestPO = new Request.Builder()
                 .get()
                 .url(Setting.IP + "counter_po.php?username=" + username)
                 .build();
@@ -468,7 +470,7 @@ public class MainRedActivity extends AppCompatActivity {
                 }
 
             }
-        });
+        });*/
 
         Request requestPermohonan = new Request.Builder()
                 .get()
@@ -503,6 +505,8 @@ public class MainRedActivity extends AppCompatActivity {
                     JSONObject j = new JSONObject(hasil);
                     boolean st = j.getBoolean("status");
                     final int total = j.getInt("total");
+                    final int total_kordinasi = j.getInt("total_kordinasi");
+                    final int total_keseluruhan = total + total_kordinasi;
 
                     if(st == false)
                     {
@@ -520,7 +524,7 @@ public class MainRedActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                initIconWithBadgesPermohonan(total);
+                                initIconWithBadgesPermohonan(total_keseluruhan);
                                 pdp.dismiss();
                             }
                         });
@@ -548,7 +552,7 @@ public class MainRedActivity extends AppCompatActivity {
         LinearLayout menupbj = (LinearLayout) findViewById(R.id.menugPbj);
         LinearLayout menunpv = (LinearLayout) findViewById(R.id.menugNpv);
         LinearLayout menuperubahan = (LinearLayout) findViewById(R.id.menugSetting);
-        LinearLayout menupo = (LinearLayout) findViewById(R.id.menugPO);
+        //LinearLayout menupo = (LinearLayout) findViewById(R.id.menugPO);
 
         menuiom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -574,13 +578,13 @@ public class MainRedActivity extends AppCompatActivity {
             }
         });
 
-        menupo.setOnClickListener(new View.OnClickListener() {
+        /*menupo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainRedActivity.this, HomePOActivity.class);
                 startActivity(i);
             }
-        });
+        });*/
 
         /*menunpv.setOnClickListener(new View.OnClickListener() {
             @Override

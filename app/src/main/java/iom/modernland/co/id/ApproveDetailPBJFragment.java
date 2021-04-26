@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
@@ -68,12 +69,15 @@ public class ApproveDetailPBJFragment extends Fragment {
         final TextView txtKaryawan = (TextView) x.findViewById(R.id.txtKaryawanAd);
         final TextView txtJabatan = (TextView) x.findViewById(R.id.txtJabatanAd);
         final TextView txtDepartemen = (TextView) x.findViewById(R.id.txtDepartemenAd);
-        final TextView txtWVP = (TextView) x.findViewById(R.id.txtWVP);
-        final TextView txtAFP = (TextView) x.findViewById(R.id.txtAFP);
-        final LinearLayout lnAFP = (LinearLayout) x.findViewById(R.id.lnAFP);
-        final Button btnAFP = (Button) x.findViewById(R.id.btnAFP);
+        //final TextView txtWVP = (TextView) x.findViewById(R.id.txtWVP);
+        //final TextView txtAFP = (TextView) x.findViewById(R.id.txtAFP);
+        //final LinearLayout lnAFP = (LinearLayout) x.findViewById(R.id.lnAFP);
+        //final Button btnAFP = (Button) x.findViewById(R.id.btnAFP);
+        final TextView txtWV = (TextView) x.findViewById(R.id.txtWV);
+        final TextView txtdownload_file = (TextView) x.findViewById(R.id.txtdownload_file);
         final Button btnKordinasi = (Button) x.findViewById(R.id.btnKordinasiP);
         final Button btnApprove = (Button) x.findViewById(R.id.btnApproveP);
+        final TextView download_file = (TextView) x.findViewById(R.id.download_file);
 
         OkHttpClient postman = new OkHttpClient();
 
@@ -133,11 +137,11 @@ public class ApproveDetailPBJFragment extends Fragment {
                                 txtKaryawan.setText(nama_user);
                                 txtJabatan.setText(jabatan);
                                 txtDepartemen.setText(departemen);
-                                txtAFP.setText(lampiran);
-                                txtWVP.setText(no_permintaan);
+                                txtWV.setText(nopermintaan);
+                                txtdownload_file.setText(lampiran);
                                 txtLama.setText(lama + " hari");
                                 txtPending.setText(pending + " hari");
-
+                                txtdownload_file.setPaintFlags(txtdownload_file.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                             } else {
 
                                 txtNoPermintaan.setText(no_permintaan);
@@ -146,12 +150,11 @@ public class ApproveDetailPBJFragment extends Fragment {
                                 txtKaryawan.setText(nama_user);
                                 txtJabatan.setText(jabatan);
                                 txtDepartemen.setText(departemen);
-                                txtAFP.setText(lampiran);
-                                txtWVP.setText(no_permintaan);
+                                txtWV.setText(nopermintaan);
+                                txtdownload_file.setVisibility(View.INVISIBLE);
+                                download_file.setVisibility(View.INVISIBLE);
                                 txtLama.setText("\n" + lama + " hari");
                                 txtPending.setText(pending + " hari");
-
-                                lnAFP.setVisibility(View.INVISIBLE);
 
                             }
 
@@ -425,20 +428,42 @@ public class ApproveDetailPBJFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+                final View mView = getLayoutInflater().inflate(R.layout.approve_password, null);
 
-                EditText tCatatanCAd = (EditText) x.findViewById(R.id.tCatatanPBJ);
+                mBuilder.setView(mView);
 
-                final String isiKomenCAd = tCatatanCAd.getText().toString();
-
-                AlertDialog.Builder abpc = new AlertDialog.Builder(getActivity());
-
-                abpc.create();
-                abpc.setTitle("Confirmation");
-                abpc.setIcon(R.drawable.ic_check_black_24dp);
-                abpc.setMessage("Apakah Anda Yakin Tidak Menyetujui Pengajuan Ini?");
-                abpc.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                AlertDialog dialog = mBuilder.create();
+                dialog.setButton(Dialog.BUTTON_POSITIVE, "Submit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        EditText tCatatan = (EditText) x.findViewById(R.id.tCatatan);
+                        final TextView passwordUser = (TextView) mView.findViewById(R.id.etPassword);
+                        final String isiPassword = passwordUser.getText().toString();
+
+                        WifiManager wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+
+                        WifiInfo info = wifiManager.getConnectionInfo();
+                        String IP = Formatter.formatIpAddress(info.getIpAddress());
+                        String address_wifi = Utils.getMACAddress("wlan0");
+                        String address_lan =  Utils.getMACAddress("eth0");
+                        String IP_LOKAL = Utils.getIPAddress(true); // IPv4
+
+                        if (IP_LOKAL==""){
+                            IP_ISI = IP;
+                            address = address_lan;
+
+                        }
+                        else{
+                            IP_ISI = IP_LOKAL;
+                            address = address_wifi;
+                        }
+
+                        EditText tCatatanCAd = (EditText) x.findViewById(R.id.tCatatanPBJ);
+
+                        final String isiKomenCAd = tCatatanCAd.getText().toString();
+
 
                         OkHttpClient postman = new OkHttpClient();
 
@@ -452,6 +477,9 @@ public class ApproveDetailPBJFragment extends Fragment {
                                 .addFormDataPart("komenad", isiKomenCAd)
                                 .addFormDataPart("no_permintaan", nopermintaan)
                                 .addFormDataPart("id_user", id_user)
+                                .addFormDataPart("ipaddres", IP_ISI)
+                                .addFormDataPart("macaddress", address)
+                                .addFormDataPart("passwordUser", isiPassword)
                                 .build();
 
                         Request request = new Request.Builder()
@@ -525,27 +553,20 @@ public class ApproveDetailPBJFragment extends Fragment {
                     }
                 });
 
-                abpc.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-
-                abpc.show();
+                dialog.show();
             }
         });
 
-        Button btnWvP = (Button) x.findViewById(R.id.btnWVP);
-        btnWvP.setOnClickListener(new View.OnClickListener() {
+        TextView  txtview_detail = (TextView) x.findViewById(R.id.txtview_detail);
+        txtview_detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nopermintaan = txtWVP.getText().toString();
+                String no_permintaan = txtWV.getText().toString();
 
                 WebViewPBJFragment wv = new WebViewPBJFragment();
 
                 Bundle b = new Bundle();
-                b.putString("no_permintaan", nopermintaan);
+                b.putString("no_permintaan",no_permintaan);
 
                 wv.setArguments(b);
 
@@ -557,49 +578,10 @@ public class ApproveDetailPBJFragment extends Fragment {
             }
         });
 
-        LinearLayout lnWvp = (LinearLayout) x.findViewById(R.id.lnWVP);
-        lnWvp.setOnClickListener(new View.OnClickListener() {
+        txtdownload_file.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String no_permintaan = txtWVP.getText().toString();
-
-                WebViewPBJFragment wvp = new WebViewPBJFragment();
-
-                Bundle b = new Bundle();
-                b.putString("no_permintaan",no_permintaan);
-
-                wvp.setArguments(b);
-
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frameApprovePBJ, wvp)
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
-
-        lnAFP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String attch_lampiran = txtAFP.getText().toString();
-
-                dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
-
-                Uri uri = Uri.parse("https://approval.modernland.co.id/assets/file/"
-                        + attch_lampiran);
-
-                DownloadManager.Request request = new DownloadManager.Request(uri);
-
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
-                Long reference = dm.enqueue(request);
-            }
-        });
-
-        btnAFP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String attch_lampiran = txtAFP.getText().toString();
+                String attch_lampiran = txtdownload_file.getText().toString();
 
                 dm = (DownloadManager)getContext().getSystemService(Context.DOWNLOAD_SERVICE);
 

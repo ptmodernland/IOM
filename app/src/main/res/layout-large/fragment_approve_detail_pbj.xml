@@ -18,7 +18,6 @@
             <TextView
                 android:text="@string/nomor"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -26,7 +25,6 @@
             <TextView
                 android:id="@+id/txtNoPermoAd"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -37,7 +35,6 @@
             <TextView
                 android:text="@string/tanggal"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -45,20 +42,18 @@
             <TextView
                 android:id="@+id/txtTanggalAd"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:inputType="date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
         </TableRow>
 
+
         <TableRow>
 
             <TextView
                 android:text="@string/karyawan"
                 android:textColor="#000"
-                android:textSize="22dp"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -66,8 +61,6 @@
             <TextView
                 android:id="@+id/txtKaryawanAd"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="20dp"
-                android:textSize="22dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -82,7 +75,6 @@
 
             <TextView
                 android:id="@+id/txtJabatanAd"
-                android:textSize="22dp"
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -94,7 +86,6 @@
             <TextView
                 android:text="@string/departemen"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -102,7 +93,6 @@
             <TextView
                 android:id="@+id/txtDepartemenAd"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -113,7 +103,6 @@
             <TextView
                 android:text="@string/jenis"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -121,7 +110,6 @@
             <TextView
                 android:id="@+id/txtJenisPermoAd"
                 android:layout_marginLeft="5dp"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -132,7 +120,6 @@
             <TextView
                 android:text="@string/lama"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -142,7 +129,6 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="20dp"
                 android:inputType="date"
-                android:textSize="22dp"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -154,7 +140,6 @@
             <TextView
                 android:text="@string/pending"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -168,13 +153,62 @@
                 android:layout_height="wrap_content"/>
 
         </TableRow>
+        <TableRow>
 
+            <TextView
+                android:text="@string/view_detail"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtview_detail"
+                android:text="@string/klik_view_detail"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:textColor="#A62222"
+                android:linksClickable="true"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/download_file"
+                android:text="@string/download_file"
+                android:fontFamily="@font/helvetica"
+                android:textColor="#000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/txtdownload_file"
+                android:fontFamily="@font/helvetica"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:textColor="#A62222"
+                android:linksClickable="true"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txtWV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
         <TableRow>
 
             <TextView
                 android:text="@string/catatan"
                 android:textColor="#000"
-                android:textSize="22dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="0"/>
@@ -184,13 +218,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingRight="100dp"
-                android:textSize="22dp"
                 android:layout_marginLeft="5dp"
                 android:gravity="top|left"
                 android:hint="@string/komen"
                 android:lines="10"
                 android:maxLines="15"
-                android:minLines="5" />
+                android:minLines="3" />
 
         </TableRow>
 
@@ -198,59 +231,7 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:id="@+id/lnWVP"
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btnWVP"
-                android:drawableLeft="@drawable/ic_search_black_24dp"
-                android:text="@string/view"
-                android:textSize="21dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:visibility="gone"
-                android:id="@+id/txtWVP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/lnAFP"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btnAFP"
-                android:drawableLeft="@drawable/ic_file_download_black_24dp"
-                android:text="@string/file"
-                android:textSize="21dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/txtAFP"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -258,15 +239,19 @@
             android:id="@+id/btnCancelP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="21dp"
             android:text="@string/reject"/>
 
         <Button
             android:id="@+id/btnApproveP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="21dp"
             android:text="@string/approve"/>
+
+        <Button
+            android:id="@+id/btnKordinasiP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rekomendasi"/>
 
     </LinearLayout>
 

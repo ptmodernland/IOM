@@ -319,6 +319,13 @@ public class HomePermohonanActivity extends AppCompatActivity {
 
                     ab.show();
                 }
+                else if (menuItem.getItemId() == R.id.menuUtama) {
+
+                    Intent i = new Intent(HomePermohonanActivity.this, MainRedActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(i);
+                    finish();
+                }
                 return false;
             }
         });
@@ -362,7 +369,7 @@ public class HomePermohonanActivity extends AppCompatActivity {
                     JSONObject jpk = new JSONObject(hasil);
                     boolean st = jpk.getBoolean("status");
                     final int total = jpk.getInt("total");
-                    //final int totalKordinasi = jpk.getInt("total_kordinasi");
+                    final int totalKordinasi = jpk.getInt("total_kordinasi");
 
                     if(st == false)
                     {
@@ -383,7 +390,7 @@ public class HomePermohonanActivity extends AppCompatActivity {
                                 pd.dismiss();
 
                                 initIconWithBadges(total);
-                                //initIconWithBadgesKordP(totalKordinasi);
+                                initIconWithBadgesKordP(totalKordinasi);
 
                             }
                         });
@@ -487,4 +494,8 @@ public class HomePermohonanActivity extends AppCompatActivity {
                 .setBadgePadding(4);
     }
 
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),
+                "Tombol Back Tidak Bisa Digunakan", Toast.LENGTH_LONG).show();
+    }
 }

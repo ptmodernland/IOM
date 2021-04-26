@@ -26,11 +26,13 @@ public class DialogHeadActivity extends AppCompatActivity {
         tIDMemo.setVisibility(tIDMemo.INVISIBLE);
 
         String NomorMemo = tNomorMemo.getText().toString();
+        String IDMemo = tIDMemo.getText().toString();
 
         DialogHeadFragment df = new DialogHeadFragment();
 
         Bundle bf = new Bundle();
         bf.putString("NomorMemo",NomorMemo);
+        bf.putString("IDMemo",IDMemo);
 
         df.setArguments(bf);
 

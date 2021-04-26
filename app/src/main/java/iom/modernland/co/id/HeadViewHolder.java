@@ -9,13 +9,14 @@ import android.widget.TextView;
 
 public class HeadViewHolder extends RecyclerView.ViewHolder {
 
-    TextView tHead,txNomorMemo;
+    TextView tHead,txNomorMemo,txIDMemo;
 
     public HeadViewHolder(@NonNull final View itemView) {
         super(itemView);
 
         tHead = (TextView) itemView.findViewById(R.id.tHead);
         txNomorMemo = (TextView) itemView.findViewById(R.id.txNomorMemo);
+        txIDMemo = (TextView) itemView.findViewById(R.id.txIDMemo);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,13 +26,14 @@ public class HeadViewHolder extends RecyclerView.ViewHolder {
 
                 String head = tHead.getText().toString();
                 String nomor = txNomorMemo.getText().toString();
+                String id = txIDMemo.getText().toString();
 
         SaveDialogFragment ad = new SaveDialogFragment();
 
                 Bundle b = new Bundle();
                 b.putString("head",head);
                 b.putString("nomor",nomor);
-
+                b.putString("id",id);
                 ad.setArguments(b);
 
         c.getSupportFragmentManager()

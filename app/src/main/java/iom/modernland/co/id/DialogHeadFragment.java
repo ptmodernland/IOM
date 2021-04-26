@@ -44,7 +44,7 @@ public class DialogHeadFragment extends Fragment {
 
         final RecyclerView rvHead = (RecyclerView) x.findViewById(R.id.rvHead);
         final String nomornya = getArguments().getString("NomorMemo");
-
+        final String idnya = getArguments().getString("IDMemo");
 
         LinearLayoutManager lp = new LinearLayoutManager(getActivity());
         lp.setOrientation(LinearLayoutManager.VERTICAL);
@@ -93,7 +93,7 @@ public class DialogHeadFragment extends Fragment {
 
                         lh.namaUser = jl.getString("namaUser");
                         lh.nomornya = nomornya;
-
+                        lh.idnya = idnya;
                         adapter.data.add(lh);
                     }
                     getActivity().runOnUiThread(new Runnable() {

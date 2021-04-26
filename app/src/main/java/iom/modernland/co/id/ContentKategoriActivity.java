@@ -215,10 +215,9 @@ public class ContentKategoriActivity extends AppCompatActivity {
         });
     }
 
-    //@Override
-    // public void onBackPressed() {
-    //Intent i = new Intent(ContentApproveActivity.this, HomeUserActivity.class);
-    // startActivity(i);
-    //}
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(),
+                "Tombol Back Tidak Bisa Digunakan", Toast.LENGTH_LONG).show();
+    }
 
 }

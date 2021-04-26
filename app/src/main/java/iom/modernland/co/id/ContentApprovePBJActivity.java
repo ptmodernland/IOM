@@ -60,7 +60,7 @@ public class ContentApprovePBJActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),
-                        HomePermohonanActivity.class);
+                        MainRedActivity.class);
 
                 startActivity(i);
             }

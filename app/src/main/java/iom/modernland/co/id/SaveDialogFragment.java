@@ -44,6 +44,7 @@ public class SaveDialogFragment extends Fragment {
         final String head = getArguments().getString("head");
 
         final String nomor = getArguments().getString("nomor");
+        final String id = getArguments().getString("id");
 
         //Toast.makeText(getActivity(),
                 //nomor, Toast.LENGTH_LONG).show();
@@ -52,6 +53,7 @@ public class SaveDialogFragment extends Fragment {
                 .setType(MultipartBody.FORM)
                 .addFormDataPart("head", head)
                 .addFormDataPart("nomor", nomor)
+                .addFormDataPart("id_iom", id)
                 .addFormDataPart("id_user", id_user)
                 .build();
 
